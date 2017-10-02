@@ -9,5 +9,6 @@
 	<h1>
 		This is the game page
 	</h1>
+	<p>Here are some games</p>
 </body>
 </html>
