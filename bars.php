@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Förkrök - Games</title>
+	<title>Förkrök - Bars & Clubs</title>
 	<link rel="stylesheet" type="text/css" href="forkrok.css">
 </head>
 <body>
@@ -9,16 +9,7 @@
 
 <div class="content">
 
-	<h2>Games<i class="fa fa-trophy" aria-hidden="true"></i></h2>
-
-	<form>
-		<input type="text" name="" placeholder=""/>
-		<input type="submit" name="search" label="Search">
-	</form>
-
-	<div>
-		
-	</div>
+	<h2>Bars & Clubs<i class="fa fa-beer" aria-hidden="true"></i></h2>
 	
 </div>
 
@@ -36,12 +27,10 @@
 		max-width: 600px;
 	}
 
-	form {
-		max-width: 400px;
-
-	}
-
 </style>
 
 </body>
 </html>
+
+
+

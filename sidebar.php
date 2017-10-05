@@ -18,6 +18,7 @@
 			<li>
 				<a href="food.php"><i class="fa fa-cutlery" aria-hidden="true"></i>Food</a>
 			</li>
+			<li><a href="bars.php"><i class="fa fa-beer" aria-hidden="true"></i>Bars & Clubs</a>
 			<li>
 				<a href="favourites.php"><i class="fa fa-star" aria-hidden="true"></i>Favourites</a>
 			</li>
