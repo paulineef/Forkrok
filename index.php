@@ -8,4 +8,5 @@
  	Det här är vår fina index-fil :)
  </div>
 </body>
+<?php include ("footer.php") ?>
 </html>
