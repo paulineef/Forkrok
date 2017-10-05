@@ -5,11 +5,7 @@
 </head>
 <body>
  <div>
- 	hej
-	 
-	 hj
-	 he
-	 hejsan jag heter frida
+ 	Det här är vår fina index-fil :)
  </div>
 </body>
 </html>
