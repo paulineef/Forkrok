@@ -9,7 +9,7 @@
 
 <div class="content">
 
-	<h2>Drinks<i class="fa fa-glass" aria-hidden="true"></i></h2>
+	<h2>Favourites<i class="fa fa-star" aria-hidden="true"></i></h2>
 	
 </div>
 
@@ -31,4 +31,6 @@
 
 </body>
 </html>
+
+
 

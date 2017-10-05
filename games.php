@@ -1,14 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Untitled Document</title>
+	<title>Förkrök</title>
+	<link rel="stylesheet" type="text/css" href="forkrok.css">
 </head>
-
 <body>
-	<h1>
-		This is the game page
-	</h1>
-	<p>Here are some games</p>
+<?php include ("sidebar.php") ?>
+
+<div class="content">
+
+	<h2>Games<i class="fa fa-trophy" aria-hidden="true"></i></h2>
+	
+</div>
+
+<?php include ("footer.php") ?>
+<style type="text/css">
+
+	.content {
+		float:left;
+		margin-left: 400px;
+		margin-top: 70px; 
+		margin-right: 100px;
+	}
+
+	.content div {
+		max-width: 600px;
+	}
+
+</style>
+
 </body>
 </html>

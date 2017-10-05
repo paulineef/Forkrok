@@ -3,22 +3,23 @@
 	<head>
 		<!--<?php include('config.php')?>-->
 		<script src="https://use.fontawesome.com/6f2a9fca0c.js"></script>
+		<link rel="stylesheet" type="text/css" href="forkrok.css">
 	</head>
 	<header>
 		<ul>
-		<img id="logoSide" src="img/logo_icon.svg"/>
-		<img id="forkrok" src="img/logo.svg"/>
+		<a href="index.php"><img id="logoSide" src="img/logo_icon.svg"/>
+		<img id="forkrok" src="img/logo.svg"/><a/>
 			<li id="first">
-				<a href=" games.php"><i class="fa fa-trophy" aria-hidden="true"></i>GAMES</a>
+				<a href=" games.php"><i class="fa fa-trophy" aria-hidden="true"></i>Games</a>
 			</li>
 			<li>
-				<a href="drinks.php"><i class="fa fa-glass" aria-hidden="true"></i>DRINKS</a>
+				<a href="drinks.php"><i class="fa fa-glass" aria-hidden="true"></i>Drinks</a>
 			</li>
 			<li>
-				<a href="food.php"><i class="fa fa-cutlery" aria-hidden="true"></i>FOOD</a>
+				<a href="food.php"><i class="fa fa-cutlery" aria-hidden="true"></i>Food</a>
 			</li>
 			<li>
-				<a href="favourite.php"><i class="fa fa-star" aria-hidden="true"></i>FAVOURITES</a>
+				<a href="favourites.php"><i class="fa fa-star" aria-hidden="true"></i>Favourites</a>
 			</li>
 		</ul>
 		
@@ -43,6 +44,8 @@
 		padding-left: 29px;
 		box-sizing: border-box;
 		font-weight: 900;
+		text-transform: uppercase; 
+		cursor: pointer:
 		
 	}
 	#first {
@@ -50,15 +53,20 @@
 	}
 	ul li a {
 		text-decoration: none;
-		color: #F7E431;
+		color: #FDCD01;
 		font-weight: 700;
 		font-size: 19px;
+	}
+
+	ul li a:hover {
+		color: #efc100;
 	}
 	#logoSide {
 		max-width: 100%;
 	}
 	#forkrok {
 		max-width: 100%;
+		padding-top: 30px;
 		margin: 0 auto;
 		box-sizing: border-box;
 	}
@@ -67,7 +75,7 @@
 	}
 	header {
 		max-width: 320px;
-		z-index: 9999999;
+		z-index: 9999;
 		position: fixed;
 		left: 0;
 		padding-left: 56px;
@@ -75,6 +83,8 @@
 		background: white;
 		padding-right: 45px;
 		height: 100vh;
+		border-right: solid 1px #f3f3f3; 
+		float: left; 
 	}
 	body {
 		margin: 0;
