@@ -7,5 +7,6 @@
  <div>
  	Det här är vår fina index-fil :)
 </body>
+<?php include ("sidebar.php") ?>
 <?php include ("footer.php") ?>
 </html>
