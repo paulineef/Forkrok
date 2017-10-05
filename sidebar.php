@@ -82,12 +82,9 @@
 		padding-left: 56px;
 		padding-top: 56px;
 		background: white;
-		padding-right: 45px;
+		padding-right: 50px;
 		height: 100vh;
 		border-right: solid 1px #f3f3f3; 
 		float: left; 
-	}
-	body {
-		margin: 0;
 	}
 </style>

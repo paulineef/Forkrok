@@ -4,7 +4,7 @@
 		<meta name="description" content="describes page"/>
 		<meta charset="utf-8" />
 		<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="forkrok.css">
+		<!--<link rel="stylesheet" type="text/css" href="forkrok.css">-->
 
 	</head>
 
@@ -19,7 +19,7 @@
 		font-family: 'Lato', sans-serif;
 		font-weight: 300;
 		font-size: 12px;
-		background-color: #f3f3f3;
+		background-color: #fd896d;
 		color: #fff;
 		margin: 0px;
 		padding: 10px;

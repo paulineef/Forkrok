@@ -1,5 +1,6 @@
 body {
-	margin: 0px;
+	margin: 0;
+	padding: 0; 
 }
 
 h1 {
@@ -7,6 +8,8 @@ h1 {
 	font-size: 30pt;
 	font-weight: 400; 
 	color: #d34e24;
+	margin: 0;
+	padding: 0;
 }
 
 h2 {
@@ -49,7 +52,8 @@ h2 i {
 
 .content {
 		float:left;
-		margin-left: 400px;
-		margin-top: 80px; 
-		margin-right: 100px;
+		margin: 70px 100px 40px 400px;
+		max-width: 600px; 
 	}
+
+
