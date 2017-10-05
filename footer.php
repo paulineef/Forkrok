@@ -2,16 +2,29 @@
 <html>
 	<head>
 		<meta name="description" content="describes page"/>
-		<meta charset="utf-8" /> 
+		<meta charset="utf-8" />
+		<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
 	</head>
 
 	<footer>
-		<p>Copyright © 2017 forkrok</p>
+		<p>Copyright © 2017 forkrok
+		</p>
 	</footer>
 </html>
 
 <style type="text/css">
 	p {
-		color:blue;
+		font-family: 'Lato', sans-serif;
+		font-weight: 300;
+		font-size: 12px;
+		background-color: #fd896d;
+		color: #fff;
+		margin: 0px;
+		padding: 10px;
+		text-align: right;
+		position:fixed;
+		right:0px;
+		bottom:0px;
+		width:100%;
 	}
 </style>
