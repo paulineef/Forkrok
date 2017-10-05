@@ -6,8 +6,8 @@
 	</head>
 	<header>
 		<ul>
-		<img id="logoSide" src="logo.svg"/>
-		<img id="forkrok" src="forkrok.svg"/>
+		<img id="logoSide" src="img/logouícon.svg"/>
+		<img id="forkrok" src="img/logo.svg"/>
 			<li id="first">
 				<a href=" games.php"><i class="fa fa-trophy" aria-hidden="true"></i>GAMES</a>
 			</li>
