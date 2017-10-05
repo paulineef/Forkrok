@@ -1,12 +1,12 @@
 <!doctype html>
 <html>
 	<head>
-		<?php include('config.php')?>
+		<!--<?php include('config.php')?>-->
 		<script src="https://use.fontawesome.com/6f2a9fca0c.js"></script>
 	</head>
 	<header>
 		<ul>
-		<img id="logoSide" src="img/logouícon.svg"/>
+		<img id="logoSide" src="img/logo_icon.svg"/>
 		<img id="forkrok" src="img/logo.svg"/>
 			<li id="first">
 				<a href=" games.php"><i class="fa fa-trophy" aria-hidden="true"></i>GAMES</a>
@@ -31,7 +31,7 @@
 
 <style>
 	ul {
-		padding-top: 29px;
+		padding: 0px;
 		box-sizing: border-box;
 		margin-top: 0;
 	}
@@ -59,7 +59,6 @@
 	}
 	#forkrok {
 		max-width: 100%;
-		padding-top: 24px;
 		margin: 0 auto;
 		box-sizing: border-box;
 	}
@@ -67,13 +66,17 @@
 		padding-right: 9px;
 	}
 	header {
-		max-width: 230px;
+		max-width: 320px;
 		z-index: 9999999;
 		position: fixed;
 		left: 0;
-		margin-left: 38px;
-		margin-top: 38px;
+		padding-left: 56px;
+		padding-top: 56px;
 		background: white;
-		padding-right: 35px;
+		padding-right: 45px;
+		height: 100vh;
+	}
+	body {
+		margin: 0;
 	}
 </style>
