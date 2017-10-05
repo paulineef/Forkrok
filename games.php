@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Förkrök</title>
+	<title>Förkrök - Games</title>
 	<link rel="stylesheet" type="text/css" href="forkrok.css">
 </head>
 <body>
