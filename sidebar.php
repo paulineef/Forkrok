@@ -87,4 +87,6 @@
 		border-right: solid 1px #f3f3f3; 
 		float: left; 
 	}
+
+
 </style>

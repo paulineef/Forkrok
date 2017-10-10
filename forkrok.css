@@ -56,4 +56,18 @@ h2 i {
 		max-width: 600px; 
 	}
 
+@media screen and (max-width: 770px) {
+	header {
+		background: red; !important; 
+	}
+
+}
+
+@media screen and (max-width: 380px) {
+	header {
+		display: none; 
+	}
+
+}
+
 

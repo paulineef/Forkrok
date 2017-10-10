@@ -56,7 +56,6 @@
 	.pingpong {
 		margin-bottom: 40px; 
 	}
-
 </style>
 
 </body>
