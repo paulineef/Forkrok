@@ -84,7 +84,7 @@
   		position: absolute;
  		height: 6px;
   		width: 55px;
-  		background: #000000;
+  		background: #d34e24;
   		opacity: 1;
   		left: 0;
   		-webkit-transform: rotate(0deg);
