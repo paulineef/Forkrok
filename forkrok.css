@@ -3,7 +3,6 @@ body {
 	padding: 0; 
 	min-width: 320px;
 	cursor: default;
-	margin-top: 32px;
 }
 h1,h2,h3,h4,h5,h6 {
 	font-family: lato, sans-serif; 
@@ -43,15 +42,16 @@ h2 i {
 }
 
 .content {
-		margin: 32px;
-	}
+	padding: 30px;
+}
+
 
 /** ------- MEDIA -------- **/
 
 @media (min-width: 928px) {
 	.content {
 		float:left;
-		margin: 70px 100px 40px 500px;
+		margin: 0px 0px 0px 500px;
 		max-width: 600px; 
 	}
 }

@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-		<!--<?php include('config.php')?>-->
+		<?php include('config.php')?>
 		<script src="https://use.fontawesome.com/6f2a9fca0c.js"></script>
 		<link rel="stylesheet" type="text/css" href="forkrok.css">
 		<script src="http://code.jquery.com/jquery-latest.min.js"></script>

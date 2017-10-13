@@ -15,24 +15,29 @@
 </html>
 
 <style type="text/css">
+
+footer p {
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	background-color: #fd896d;
+	color: #fff;
+	margin: 0px;
+	padding: 5px;
+	text-align: right;
+	position:fixed;
+	right:0px;
+	bottom:0px;
+	width:100%;
+	z-index: 9998;
+	font-size: 10pt; 
+}
+
+/*Media*/
+@media (min-width: 928px){
 	footer p {
-		font-family: 'Lato', sans-serif;
-		font-weight: 300;
-		font-size: 16px;
-		background-color: #fd896d;
-		color: #fff;
-		margin: 0px;
-		padding: 10px;
-		text-align: right;
-		position:fixed;
-		right:0px;
-		bottom:0px;
-		width:100%;
-		z-index: 9998;
+		font-size: 12px;
+		padding: 10px; 
 	}
-	@media (min-width: 928px){
-		footer p {
-			font-size: 12px;
-		}
-	}
+}
+
 </style>

@@ -10,8 +10,7 @@
 <div class="content" id="s">
 
 	<div class="index">
-		<img id="stars" src="img/starsgrey.svg"/>
-		<h1>Get the party started!</h1>
+			<h1>Get the party started!</h1>
 		<div>
 			<p>
 				Want to get the pre-party fun and games going? Then you're in the right place. <br><br>
@@ -54,9 +53,6 @@
 		margin-bottom: 40px; 
 	}
 	@media (min-width: 928px){
-		#s {
-		margin-top: 30px; 
-	}
 	}
 </style>
 
