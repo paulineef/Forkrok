@@ -12,16 +12,16 @@
 	<div class="index">
 		<img id="stars" src="img/starsgrey.svg"/>
 		<h1>Get the party started!</h1>
-
-
 		<div>
 			<p>
-				Falli propriae concludaturque ius ea, sale atomorum referrentur duo ex, mea omittam argumentum necessitatibus ad. No sea tota verterem. Eum vocent interpretaris ut. Est eu sint mediocrem laboramus, dolores persecuti argumentum vel ea, exerci verear mandamus id mel. Elit suscipit sea in. Eius iudico legendos mei ut, reque gubergren posidonium ne sit. Ex sea saepe quodsi, ea corpora constituam intellegebat mel.<br/><br/>
-
-				Unum delectus in ius, eum at option principes. Ad veniam laoreet pri. Vis graeco persius complectitur ex, stet intellegat cotidieque sit an. Eos id saepe suavitate suscipiantur.<br/><br/>
-
-				In mea soleat offendit quaestio, ea simul clita utroque eum. Ex quot vocent iriure ius. Sea libris democritum in, saperet commune his te. Ei sale aliquando argumentum eum, aliquid ponderum ex mei. Mea iisque delenit accusamus eu, pri impetus noluisse appetere ad, eos ad eirmod voluptua. Alii maiestatis liberavisse sed ea, iudico persequeris ut sit, an eruditi elaboraret ius. Et cum possim tritani gloriatur, ius no quem fabulas mnesarchum, eu alii agam pertinacia eos.<br/><br/>
-
+				Want to get the pre-party fun and games going? Then you're in the right place. <br><br>
+				
+				Search for drinks depending on which liqour you've got or feel like drinking, or just depending on the name of the drink. If you're more interested in food than drinks, you can find out places nearby where you can have a meal, eather during the pre-party or when leaving the club. Under the tab "Bars &amp; clubs" you'll find clubs and bars in the area of Jönköping, to find out where to head of next!<br><br>
+				If you want to play some games, the tab "games" is the one for you (no shit Sherlock). There you find rules for different games that you can play during your party.
+				<br><br>
+				If you're interested in a drink, but don't want to make it right away, you can always save it to your favourites. You can't have them all in one night, or can you? <br><br>
+				<i id="drinkResp">Drink responsibly, Förkrök is not responsible if you get smashed.</i>
+				<br><br>
 			</p>
 		</div>
 
@@ -32,29 +32,31 @@
 	</div>
 </div>
 
-
-
 <?php include ("footer.php") ?>
 <style type="text/css">
 
 	.index {
 		margin: 0 auto;
 	}
-
 	#stars {
 		max-width: 100px;
 		min-width: 100px; 
 		margin-left: 350px;
 		display: inline; 
 	}
-
-	#s {
-		margin-top: 30px; 
+	.index {
+		padding-top: 60px; 
 	}
-
-
+	#drinkResp {
+		font-size: 8pt;
+	}
 	.pingpong {
 		margin-bottom: 40px; 
+	}
+	@media (min-width: 928px){
+		#s {
+		margin-top: 30px; 
+	}
 	}
 </style>
 
