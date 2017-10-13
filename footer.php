@@ -18,7 +18,7 @@
 	footer p {
 		font-family: 'Lato', sans-serif;
 		font-weight: 300;
-		font-size: 12px;
+		font-size: 16px;
 		background-color: #fd896d;
 		color: #fff;
 		margin: 0px;
@@ -29,5 +29,10 @@
 		bottom:0px;
 		width:100%;
 		z-index: 9998;
+	}
+	@media (min-width: 928px){
+		footer p {
+			font-size: 12px;
+		}
 	}
 </style>
