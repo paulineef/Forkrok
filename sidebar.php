@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-		<!--<?php include('config.php')?>-->
+		<?php include('config.php')?>
 		<script src="https://use.fontawesome.com/6f2a9fca0c.js"></script>
 		<link rel="stylesheet" type="text/css" href="forkrok.css">
 		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -84,7 +84,7 @@
   		position: absolute;
  		height: 6px;
   		width: 55px;
-  		background: #000000;
+  		background: #d34e24;
   		opacity: 1;
   		left: 0;
   		-webkit-transform: rotate(0deg);

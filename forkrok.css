@@ -42,15 +42,16 @@ h2 i {
 }
 
 .content {
-		margin: 32px;
-	}
+	padding: 30px;
+}
+
 
 /** ------- MEDIA -------- **/
 
 @media (min-width: 928px) {
 	.content {
 		float:left;
-		margin: 70px 100px 40px 500px;
+		margin: 0px 0px 0px 500px;
 		max-width: 600px; 
 	}
 }
