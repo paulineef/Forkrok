@@ -140,10 +140,10 @@
 <style type="text/css">
 
 	.content {
-		float:left;
-		margin-left: 400px;
-		margin-top: 70px; 
+		float:left; 
 		margin-right: 100px;
+		max-width: 100% !important;
+		margin: 0 auto;
 	}
 
 	.content div {
@@ -173,21 +173,20 @@
 		max-width: 100%;
 		position: relative;
 	}
+	#majs h3 {
+		font-size: 26pt;
+	}
 	li h3, li p {
 		position: absolute;
-		bottom: 30px;
+		bottom: 40px;
 		left: 10px;
 		width: 100%;
 		text-align: center !important;
 		color: white;
 	}
-	.ul {
+	#majs {
 		max-width: 80%;
 		margin: 0 auto;
-	}
-	.content {
-		margin: 0 auto;
-		width: 100%;
 	}
 	#listBars {
 		max-width: 400px;
