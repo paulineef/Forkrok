@@ -11,7 +11,45 @@
 
 	<h2>Bars & Clubs<i class="fa fa-beer" aria-hidden="true"></i></h2>
 	
-	<ul id="listBars">
+	<ul id="majs">
+		<a href="bongo.php"><li>
+			<img src="img/bar.png"/>
+			<h3>Bongo Bar</h3>
+			<p>majsmajs</p>
+			</li></a>
+		<li>
+			<img src="img/cooperfields.png"/>
+			<h3>MAJS</h3>
+			<p>majsmajs</p>
+		</li>
+		<li>
+			<img src="img/nightclub.png"/>
+			<h3>MAJS</h3>
+			<p>majsmajs</p>
+		</li>
+		<li>
+			<img src="img/restaurant.png"/>
+			<h3>MAJS</h3>
+			<p>majsmajs</p>
+		</li>
+		<li>
+			<img src="img/sportsbar.png"/>
+			<h3>MAJS</h3>
+			<p>majsmajs</p>
+		</li>
+		<li>
+			<img src="img/shooters.png"/>
+			<h3>MAJS</h3>
+			<p>majsmajs</p>
+		</li>
+		
+	</ul>
+	
+	
+	
+	
+	
+<!--	<ul id="listBars">
 		<li>
 			<h4>
 				Bongo Bar
@@ -92,7 +130,7 @@
 				Enjoy a nice dinner or something from the bar with a couple of friends.
 			</p>
 		</li>
-	</ul>
+	</ul>-->
 	
 	
 	
@@ -111,8 +149,60 @@
 	.content div {
 		max-width: 600px;
 	}
-
+	#majs {
+		padding-top: 32px;
+	}
+	#majs li {
+		width: 50%;
+		float: left;
+		position: relative;
+		text-align: center;
+		padding: 0;
+		box-sizing: border-box;
+		padding: 12px 0;
+	}
+	.colour {
+		background: rgba(0,0,0, 0.5);
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0px;
+		margin: 0px;
+	}
+	#majs li img {
+		max-width: 100%;
+		position: relative;
+	}
+	li h3, li p {
+		position: absolute;
+		bottom: 30px;
+		left: 10px;
+		width: 100%;
+		text-align: center !important;
+		color: white;
+	}
+	.ul {
+		max-width: 80%;
+		margin: 0 auto;
+	}
+	.content {
+		margin: 0 auto;
+		width: 100%;
+	}
+	#listBars {
+		max-width: 400px;
+		margin: 0 auto;
+		text-align: center;
+	}
+	li p {
+		text-align: left;
+	}
+	@media (max-width: 928px){
+		
+	}
+	
 </style>
+
 
 </body>
 </html>
