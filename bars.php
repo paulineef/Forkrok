@@ -117,7 +117,7 @@ if ($db->connect_error) {
 	}
 	.pic {
 		float: left;
-		max-width: 50%;
+		max-width: 100%;
 	}
 	#listBar li {
 		padding: 0;
@@ -174,7 +174,7 @@ if ($db->connect_error) {
 		padding: 24px 0;
 	}
 	.map {
-		max-width: 80%;
+		max-width: 100%;
 		margin: 0 auto;
 		padding: 88px 0 66px 0;
 	}
