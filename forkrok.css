@@ -9,14 +9,34 @@ h1,h2,h3,h4,h5,h6 {
 	font-weight: 600;
 }
 
-h2 {
-	font-size: 15pt; 
-	color: #d34e24;
-}
+	h1 {
+		font-size: 25pt;
+		color: #d34e24;
+		margin: 0;
+		padding: 0;
+	}
+	h2 {
+		font-size: 18pt;
+		color: #d34e24;
+	}
+	h3 {
+		font-size: 16pt;
+	}
+	h4 {
+		font-size: 14pt;
+	}
+	h5 {
+		font-size: 12pt;
+	}
+	h6 {
+		font-size: 10pt;
+	}
+
 
 p {
 	font-family: 'lato', sans-serif;
 	font-weight: 300;
+	font-size: 12pt; 
 }
 
 @media (min-width: 928px) {
