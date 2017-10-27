@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Förkrök - Drinks</title>
-<!-- 	<link rel="stylesheet" type="text/css" href="forkrok.css"> -->
-	<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+	<title>Förkrök - Games</title>
+	<link rel="stylesheet" type="text/css" href="forkrok.css">
 </head>
 <body>
 <?php include ("sidebar.php") ?>
-<?php include ("config.php") ?>
+
 
 <div class="content">
 
@@ -23,27 +22,38 @@
 	<?php
 	$searchdrink = "";
 	$searchingredients = "";
+	
+	@ $db = new mysqli('localhost', 'root', '', 'forkrok');
 
-	if (isset($_POST) && !empty($)) {
+	if (isset($_POST) && !empty($_POST)) {
+		
 		$searchdrink = trim($_POST['searchdrink']);
 		$searchingredients = trim ($_POST['searchingredients']);
+		
+		$searchdrink = mysqli_real_escape_string($db, $searchdrink);
+		$searchdrink = htmlentities($searchdrink);
+
+		$searchingredients = mysqli_real_escape_string($db, $searchingredients);
+		$searchingredients = htmlentities($searchingredients);
+
+		$searchdrink = addslashes ($searchdrink);
+		$searchingredients = addslashes($searchingredients);
 	}
 
-	$searchdrink = mysqli_real_escape_string($db, $searchdrink):
-	$searchdrink = htmlentities($searchdrink);
-	$searchingredients = mysqli_real_escape_string($dh, $searchingredients);
-	$searchingredients = htmlentities($searchingredients);
+           /* if ($db->connect_error) {
+                echo "could not connect: " . $db->connect_error;
+                printf("<br><a href=index.php>Return to home page </a>");
+                exit();
+            }*/
 
-	$searchdrink = addslashes ($searchdrink);
-	$searchingredients = addcslashes($searchingredients);
-
-
-
-	$query = "SELECT drinkID, name FROM drinks
+	$query = "SELECT drinks.drinkID, drinks.name FROM drinks
 	JOIN drinks_ingredients ON drinks.drinkID = drinks_ingredients.drinkID
 	JOIN ingredients ON ingredients.ingredientID = drinks_ingredients.ingredientID";
+	//$query = "SELECT drinkID, name FROM drinks";
+
+	
 	if ($searchdrink && !$searchingredients) {
-		$query = $query . "where name like '%" . $searchdrink . "%";
+		$query = $query . " where name like '%" . $searchdrink . "%'";
 	}
 	if (!$searchdrink && $searchingredients) {
         $query = $query . " where name like '%" . $searchingredients . "%'";
@@ -52,13 +62,17 @@
         $query = $query . " where name like '%" . $searchdrink . "%' and name like '%" . $searchingredients . "%'";
     }
 
-    $stmt = db -> prepare($query);
-    $stmt -> bind_result ($drinkID, $name);
-    $stmt -> execute();
+    $stmt = $db->prepare($query);
+    $stmt->bind_result($drinkID, $name);
+    $stmt->execute();
 
     echo '<table bgcolor="#fff" cellpadding="6">';
     echo '<tr><td>drinkID</td> <b> <td>name</td></b> </tr>';
-
+	while ($stmt->fetch()) {
+        echo "<tr>";
+        echo "<td> $drinkID </td><td> $name </td>";
+        echo "</tr>";
+    }
 ?>
 
 
@@ -86,25 +100,6 @@
 </div>
 
 <?php include ("footer.php") ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <style type="text/css">
 
@@ -164,4 +159,3 @@ h3 {
 
 </body>
 </html>
-
