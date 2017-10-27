@@ -74,8 +74,11 @@ h2 i {
     font-size: 15px;
     font-weight: 300;
     font-family: lato, sans-serif; 
-	}
-
+	margin-left: 10px;
+}
+.submit:hover {
+	border: 1px solid #fd896d;
+}
 .searchField {
 	margin-bottom: 5px;
 	padding: 5px 10px;
@@ -85,7 +88,38 @@ h2 i {
 	font-weight: 300;
 	border: 1px solid #ddd;
 }
-
+.dropDown {
+	width: 80px;
+	height: 30px;
+	margin-bottom: 5px;
+    padding: 5px 10px;
+    font-size: 15px;
+    font-family: lato, sans-serif;
+    text-align: center;
+    font-weight: 300;
+	border: 1px solid #ddd;
+	border-radius: 20px;
+	background-color: transparent;
+}
+.dropDown select {
+	border: 1px solid #ddd;
+}
+.listStyle {
+	font-family: lato, sans-serif; 
+	font-weight: 300;
+	font-size: 12px;
+	margin: 10px;
+	padding: 4px; 	
+	margin-right: 120px;
+}
+.listStyle a {
+	list-style: none;
+	text-decoration: none;
+	color: #000;
+}
+.listStyle a:hover {
+	color: #ddd;
+}
 @media (min-width: 768px) and (max-width: 927px){
 	.content {
 		padding: 100px;
@@ -117,42 +151,35 @@ h2 i {
 	}
 
 /* ------- GAMES --------- */
-
-	.games {
-		margin-top: 20px;
-	}
-
-	.games ul {
-		float: left;
-		margin: 0px;
-		margin-left: -10px; 
-		padding: 0px; 
-	}
-
-	.games li {
-		list-style-type: none; 
-		margin: 0px; 
-		padding: 0px; 
-		cursor: pointer;
-	}
-
-	.games li:hover {
-		background: #D34E24;
-		border-radius: 8px; 
-		color: #fff;
-	}
-
-	.game {
+#gameTable {
+	margin: 30px;
+	margin-left: 0;
+}
+.category {
 		font-family: lato, sans-serif; 
-		text-align: center;
+		text-align: right;
+		color: #D34E24;
 		font-weight: 300;
 		font-size: 12px;
-		border: 1px solid #D34E24;
-		border-radius: 10px;
 		margin: 10px;
 		padding: 4px; 
-	}
-
+}
+.headList {
+		font-family: lato, sans-serif; 
+		font-weight: 300;
+		font-size: 12px;
+		margin: 10px;
+		padding: 4px;
+		color: #FDCD01;
+		border-bottom: 1px #FDCD01 solid;
+}
+.headForm {
+		font-family: lato, sans-serif; 
+		font-weight: 300;
+		font-size: 12px;
+		margin: 10px;
+		padding: 4px;
+}
 /* ------- DRINKS -------- */
 
 @media(min-width: 928px) {
@@ -309,7 +336,7 @@ h2 i {
 	}
 
 	.ulli li a:hover {
-			color: #efc100;
+		color: #efc100;
 	}
 	
 	#first {
