@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html>
+<?php include ("sidebar.php") ?>
 <head>
 	<title>Förkrök - Games</title>
 	<link rel="stylesheet" type="text/css" href="forkrok.css">
 </head>
 <body>
-<?php include ("sidebar.php") ?>
-
 
 <div class="content">
 
@@ -99,8 +96,6 @@
 	
 </div>
 
-<?php include ("footer.php") ?>
-
 <style type="text/css">
 
 	.content {
@@ -124,38 +119,38 @@
 }
 
 
-#drinksubmit {
-    border: solid;
-    border-color: #ddd;
-    background-color: #fff;
-    border-width: 1px;
-    border-radius: 1px;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 300;
-    font-family: lato, sans-serif; 
-}
+	#drinksubmit {
+	    border: solid;
+	    border-color: #ddd;
+	    background-color: #fff;
+	    border-width: 1px;
+	    border-radius: 1px;
+	    padding: 5px 10px;
+	    text-align: center;
+	    text-decoration: none;
+	    display: inline-block;
+	    font-size: 12px;
+	    font-weight: 300;
+	    font-family: lato, sans-serif; 
+	}
 
-#gallerycontent {
-    column-count: 3;
-    column-gap: 0;
-    line-height: 0;
-}
+	#gallerycontent {
+	    column-count: 3;
+	    column-gap: 0;
+	    line-height: 0;
+	}
 
-.imagebox {
-	width: 100%;
-}
+	.imagebox {
+		width: 100%;
+	}
 
-h3 {
-	font-family: lato, sans-serif;
-	font-size: 15pt;
-	font-weight: 300;
-}
+	h3 {
+		font-family: lato, sans-serif;
+		font-size: 15pt;
+		font-weight: 300;
+	}
 
 </style>
-
 </body>
-</html>
+
+<?php include ("footer.php") ?>

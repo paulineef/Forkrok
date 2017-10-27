@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html>
+<?php include ("sidebar.php") ?>
 <head>
 	<title>Förkrök - Favourites</title>
 	<link rel="stylesheet" type="text/css" href="forkrok.css">
 </head>
 <body>
-<?php include ("sidebar.php") ?>
 
 <div class="content">
 
@@ -13,7 +11,6 @@
 	
 </div>
 
-<?php include ("footer.php") ?>
 <style type="text/css">
 
 	.content {
@@ -28,9 +25,8 @@
 	}
 
 </style>
-
 </body>
-</html>
+<?php include ("footer.php") ?>
 
 
 

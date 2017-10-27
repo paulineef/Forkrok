@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Förkrök - Complete Pre-Party Tool</title>
-	<link rel="stylesheet" type="text/css" href="forkrok.css">
-</head>
-<body>
 <?php include ("sidebar.php") ?>
+<body>
 
 <div class="content" id="s">
 
@@ -31,7 +25,6 @@
 	</div>
 </div>
 
-<?php include ("footer.php") ?>
 <style type="text/css">
 
 	.index {
@@ -52,4 +45,4 @@
 </style>
 
 </body>
-</html>
+<?php include ("footer.php") ?>
