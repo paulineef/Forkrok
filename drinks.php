@@ -7,6 +7,7 @@
 </head>
 <body>
 <?php include ("sidebar.php") ?>
+<?php include ("config.php") ?>
 
 <div class="content">
 
@@ -19,8 +20,46 @@
 		<input type="submit" value="Submit" id="drinksubmit">
 	</form>
 
+	<?php
+	$searchdrink = "";
+	$searchingredients = "";
+
+	if (isset($_POST) && !empty($)) {
+		$searchdrink = trim($_POST['searchdrink']);
+		$searchingredients = trim ($_POST['searchingredients']);
+	}
+
+	$searchdrink = mysqli_real_escape_string($db, $searchdrink):
+	$searchdrink = htmlentities($searchdrink);
+	$searchingredients = mysqli_real_escape_string($dh, $searchingredients);
+	$searchingredients = htmlentities($searchingredients);
+
+	$searchdrink = addslashes ($searchdrink);
+	$searchingredients = addcslashes($searchingredients);
 
 
+
+	$query = "SELECT drinkID, name FROM drinks
+	JOIN drinks_ingredients ON drinks.drinkID = drinks_ingredients.drinkID
+	JOIN ingredients ON ingredients.ingredientID = drinks_ingredients.ingredientID";
+	if ($searchdrink && !$searchingredients) {
+		$query = $query . "where name like '%" . $searchdrink . "%";
+	}
+	if (!$searchdrink && $searchingredients) {
+        $query = $query . " where name like '%" . $searchingredients . "%'";
+    }
+    if ($searchdrink && $searchingredients) { 
+        $query = $query . " where name like '%" . $searchdrink . "%' and name like '%" . $searchingredients . "%'";
+    }
+
+    $stmt = db -> prepare($query);
+    $stmt -> bind_result ($drinkID, $name);
+    $stmt -> execute();
+
+    echo '<table bgcolor="#fff" cellpadding="6">';
+    echo '<tr><td>drinkID</td> <b> <td>name</td></b> </tr>';
+
+?>
 
 
 
