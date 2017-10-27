@@ -27,24 +27,24 @@
 			</div>
 	
 	
-		<ul id="header">
-		<div id="imgCont">
-		<a href="index.php"><img id="logoSide" src="img/logo_icon.svg"/><a/>
-		<a href="index.php"><img id="forkrok" src="img/logo.svg"/><a/>
+		<ul id="header" class="ulli">
+			<div id="imgCont">
+				<a href="index.php"><img id="logoSide" src="img/logo_icon.svg"/><a/>
+				<a href="index.php"><img id="forkrok" src="img/logo.svg"/><a/>
 			</div>
-			<li id="first">
-				<a href=" games.php"><i class="fa fa-trophy" aria-hidden="true"></i>Games</a>
-			</li>
-			<li>
-				<a href="drinks.php"><i class="fa fa-glass" aria-hidden="true"></i>Drinks</a>
-			</li>
-			<li>
-				<a href="food.php"><i class="fa fa-cutlery" aria-hidden="true"></i>Food</a>
-			</li>
-			<li><a href="bars.php"><i class="fa fa-beer" aria-hidden="true"></i>Bars &amp; Clubs</a>
-			<li>
-				<a href="favourites.php"><i class="fa fa-star" aria-hidden="true"></i>Favourites</a>
-			</li>
+				<li id="first">
+					<a href=" games.php"><i class="fa fa-trophy" aria-hidden="true"></i>Games</a>
+				</li>
+				<li>
+					<a href="drinks.php"><i class="fa fa-glass" aria-hidden="true"></i>Drinks</a>
+				</li>
+				<li>
+					<a href="food.php"><i class="fa fa-cutlery" aria-hidden="true"></i>Food</a>
+				</li>
+				<li><a href="bars.php"><i class="fa fa-beer" aria-hidden="true"></i>Bars &amp; Clubs</a>
+				<li>
+					<a href="favourites.php"><i class="fa fa-star" aria-hidden="true"></i>Favourites</a>
+				</li>
 		</ul>
 		
 	</header>
@@ -150,14 +150,14 @@
 	#imgCont img {
 		max-width: 200px;
 	}
-	ul {
+	.ulli {
 		text-align: center;
 		background: white;
 		height: 100vh;
 		padding: 0;
 		margin: 0;
 	}
-	ul li {
+	.ulli li {
 		list-style-type: none;
 		color: #F7E431;
 		font-family: "lato";
@@ -170,7 +170,7 @@
 	#first {
 		padding-top: 100px;
 	}
-	ul li a {
+	.ulli li a {
 		text-decoration: none;
 		color: #FDCD01;
 		font-weight: 500;
@@ -192,7 +192,7 @@
 		#header {
 			display: block;
 		}
-		ul {
+		.ulli {
 			padding: 0px;
 			box-sizing: border-box;
 			margin-top: 0;
@@ -200,7 +200,7 @@
 		#first {
 			margin-top: 10px;
 		}
-		ul li {
+		.ulli li {
 			padding-top: 10px;
 			color: #F7E431;
 			font-family: "lato";
@@ -211,13 +211,13 @@
 		#first {
 			padding-top: 38px;
 		}
-		ul li a {
+		.ulli li a {
 			color: #FDCD01;
 			font-weight: 700;
 			font-size: 19px;
 		}
 
-		ul li a:hover {
+		.ulli li a:hover {
 			color: #efc100;
 		}
 		#logoSide {
