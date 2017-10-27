@@ -49,10 +49,6 @@
 		</ul>
 		
 	</header>
-	<body>
-		
-	</body>
-</html>
 
 <style>
 	
