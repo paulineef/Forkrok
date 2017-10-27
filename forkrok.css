@@ -323,7 +323,7 @@ h2 i {
 	@media (min-width: 928px) { /* desktop*/
 
 		.imgCont {
-			padding-top: 60px;
+			padding-top: 40px;
 			width: 150px;
 		}
 
@@ -355,7 +355,7 @@ h2 i {
 		}
 
 		#first {
-			padding-top: 38px;
+			padding-top: 30px;
 		}
 
 		.ulli li a {
