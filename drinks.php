@@ -7,13 +7,15 @@
 
 <div class="content">
 
+	<div class="placement">
+
 	<h2>Drinks<i class="fa fa-glass" aria-hidden="true"></i></h2>
 
 	<!-- Searchfield -->
 	<form action ="drinks.php" method="POST" id="drinksearch">
 		<input type="text" name="searchdrink" placeholder="Search by drink" class="searchField">
 		<input type="text" name="searchingredients" placeholder="or by ingrediens" class="searchField">
-		<input type="submit" value="Submit" id="drinksubmit">
+		<input type="submit" value="Submit" class="submit">
 	</form>
 
 	<?php
@@ -72,10 +74,6 @@
     }
 ?>
 
-
-
-
-
 <!-- Gallery -->
 
 	<div id="gallerycontent">
@@ -92,65 +90,12 @@
 			echo '<img src="'.$image .'" alt="Random image" class="imagebox" />'."<br /><br />";
 		}
 		?>	
+
 	</div>
-	
+
+</div>	
 </div>
 
-<style type="text/css">
-
-	.content {
-		float:left;
-		margin-left: 400px;
-		margin-top: 70px; 
-		margin-right: 100px;
-	}
-
-	.content div {
-		max-width: 600px;
-	}
-
-	.searchField {
-	margin: 0 0;
-	padding: 5px 10px;
-	font-size: 12px;
-	font-family: lato, sans-serif; 
-	text-align: center;
-	font-weight: 300;
-}
-
-
-	#drinksubmit {
-	    border: solid;
-	    border-color: #ddd;
-	    background-color: #fff;
-	    border-width: 1px;
-	    border-radius: 1px;
-	    padding: 5px 10px;
-	    text-align: center;
-	    text-decoration: none;
-	    display: inline-block;
-	    font-size: 12px;
-	    font-weight: 300;
-	    font-family: lato, sans-serif; 
-	}
-
-	#gallerycontent {
-	    column-count: 3;
-	    column-gap: 0;
-	    line-height: 0;
-	}
-
-	.imagebox {
-		width: 100%;
-	}
-
-	h3 {
-		font-family: lato, sans-serif;
-		font-size: 15pt;
-		font-weight: 300;
-	}
-
-</style>
 </body>
 
 <?php include ("footer.php") ?>

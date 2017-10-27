@@ -1,9 +1,10 @@
 <?php include ("sidebar.php") ?>
+
 <body>
 
-<div class="content" id="s">
+<div class="content">
 
-	<div class="index">
+	<div class="placement">
 			<h1>Get the party started!</h1>
 		<div>
 			<p>
@@ -24,25 +25,6 @@
 	
 	</div>
 </div>
-
-<style type="text/css">
-
-	.index {
-		margin: 0 auto;
-	}
-
-	.index {
-		padding-top: 60px; 
-	}
-	#drinkResp {
-		font-size: 8pt;
-	}
-	.pingpong {
-		margin-bottom: 40px; 
-	}
-	@media (min-width: 928px){
-	}
-</style>
 
 </body>
 <?php include ("footer.php") ?>
