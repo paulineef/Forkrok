@@ -117,6 +117,7 @@ if ($db->connect_error) {
 	}
 	.pic {
 		float: left;
+		max-width: 50%;
 	}
 	#listBar li {
 		padding: 0;
@@ -163,11 +164,6 @@ if ($db->connect_error) {
 		width: 100%;
 		left: 0px;
 		
-	/*	   -webkit-animation: slide 0.5s forwards;
-    -webkit-animation-delay: 0s;
-    animation: slide 0.5s forwards;
-    animation-delay: 0s;*/
-		
 	}
 	#listBar #indexNEO.open{
 		display: none;
@@ -190,18 +186,20 @@ if ($db->connect_error) {
 	.back i {
 		color: black;
 		font-size: 25pt !important;
-	}
-	i {
-		font-size: 80px !important;
-		text-align: center;
-		margin: 0 auto;
 		padding: 0;
 		padding: 18px;
 	}
+	
 	.social {
 		text-align: center;
 		color: black;
 		padding-top: 48px;
+	}
+	.social i {
+		font-size: 80px !important;
+		text-align: center;
+		margin: 0 auto;
+		padding: 0;
 	}
 	.social .fa {
 		color: black !important;
@@ -209,8 +207,6 @@ if ($db->connect_error) {
 	.content {
 		position: relative;
 	}
-
-	
 	
 	.content {
 		float:left; 
@@ -226,12 +222,12 @@ if ($db->connect_error) {
 		top: 0px;
 		margin: 0px;
 	}
-	#listBars {
+	#listBar {
 		max-width: 400px;
 		margin: 0 auto;
 		text-align: center;
 	}
-	li p {
+	#listBar li p {
 		text-align: left;
 	}
 	@media (min-width: 928px){
