@@ -1,47 +1,81 @@
-<!DOCTYPE html>
-<html>
+<?php include ("sidebar.php") ?>
 <head>
 	<title>Förkrök - Games</title>
-	<link rel="stylesheet" type="text/css" href="forkrok.css">
 </head>
+
 <body>
-<?php include ("sidebar.php") ?>
 
 <div class="content">
 
-	<h2>Games<i class="fa fa-trophy" aria-hidden="true"></i></h2>
+	<div class="placement">
 
-	<form>
-		<input type="text" name="" placeholder=""/>
-		<input type="submit" name="search" label="Search">
-	</form>
+		<h2>Games<i class="fa fa-trophy" aria-hidden="true"></i></h2>
 
-	<div>
-		
+		<form>
+			<input class="searchField" type="text" name="" placeholder="ex. Kings Cup"/>
+			<input class="submit" type="submit" name="search" value="Search">
+		</form>
+
+		<div class="games">
+			<ul>
+				<li>
+					<div class="game">
+						Kings Cup
+					</div>
+				</li>
+				<li>
+					<div class="game">
+						Fuzzy Duck
+					</div>
+				</li>
+				<li>
+					<div class="game">
+						Never Have I Ever
+					</div>
+				</li>
+			</ul>
+		</div>
 	</div>
 	
 </div>
 
-<?php include ("footer.php") ?>
-<style type="text/css">
+	<style type="text/css">
 
-	.content {
-		float:left;
-		margin-left: 400px;
-		margin-top: 70px; 
-		margin-right: 100px;
-	}
+		.games {
+			margin-top: 20px;
+		}
 
-	.content div {
-		max-width: 600px;
-	}
+		.games ul {
+			float: left;
+			margin: 0px;
+			margin-left: -10px; 
+			padding: 0px; 
+		}
 
-	form {
-		max-width: 400px;
+		.games li {
+			list-style-type: none; 
+			margin: 0px; 
+			padding: 0px; 
+			cursor: pointer;
+		}
 
-	}
+		.games li:hover {
+			background: #D34E24;
+			border-radius: 8px; 
+			color: #fff;
+		}
 
-</style>
+		.game {
+			font-family: lato, sans-serif; 
+			text-align: center;
+			font-weight: 300;
+			font-size: 12px;
+			border: 1px solid #D34E24;
+			border-radius: 10px;
+			margin: 10px;
+			padding: 4px; 
+		}
 
+	</style>
 </body>
-</html>
+<?php include ("footer.php") ?>
