@@ -1,14 +1,12 @@
 <?php include ("sidebar.php") ?>
 <head>
-	<title>Förkrök - Games</title>
+	<title>Förkrök - Drinks</title>
 	<link rel="stylesheet" type="text/css" href="forkrok.css">
 </head>
 <body>
 
 <div class="content">
-
 	<div class="placement">
-
 	<h2>Drinks<i class="fa fa-glass" aria-hidden="true"></i></h2>
 
 	<!-- Searchfield -->
@@ -45,9 +43,10 @@
                 exit();
             }*/
 
-	$query = "SELECT drinks.drinkID, drinks.name FROM drinks
+	$query = "SELECT drinks.drinkID, drinks.name, ingredients.ingredientID, ingredients.term FROM drinks
 	JOIN drinks_ingredients ON drinks.drinkID = drinks_ingredients.drinkID
 	JOIN ingredients ON ingredients.ingredientID = drinks_ingredients.ingredientID";
+
 	//$query = "SELECT drinkID, name FROM drinks";
 
 	
@@ -55,32 +54,29 @@
 		$query = $query . " where name like '%" . $searchdrink . "%'";
 	}
 	if (!$searchdrink && $searchingredients) {
-        $query = $query . " where name like '%" . $searchingredients . "%'";
+        $query = $query . " where term like '%" . $searchingredients . "%'";
     }
     if ($searchdrink && $searchingredients) { 
-        $query = $query . " where name like '%" . $searchdrink . "%' and name like '%" . $searchingredients . "%'";
+        $query = $query . " where name like '%" . $searchdrink . "%' and term like '%" . $searchingredients . "%'";
     }
 
     $stmt = $db->prepare($query);
-    $stmt->bind_result($drinkID, $name);
+    $stmt->bind_result($drinkID, $name, $ingredientID, $term);
     $stmt->execute();
 
     echo '<table bgcolor="#fff" cellpadding="6">';
-    echo '<tr><td>drinkID</td> <b> <td>name</td></b> </tr>';
 	while ($stmt->fetch()) {
         echo "<tr>";
-        echo "<td> $drinkID </td><td> $name </td>";
+        echo "<td> $name </td>";
         echo "</tr>";
     }
 ?>
-
 <!-- Gallery -->
-
 	<div id="gallerycontent">
+
 
 		<?php
 		//https://stackoverflow.com/questions/11903289/pull-all-images-from-a-specified-directory-and-then-display-them
-
 		//the code for creating a simple gallery is inspired by the link above
 
 		$files = glob("uploadedfiles/*.*");
