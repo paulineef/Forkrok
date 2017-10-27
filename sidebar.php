@@ -29,9 +29,10 @@
 		</div>
 		
 		
+		
 		<ul id="header" class="ulli">
 
-			<div id="imgCont">
+			<div class="imgCont">
 				<a href="index.php"><img id="logoSide" src="img/logo_icon.svg"/><a/>
 				<a href="index.php"><img id="forkrok" src="img/logo.svg"/><a/>
 			</div>
