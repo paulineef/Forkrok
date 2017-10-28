@@ -9,14 +9,34 @@ h1,h2,h3,h4,h5,h6 {
 	font-weight: 600;
 }
 
-h2 {
-	font-size: 15pt; 
-	color: #d34e24;
-}
+	h1 {
+		font-size: 25pt;
+		color: #d34e24;
+		margin: 0;
+		padding: 0;
+	}
+	h2 {
+		font-size: 18pt;
+		color: #d34e24;
+	}
+	h3 {
+		font-size: 16pt;
+	}
+	h4 {
+		font-size: 14pt;
+	}
+	h5 {
+		font-size: 12pt;
+	}
+	h6 {
+		font-size: 10pt;
+	}
+
 
 p {
 	font-family: 'lato', sans-serif;
 	font-weight: 300;
+	font-size: 12pt; 
 }
 
 @media (min-width: 928px) {
@@ -74,8 +94,11 @@ h2 i {
     font-size: 15px;
     font-weight: 300;
     font-family: lato, sans-serif; 
-	}
-
+	margin-left: 10px;
+}
+.submit:hover {
+	border: 1px solid #fd896d;
+}
 .searchField {
 	margin-bottom: 5px;
 	padding: 5px 10px;
@@ -85,7 +108,38 @@ h2 i {
 	font-weight: 300;
 	border: 1px solid #ddd;
 }
-
+.dropDown {
+	width: 80px;
+	height: 30px;
+	margin-bottom: 5px;
+    padding: 5px 10px;
+    font-size: 15px;
+    font-family: lato, sans-serif;
+    text-align: center;
+    font-weight: 300;
+	border: 1px solid #ddd;
+	border-radius: 20px;
+	background-color: transparent;
+}
+.dropDown select {
+	border: 1px solid #ddd;
+}
+.listStyle {
+	font-family: lato, sans-serif; 
+	font-weight: 300;
+	font-size: 12px;
+	margin: 10px;
+	padding: 4px; 	
+	margin-right: 120px;
+}
+.listStyle a {
+	list-style: none;
+	text-decoration: none;
+	color: #000;
+}
+.listStyle a:hover {
+	color: #ddd;
+}
 @media (min-width: 768px) and (max-width: 927px){
 	.content {
 		padding: 100px;
@@ -117,42 +171,35 @@ h2 i {
 	}
 
 /* ------- GAMES --------- */
-
-	.games {
-		margin-top: 20px;
-	}
-
-	.games ul {
-		float: left;
-		margin: 0px;
-		margin-left: -10px; 
-		padding: 0px; 
-	}
-
-	.games li {
-		list-style-type: none; 
-		margin: 0px; 
-		padding: 0px; 
-		cursor: pointer;
-	}
-
-	.games li:hover {
-		background: #D34E24;
-		border-radius: 8px; 
-		color: #fff;
-	}
-
-	.game {
+#gameTable {
+	margin: 30px;
+	margin-left: 0;
+}
+.category {
 		font-family: lato, sans-serif; 
-		text-align: center;
+		text-align: right;
+		color: #D34E24;
 		font-weight: 300;
 		font-size: 12px;
-		border: 1px solid #D34E24;
-		border-radius: 10px;
 		margin: 10px;
 		padding: 4px; 
-	}
-
+}
+.headList {
+		font-family: lato, sans-serif; 
+		font-weight: 300;
+		font-size: 12px;
+		margin: 10px;
+		padding: 4px;
+		color: #FDCD01;
+		border-bottom: 1px #FDCD01 solid;
+}
+.headForm {
+		font-family: lato, sans-serif; 
+		font-weight: 300;
+		font-size: 12px;
+		margin: 10px;
+		padding: 4px;
+}
 /* ------- DRINKS -------- */
 
 @media(min-width: 928px) {
@@ -309,7 +356,7 @@ h2 i {
 	}
 
 	.ulli li a:hover {
-			color: #efc100;
+		color: #efc100;
 	}
 	
 	#first {
@@ -323,7 +370,7 @@ h2 i {
 	@media (min-width: 928px) { /* desktop*/
 
 		.imgCont {
-			padding-top: 60px;
+			padding-top: 40px;
 			width: 150px;
 		}
 
@@ -355,7 +402,7 @@ h2 i {
 		}
 
 		#first {
-			padding-top: 38px;
+			padding-top: 30px;
 		}
 
 		.ulli li a {

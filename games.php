@@ -13,8 +13,9 @@
 
 		<form action="games.php" method="POST">
 			<input class="searchField" type="text" name="searchgame" placeholder="ex. Kings Cup"/>
-			<select name="searchcategory">
-				<option value="">None</option>
+			<label class="headForm"> Category: </label> 
+			<select name="searchcategory" class="dropDown">
+				<option value="">All</option>
 				<option value="card">Card</option>
 				<option value="classic">Classic</option>
 				<option value="new">New</option>
@@ -66,57 +67,16 @@
 			$stmt->bind_result($gameID, $name, $catID, $term);
 			$stmt->execute();
 
-			echo '<table bgcolor="#fff" cellpadding="6">';
+			echo '<table id="gameTable" cellpadding="6">';
+   			echo '<tr><b><td class="headList">Name of game</td> <td class="headList">Category</td> </b> </tr>';
 			while ($stmt->fetch()) {
 				echo "<tr>";
-				echo " <td class='game'> $name </td> <td class='category'> $term </td>";
+				echo " <td class='listStyle'><a href='games/gameBase.php'> $name</a></td> <td class='category'> $term </td>";
 				echo "</tr>";
 			}
 		?>
 	</div>
 	
 </div>
-
-	<style type="text/css">
-
-		.games {
-			margin-top: 20px;
-		}
-		.games ul {
-			float: left;
-			margin: 0px;
-			margin-left: -10px; 
-			padding: 0px; 
-		}
-		.games li {
-			list-style-type: none; 
-			margin: 0px; 
-			padding: 0px; 
-			cursor: pointer;
-		}
-		.games li:hover {
-			background: #D34E24;
-			border-radius: 8px; 
-			color: #fff;
-		}
-		.game {
-			font-family: lato, sans-serif; 
-			text-align: center;
-			font-weight: 300;
-			font-size: 12px;
-			border: 1px solid #D34E24;
-			border-radius: 10px;
-			margin: 10px;
-			padding: 4px; 
-		}
-		.category {
-			font-family: lato, sans-serif; 
-			text-align: center;
-			font-weight: 300;
-			font-size: 12px;
-			margin: 10px;
-			padding: 4px;
-		}
-	</style>
 </body>
 <?php include ("footer.php") ?>

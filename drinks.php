@@ -12,7 +12,7 @@
 	<!-- Searchfield -->
 	<form action ="drinks.php" method="POST" id="drinksearch">
 		<input type="text" name="searchdrink" placeholder="Search by drink" class="searchField">
-		<input type="text" name="searchingredients" placeholder="or by ingrediens" class="searchField">
+		<input type="text" name="searchingredients" placeholder="or by ingredients" class="searchField">
 		<input type="submit" value="Submit" class="submit">
 	</form>
 
@@ -67,7 +67,7 @@
     echo '<table bgcolor="#fff" cellpadding="6">';
 	while ($stmt->fetch()) {
         echo "<tr>";
-        echo "<td> $name </td>";
+        echo "<td class='listStyle'><a href='drinks/drinkBase.php'>$name</a></td>";
         echo "</tr>";
     }
 ?>

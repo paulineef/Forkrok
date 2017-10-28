@@ -1,6 +1,6 @@
 
 	<footer>
-		<p>Copyright © 2017 forkrok
+		<p>Copyright © 2017 KRÖK CO.
 		</p>
 	</footer>
 
@@ -22,7 +22,7 @@ footer p {
 	font-size: 10pt; 
 }
 
-/*Media*/
+/* Media */
 @media (min-width: 928px){
 	footer p {
 		font-size: 12px;
