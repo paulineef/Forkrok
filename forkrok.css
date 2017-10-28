@@ -76,6 +76,7 @@ h2 i {
 
 .content {
 	padding: 30px;
+	box-sizing: border-box
 }
 
 .placement {
