@@ -9,7 +9,6 @@
 			$("#1").click(function(){
 				event.preventDefault();	
 				$("#indexBongo").toggleClass('open');
-				$(".back").toggleClass('open');
 				$("#listBar").toggleClass('open');
 			});
 				$(".back").click(function(){
@@ -18,16 +17,44 @@
 				$(".back").toggleClass('open');
 				$("#listBar").toggleClass('open');
 			});
+				$("#2").click(function(){
+				event.preventDefault();	
+				$("#indexAqua").toggleClass('open');
+				$("#listBar").toggleClass('open');
+			});
+				$(".backAqua").click(function(){
+				event.preventDefault();	
+				$("#indexAqua").toggleClass('open');
+				$("#listBar").toggleClass('open');
+			});
+				$("#3").click(function(){
+				event.preventDefault();	
+				$("#indexHarrys").toggleClass('open');
+				$("#listBar").toggleClass('open');
+			});
+				$(".backHarrys").click(function(){
+				event.preventDefault();	
+				$("#indexHarrys").toggleClass('open');
+				$("#listBar").toggleClass('open');
+			});
+				$("#4").click(function(){
+				event.preventDefault();	
+				$("#indexID").toggleClass('open');
+				$("#listBar").toggleClass('open');
+			});
+				$(".backID").click(function(){
+				event.preventDefault();	
+				$("#indexID").toggleClass('open');
+				$("#listBar").toggleClass('open');
+			});
 				$("#8").click(function(){
 				event.preventDefault();	
 				$("#indexNEO").toggleClass('open');
-				$(".back").toggleClass('open');
 				$("#listBar").toggleClass('open');
 			});
 				$(".backNEO").click(function(){
 				event.preventDefault();	
 				$("#indexNEO").toggleClass('open');
-				$(".back").toggleClass('open');
 				$("#listBar").toggleClass('open');
 			});
 				
@@ -51,8 +78,8 @@
 			Small and nice place for both a chill night out and more energized with mixed hip-hop and reggae music. Entrance for 60:- and you get the first glass for free.<br><br>
 		</p>
 		<div class="social">
-			<a href="https://www.facebook.com/bongojkpg/"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-			<a href="http://bongobar.se/jonkoping/"><i class="fa fa-internet-explorer" aria-hidden="true"></i></a>
+			<a href="https://www.facebook.com/bongojkpg/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+			<a href="http://bongobar.se/jonkoping/" target="_blank"><i class="fa fa-internet-explorer" aria-hidden="true"></i></a>
 		</div>
 		<div class="back">
 			<i class="fa fa-arrow-left" aria-hidden="true"></i>
@@ -68,8 +95,8 @@
 			With a view over Munksjön you can enjoy a tapas dinner and drinks with your friends.<br><br>
 		</p>
 		<div class="social">
-			<a href="https://www.facebook.com/restaurangneo/"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-			<a href="http://restaurangneo.se/"><i class="fa fa-internet-explorer" aria-hidden="true"></i></a>
+			<a href="https://www.facebook.com/restaurangneo/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+			<a href="http://restaurangneo.se/" target="_blank"><i class="fa fa-internet-explorer" aria-hidden="true"></i></a>
 		</div>
 		<div class="backNEO">
 			<i class="fa fa-arrow-left" aria-hidden="true"></i>
@@ -79,16 +106,52 @@
 			<h2>Aqua Bar and Restaurant</h2>
 		
 		<div class="map">
-			<iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJqf_BLehtWkYRn8yFbMIzcqk&key=AIzaSyCmCQXDN3el8D7bvNcoj7-5hnGf9C3gzw0" allowfullscreen></iframe>
+			<iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJVyD70ettWkYRawODuCIKTvg&key=AIzaSyBGKGRmLhKz_CjGCae82YQPIgkgyHKc_H0" allowfullscreen></iframe>
 		</div>
 		<p>
 			Enjoy a Scandinavian dinner with great drinks and wine. At summer time the restaurant open up its restaurant at Piren, attached to Vättern.<br><br>
 		</p>
 		<div class="social">
-			<a href="https://www.facebook.com/bongojkpg/"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-			<a href="http://bongobar.se/jonkoping/"><i class="fa fa-internet-explorer" aria-hidden="true"></i></a>
+			<a href="https://www.facebook.com/bongojkpg/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+			<a href="http://bongobar.se/jonkoping/" target="_blank"><i class="fa fa-internet-explorer" aria-hidden="true"></i></a>
 		</div>
-		<div class="back">
+		<div class="backAqua">
+			<i class="fa fa-arrow-left" aria-hidden="true"></i>
+		</div>
+	</div>
+	<div id="indexHarrys">
+			<h2>Harrys</h2>
+		
+		<div class="map">
+			<iframe frameborder="0" style="border:0"
+				src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJw0JtZultWkYR32gTulAgPyY&key=AIzaSyBGKGRmLhKz_CjGCae82YQPIgkgyHKc_H0" allowfullscreen>
+			</iframe>
+		</div>
+		<p>
+			Enjoy a good dinner or a bottle of beer with friends. 18 year limit on Friday and 20 at Saturday.<br><br>
+		</p>
+		<div class="social">
+			<a href="https://www.facebook.com/harrysjkpg/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+			<a  href="https://www.harrys.se/restauranger/jonkoping/" target="_blank"><i class="fa fa-internet-explorer" aria-hidden="true"></i></a>
+		</div>
+		<div class="backHarrys">
+			<i class="fa fa-arrow-left" aria-hidden="true"></i>
+		</div>
+	</div>
+	<div id="indexID">
+			<h2>ID</h2>
+		
+		<div class="map">
+			<iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJVyD70ettWkYRawODuCIKTvg&key=AIzaSyBGKGRmLhKz_CjGCae82YQPIgkgyHKc_H0" allowfullscreen></iframe>
+		</div>
+		<p>
+			One of several nightclubs arranged by students, but everyone is welcome to enjoy a night with artists, effects and theme parties in an underground and industry atmosphere. <br><br>
+		</p>
+		<div class="social">
+			<a href="https://www.facebook.com/Id.jkpg/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+			<a href="https://www.idjonkoping.com/" target="_blank"><i class="fa fa-internet-explorer" aria-hidden="true"></i></a>
+		</div>
+		<div class="backID">
 			<i class="fa fa-arrow-left" aria-hidden="true"></i>
 		</div>
 	</div>
@@ -130,8 +193,6 @@ if ($db->connect_error) {
 	
 </div>
 
-
-
 <?php include ("footer.php") ?>
 <style type="text/css">	
 	#listBar {
@@ -172,7 +233,7 @@ if ($db->connect_error) {
 		min-height: 180px;
 		margin: 0 auto;
 	}
-	#indexBongo, #indexNEO {
+	#indexBongo, #indexNEO, #indexAqua, #indexHarrys, #indexID {
 		position: absolute;
 		margin: 0 auto;
 		width: 1px;
@@ -192,7 +253,7 @@ if ($db->connect_error) {
 	transition-duration: .5s;
 	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 	}
-	#indexBongo.open, #indexNEO.open {
+	#indexBongo.open, #indexNEO.open, #indexAqua.open, #indexHarrys.open, #indexID.open, #indexEnkelt.open, #indexRetro.open {
 		display: block !important;
 		width: 100%;
 		left: 0px;
@@ -212,7 +273,6 @@ if ($db->connect_error) {
 		padding: 10px 0 0px 0;
 	}
 	.back {
-		position: fixed;
 		bottom: 26px;
 		left: -500px;
 		width: 100%;
@@ -223,20 +283,6 @@ if ($db->connect_error) {
 		transition-property: all;
 	transition-duration: .5s;
 	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-	}
-	.backNEO {
-		bottom: 26px;
-		left: 0px;
-		font-size: 20pt;
-		background: white;
-	}
-	.backNEO i{
-		padding: 3px 3px 3px 12px;
-	}
-	.back i {
-		color: black;
-		font-size: 20pt !important;
-		padding: 3px 3px 3px 12px;
 	}
 	.back.open {
 		width: 100%;
