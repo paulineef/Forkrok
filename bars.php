@@ -226,7 +226,7 @@ if ($db->connect_error) {
 		z-index: 9999;
 		font-size: 15pt;
 		margin: 0;
-		margin-top: -90px;
+		margin-top: -75px;
 	}
 	iframe {
 		width: 100%;
@@ -344,36 +344,49 @@ if ($db->connect_error) {
 	}
 	#listBar li p {
 		text-align: left;
-	}
-	@media (min-width: 928px){
-		.back i{
-			display: none !important;
+	}	
+	
+	@media (min-width: 375px){
+		.header {
+			margin-top: -90px;
 		}
 	}
-	
-	
-	@-webkit-keyframes slide {
-    100% { left: 0; }
-}
-
-	@keyframes slide {
-    0% { left: -1000; }
-}
-@keyframes slide {
-    100% { left: 0; }
-}
-	@-webkit-keyframes backSlide {
-    100% { left: -1000; }
-}
-
-	@keyframes backSlide {
-    0% { left: 0; }
-}
-@keyframes backSlide {
-    100% { left: -1000; }
-}
-
-	
+	@media (min-width: 768px){
+		#listBar {
+			max-width: 600px;
+		}
+		.pic {
+			max-width: 33%;
+		}
+		#indexBongo, #indexAqua, #indexHarrys, #indexID, #indexNEO {
+			max-width: 650px;
+			margin: 0 auto !important;
+			padding-left: 150px;
+			padding-top: 100px;
+		}
+		iframe {
+			min-height: 250px;
+			padding-bottom: 32px;
+		}
+	}
+	@media (min-width: 928px){
+		.content {
+			margin-left: 400px;
+			padding-left: 0;
+		}
+		#listBar {
+			padding-left: 0;
+		}
+		#indexBongo, #indexAqua, #indexHarrys, #indexID, #indexNEO {
+			max-width: 600px;
+			padding-left: 50px;
+		}
+	}
+	@media (min-width: 1200px){
+		.content {
+			margin-left: 500px;
+		}
+	}
 </style>
 
 
