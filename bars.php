@@ -47,6 +47,26 @@
 				$("#indexID").toggleClass('open');
 				$("#listBar").toggleClass('open');
 			});
+				$("#5").click(function(){
+				event.preventDefault();	
+				$("#indexEnkelt").toggleClass('open');
+				$("#listBar").toggleClass('open');
+			});
+				$(".backEnkelt").click(function(){
+				event.preventDefault();	
+				$("#indexEnkelt").toggleClass('open');
+				$("#listBar").toggleClass('open');
+			});
+				$("#6").click(function(){
+				event.preventDefault();	
+				$("#indexRetro").toggleClass('open');
+				$("#listBar").toggleClass('open');
+			});
+				$(".backRetro").click(function(){
+				event.preventDefault();	
+				$("#indexRetro").toggleClass('open');
+				$("#listBar").toggleClass('open');
+			});
 				$("#8").click(function(){
 				event.preventDefault();	
 				$("#indexNEO").toggleClass('open');
@@ -155,6 +175,40 @@
 			<i class="fa fa-arrow-left" aria-hidden="true"></i>
 		</div>
 	</div>
+	<div id="indexEnkelt">
+			<h2>Klubb Enkelt</h2>
+		
+		<div class="map">
+			<iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJVyD70ettWkYRawODuCIKTvg&key=AIzaSyBGKGRmLhKz_CjGCae82YQPIgkgyHKc_H0" allowfullscreen></iframe>
+		</div>
+		<p>
+			One of several nightclubs arranged by students, but everyone is welcome to enjoy a night with artists, effects and theme parties in an underground and industry atmosphere. <br><br>
+		</p>
+		<div class="social">
+			<a href="https://www.facebook.com/Id.jkpg/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+			<a href="https://www.idjonkoping.com/" target="_blank"><i class="fa fa-internet-explorer" aria-hidden="true"></i></a>
+		</div>
+		<div class="backEnkelt">
+			<i class="fa fa-arrow-left" aria-hidden="true"></i>
+		</div>
+	</div>
+	<div id="indexRetro">
+			<h2>Klubb Retro</h2>
+		
+		<div class="map">
+			<iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJVyD70ettWkYRawODuCIKTvg&key=AIzaSyBGKGRmLhKz_CjGCae82YQPIgkgyHKc_H0" allowfullscreen></iframe>
+		</div>
+		<p>
+			One of several nightclubs arranged by students, but everyone is welcome to enjoy a night with artists, effects and theme parties in an underground and industry atmosphere. <br><br>
+		</p>
+		<div class="social">
+			<a href="https://www.facebook.com/Id.jkpg/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+			<a href="https://www.idjonkoping.com/" target="_blank"><i class="fa fa-internet-explorer" aria-hidden="true"></i></a>
+		</div>
+		<div class="backRetro">
+			<i class="fa fa-arrow-left" aria-hidden="true"></i>
+		</div>
+	</div>
 	
 	<?php 
 	# Open the database
@@ -233,7 +287,7 @@ if ($db->connect_error) {
 		min-height: 180px;
 		margin: 0 auto;
 	}
-	#indexBongo, #indexNEO, #indexAqua, #indexHarrys, #indexID {
+	#indexBongo, #indexNEO, #indexAqua, #indexHarrys, #indexID, #indexEnkelt, #indexRetro {
 		position: absolute;
 		margin: 0 auto;
 		width: 1px;
