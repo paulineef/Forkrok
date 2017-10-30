@@ -375,7 +375,7 @@ if ($db->connect_error) {
     while ($stmt->fetch()) {
 
 		
-	echo "<li class='pic'><img id='$test' src=\"img/" .
+	echo "<li id='$test' class='pic'><img  src=\"img/" .
 		$picture . "\"> <h3 class='header'> $header </li></li>";
 		$test ++;
     }
@@ -397,9 +397,9 @@ if ($db->connect_error) {
 		list-style-type: none;
 		left: 0px;
 		
-		transition-property: all;
+		/*transition-property: all;
 	transition-duration: .5s;
-	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);*/
 	}
 	.pic {
 		float: left;
@@ -440,10 +440,7 @@ if ($db->connect_error) {
 		padding: 48px 18px;
 		box-sizing: border-box;
 		overflow: hidden;
-		
-		transition-property: all;
-	transition-duration: .5s;
-	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+
 	}
 	#indexBongo.open, #indexNEO.open, #indexAqua.open, #indexHarrys.open, #indexID.open, #indexEnkelt.open, #indexGladje.open, #indexMurphys.open, #indexRetro.open, #indexKlubb.open, #indexLegends.open, #indexPitchers.open {
 		display: block !important;
@@ -471,19 +468,13 @@ if ($db->connect_error) {
 		width: 100%;
 		background: white;
 		width: 1px;
-		
-		
-		transition-property: all;
-	transition-duration: .5s;
-	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+
 	}
 	.back.open {
 		width: 100%;
 		left: 0;
 		
-		transition-property: all;
-	transition-duration: .5s;
-	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+
 	}
 	.social {
 		text-align: center;
