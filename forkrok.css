@@ -48,6 +48,7 @@ p {
 	}
 	h2 {
 		font-size: 30pt;
+		margin: 0px 0px 30px 0px
 		
 	}
 	h3 {
@@ -109,6 +110,10 @@ h2 i {
 	font-weight: 300;
 	border: 1px solid #ddd;
 }
+
+label {
+	font-size: 12pt; 
+}
 .dropDown {
 	width: 80px;
 	height: 30px;
@@ -119,7 +124,7 @@ h2 i {
     text-align: center;
     font-weight: 300;
 	border: 1px solid #ddd;
-	border-radius: 20px;
+	border-radius: 1px;
 	background-color: transparent;
 }
 .dropDown select {
@@ -197,7 +202,7 @@ h2 i {
 .headForm {
 		font-family: lato, sans-serif; 
 		font-weight: 300;
-		font-size: 12px;
+		font-size: 12pt;
 		margin: 10px;
 		padding: 4px;
 }
