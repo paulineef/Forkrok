@@ -9,6 +9,8 @@ h1,h2,h3,h4,h5,h6 {
 	font-weight: 600;
 }
 
+
+
 	h1 {
 		font-size: 25pt;
 		color: #d34e24;
@@ -240,6 +242,14 @@ label {
 
 /* ------- SIDEBAR ------- */
 
+#login {
+	color: #ddd; 
+}
+
+#login:hover {
+	color: #efc100;
+}
+
 .ulli.open {
 	display: block;
 }
@@ -460,7 +470,7 @@ label {
 		}
 
 		.ulli li {
-			padding-top: 50px;
+			padding-top: 40px;
 			color: #F7E431;
 			font-family: "lato";
 			box-sizing: border-box;
@@ -471,7 +481,7 @@ label {
 		.ulli li a {
 			color: #FDCD01;
 			font-weight: 700;
-			font-size: 25px;
+			font-size: 20px;
 		}
 
 		#nav-icon3{
