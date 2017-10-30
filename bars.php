@@ -67,6 +67,16 @@
 				$("#indexRetro").toggleClass('open');
 				$("#listBar").toggleClass('open');
 			});
+				$("#7").click(function(){
+				event.preventDefault();	
+				$("#indexMurphys").toggleClass('open');
+				$("#listBar").toggleClass('open');
+			});
+				$(".backMurphys").click(function(){
+				event.preventDefault();	
+				$("#indexMurphys").toggleClass('open');
+				$("#listBar").toggleClass('open');
+			});
 				$("#8").click(function(){
 				event.preventDefault();	
 				$("#indexNEO").toggleClass('open');
@@ -75,6 +85,46 @@
 				$(".backNEO").click(function(){
 				event.preventDefault();	
 				$("#indexNEO").toggleClass('open');
+				$("#listBar").toggleClass('open');
+			});
+				$("#9").click(function(){
+				event.preventDefault();	
+				$("#indexGladje").toggleClass('open');
+				$("#listBar").toggleClass('open');
+			});
+				$(".backGladje").click(function(){
+				event.preventDefault();	
+				$("#indexGladje").toggleClass('open');
+				$("#listBar").toggleClass('open');
+			});
+				$("#10").click(function(){
+				event.preventDefault();	
+				$("#indexKlubb").toggleClass('open');
+				$("#listBar").toggleClass('open');
+			});
+				$(".backKlubb").click(function(){
+				event.preventDefault();	
+				$("#indexKlubb").toggleClass('open');
+				$("#listBar").toggleClass('open');
+			});
+				$("#11").click(function(){
+				event.preventDefault();	
+				$("#indexLegends").toggleClass('open');
+				$("#listBar").toggleClass('open');
+			});
+				$(".backLegends").click(function(){
+				event.preventDefault();	
+				$("#indexLegends").toggleClass('open');
+				$("#listBar").toggleClass('open');
+			});
+				$("#12").click(function(){
+				event.preventDefault();	
+				$("#indexPitchers").toggleClass('open');
+				$("#listBar").toggleClass('open');
+			});
+				$(".backPitchers").click(function(){
+				event.preventDefault();	
+				$("#indexPitchers").toggleClass('open');
 				$("#listBar").toggleClass('open');
 			});
 				
@@ -162,10 +212,10 @@
 			<h2>ID</h2>
 		
 		<div class="map">
-			<iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJVyD70ettWkYRawODuCIKTvg&key=AIzaSyBGKGRmLhKz_CjGCae82YQPIgkgyHKc_H0" allowfullscreen></iframe>
+			<iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJS81cGuptWkYRqzbxK4n685c&key=AIzaSyBpxDBVSuGsa-txO7wGm5C0-aRSbSRQ6mw" allowfullscreen></iframe>
 		</div>
 		<p>
-			One of several nightclubs arranged by students, but everyone is welcome to enjoy a night with artists, effects and theme parties in an underground and industry atmosphere. <br><br>
+			One of several nightclubs arranged by students, but everyone is welcome to enjoy a night with artists, effects and theme parties in an underground and industry atmosphere. It's located in the same place as Klubb &amp; Co. <br><br>
 		</p>
 		<div class="social">
 			<a href="https://www.facebook.com/Id.jkpg/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
@@ -179,14 +229,13 @@
 			<h2>Klubb Enkelt</h2>
 		
 		<div class="map">
-			<iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJVyD70ettWkYRawODuCIKTvg&key=AIzaSyBGKGRmLhKz_CjGCae82YQPIgkgyHKc_H0" allowfullscreen></iframe>
+			<iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJqf_BLehtWkYRuTGGfzjNAvw&key=AIzaSyBpxDBVSuGsa-txO7wGm5C0-aRSbSRQ6mw" allowfullscreen></iframe>
 		</div>
 		<p>
 			One of several nightclubs arranged by students, but everyone is welcome to enjoy a night with artists, effects and theme parties in an underground and industry atmosphere. <br><br>
 		</p>
 		<div class="social">
-			<a href="https://www.facebook.com/Id.jkpg/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-			<a href="https://www.idjonkoping.com/" target="_blank"><i class="fa fa-internet-explorer" aria-hidden="true"></i></a>
+			<a href="https://www.facebook.com/klubbenkelt/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
 		</div>
 		<div class="backEnkelt">
 			<i class="fa fa-arrow-left" aria-hidden="true"></i>
@@ -196,23 +245,107 @@
 			<h2>Klubb Retro</h2>
 		
 		<div class="map">
-			<iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJVyD70ettWkYRawODuCIKTvg&key=AIzaSyBGKGRmLhKz_CjGCae82YQPIgkgyHKc_H0" allowfullscreen></iframe>
+			<iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJqf_BLehtWkYRuTGGfzjNAvw&key=AIzaSyBpxDBVSuGsa-txO7wGm5C0-aRSbSRQ6mw" allowfullscreen></iframe>
 		</div>
 		<p>
-			One of several nightclubs arranged by students, but everyone is welcome to enjoy a night with artists, effects and theme parties in an underground and industry atmosphere. <br><br>
+			The warmest nightclub 'round the bitter cold Vättern and a perfect place to get together with the best tunes from the 70's 80's and 90's. 100:- for both entrance and wardrobe. <br><br>
 		</p>
 		<div class="social">
-			<a href="https://www.facebook.com/Id.jkpg/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-			<a href="https://www.idjonkoping.com/" target="_blank"><i class="fa fa-internet-explorer" aria-hidden="true"></i></a>
+			<a href="https://www.facebook.com/klubbretro/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+			
 		</div>
 		<div class="backRetro">
+			<i class="fa fa-arrow-left" aria-hidden="true"></i>
+		</div>
+	</div>
+	<div id="indexMurphys">
+			<h2>Murphy's</h2>
+		
+		<div class="map">
+			<iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJXzq6j-ltWkYRumTtEqaiZtM&key=AIzaSyBpxDBVSuGsa-txO7wGm5C0-aRSbSRQ6mw" allowfullscreen></iframe>
+		</div>
+		<p>
+			Have a great time with a couple of friends at this Irish pub in the centre of Jönköping. <br><br>
+		</p>
+		<div class="social">
+			<a href="https://www.facebook.com/murphysjkpg/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+		</div>
+		<div class="backMurphys">
+			<i class="fa fa-arrow-left" aria-hidden="true"></i>
+		</div>
+	</div>
+	<div id="indexGladje">
+			<h2>Glädje</h2>
+		
+		<div class="map">
+			<iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJi9bSI-ptWkYRfeffXvE0HJI&key=AIzaSyBpxDBVSuGsa-txO7wGm5C0-aRSbSRQ6mw" allowfullscreen></iframe>
+		</div>
+		<p>
+			At Glädje you can enjoy a chill night out with both food, drinks and nice people. The restaurant only serve food with locally produced ingredients. <br><br>
+		</p>
+		<div class="social">
+			<a href="https://www.facebook.com/gladjejonkoping/ " target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+			<a href="http://www.restauranggladje.se/jonkoping/ " target="_blank"><i class="fa fa-internet-explorer" aria-hidden="true"></i></a>
+		</div>
+		<div class="backGladje">
+			<i class="fa fa-arrow-left" aria-hidden="true"></i>
+		</div>
+	</div>
+	<div id="indexKlubb">
+			<h2>Klubb &amp; Co.</h2>
+		
+		<div class="map">
+			<iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJS81cGuptWkYRqzbxK4n685c&key=AIzaSyBpxDBVSuGsa-txO7wGm5C0-aRSbSRQ6mw" allowfullscreen></iframe>
+		</div>
+		<p>
+			A newly opened night club offer RnB, house and hip hop hits on the dancefloor. Enjoy a night out with your friends and explore all the events and theme nights. <br><br>
+		</p>
+		<div class="social">
+			<a href="https://www.facebook.com/klubbco/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+			<a href="https://www.keyflow.com/venues/5047/klubb-co" target="_blank"><i class="fa fa-internet-explorer" aria-hidden="true"></i></a>
+		</div>
+		<div class="backKlubb">
+			<i class="fa fa-arrow-left" aria-hidden="true"></i>
+		</div>
+	</div>
+	<div id="indexLegends">
+			<h2>Legends</h2>
+		
+		<div class="map">
+			<iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJT5P825RtWkYReLfATfuhiHg&key=AIzaSyBpxDBVSuGsa-txO7wGm5C0-aRSbSRQ6mw" allowfullscreen></iframe>
+		</div>
+		<p>
+			Enjoy a hamburger and a bottle of beer at this sports bar directly from New York, while watching your favourite team play.  <br><br>
+		</p>
+		<div class="social">
+			<a href="https://www.facebook.com/pages/New-York-Legends-J%C3%B6nk%C3%B6ping/1930742783837816 " target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+			<a href="http://nylegends.se/jonkoping/ " target="_blank"><i class="fa fa-internet-explorer" aria-hidden="true"></i></a>
+		</div>
+		<div class="backLegends">
+			<i class="fa fa-arrow-left" aria-hidden="true"></i>
+		</div>
+	</div>
+	<div id="indexPitchers">
+			<h2>Pitcher's</h2>
+		
+		<div class="map">
+			<iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJlwwXf-ltWkYRlFSCWqxCnII&key=AIzaSyBpxDBVSuGsa-txO7wGm5C0-aRSbSRQ6mw" allowfullscreen></iframe>
+		</div>
+		<p>
+			Enjoy a nice dinner at this sports bar while watching your favourite team play and sipping on a drink or beer.  <br><br>
+		</p>
+		<div class="social">
+			<a href="https://www.facebook.com/pitchersjonkoping/ " target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+			<a href="https://www.pitchers.se/restauranger/jonkoping/ " target="_blank"><i class="fa fa-internet-explorer" aria-hidden="true"></i></a>
+		</div>
+		<div class="backPitchers">
 			<i class="fa fa-arrow-left" aria-hidden="true"></i>
 		</div>
 	</div>
 	
 	<?php 
 	# Open the database
-@ $db = new mysqli('localhost', 'root', '', 'bars');
+@ $db = new mysqli('localhost', 'root', '', 'Forkrok');
 
 	//IF the database can't connect
 if ($db->connect_error) {
@@ -287,7 +420,7 @@ if ($db->connect_error) {
 		min-height: 180px;
 		margin: 0 auto;
 	}
-	#indexBongo, #indexNEO, #indexAqua, #indexHarrys, #indexID, #indexEnkelt, #indexRetro {
+	#indexBongo, #indexNEO, #indexAqua, #indexHarrys, #indexID, #indexEnkelt, #indexRetro, #indexMurphys, #indexKlubb, #indexLegends, #indexGladje, #indexPitchers {
 		position: absolute;
 		margin: 0 auto;
 		width: 1px;
@@ -307,7 +440,7 @@ if ($db->connect_error) {
 	transition-duration: .5s;
 	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 	}
-	#indexBongo.open, #indexNEO.open, #indexAqua.open, #indexHarrys.open, #indexID.open, #indexEnkelt.open, #indexRetro.open {
+	#indexBongo.open, #indexNEO.open, #indexAqua.open, #indexHarrys.open, #indexID.open, #indexEnkelt.open, #indexGladje.open, #indexMurphys.open, #indexRetro.open, #indexKlubb.open, #indexLegends.open, #indexPitchers.open {
 		display: block !important;
 		width: 100%;
 		left: 0px;
