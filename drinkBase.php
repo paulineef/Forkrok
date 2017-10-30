@@ -2,9 +2,9 @@
 
 <body>
 	
-	<div class="content">
-		
-		<div class="placement">
+	<div class="content">		
+		<div class="placement">	
+			
 			
 			<table class="drink">
 				
@@ -16,16 +16,14 @@
 				<tr/>
 				<tr>
 					<td>
-						<h5>Ingredients</h5>
+						<h5> Ingredients</h5>
 						<ul>
 							<li>Vodka</li>
 							<li>Lime juice</li>
 							<li>Lemon juice</li>
 							<li>Lemon slices</li>
 							<li>Soda</li>
-
 						</ul>
-
 						<p>
 							Lorem ipsum dolor sit amet, sapientem patrioque voluptatibus ne ius, sea cu nobis praesent. 
 						</p>
@@ -37,7 +35,7 @@
 			</tbody>
 			</table>
 
-			<span><i class="fa fa-chevron-left" aria-hidden="true"></i>Back</span>
+			<span><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
 		</div>
 	</div>
 
