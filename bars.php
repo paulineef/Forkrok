@@ -545,7 +545,7 @@ if ($db->connect_error) {
 		.pic {
 			max-width: 33%;
 		}
-		#indexBongo, #indexAqua, #indexHarrys, #indexID, #indexNEO {
+		#indexBongo, #indexNEO, #indexAqua, #indexHarrys, #indexID, #indexEnkelt, #indexRetro, #indexMurphys, #indexKlubb, #indexLegends, #indexGladje, #indexPitchers {
 			max-width: 650px;
 			margin: 0 auto !important;
 			padding-left: 150px;
@@ -564,7 +564,7 @@ if ($db->connect_error) {
 		#listBar {
 			padding-left: 0;
 		}
-		#indexBongo, #indexAqua, #indexHarrys, #indexID, #indexNEO {
+		#indexBongo, #indexNEO, #indexAqua, #indexHarrys, #indexID, #indexEnkelt, #indexRetro, #indexMurphys, #indexKlubb, #indexLegends, #indexGladje, #indexPitchers {
 			max-width: 600px;
 			padding-left: 50px;
 		}
