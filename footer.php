@@ -25,8 +25,8 @@ footer p {
 /* Media */
 @media (min-width: 928px){
 	footer p {
-		font-size: 12px;
-		padding: 10px; 
+		font-size: 10px;
+		padding: 4px; 
 	}
 }
 

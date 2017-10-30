@@ -9,6 +9,8 @@ h1,h2,h3,h4,h5,h6 {
 	font-weight: 600;
 }
 
+
+
 	h1 {
 		font-size: 25pt;
 		color: #d34e24;
@@ -48,6 +50,7 @@ p {
 	}
 	h2 {
 		font-size: 30pt;
+		margin: 0px 0px 30px 0px
 		
 	}
 	h3 {
@@ -109,6 +112,10 @@ h2 i {
 	font-weight: 300;
 	border: 1px solid #ddd;
 }
+
+label {
+	font-size: 12pt; 
+}
 .dropDown {
 	width: 80px;
 	height: 30px;
@@ -119,7 +126,7 @@ h2 i {
     text-align: center;
     font-weight: 300;
 	border: 1px solid #ddd;
-	border-radius: 20px;
+	border-radius: 1px;
 	background-color: transparent;
 }
 .dropDown select {
@@ -128,7 +135,7 @@ h2 i {
 .listStyle {
 	font-family: lato, sans-serif; 
 	font-weight: 300;
-	font-size: 12px;
+	font-size: 12pt;
 	margin: 10px;
 	padding: 4px; 	
 	margin-right: 120px;
@@ -139,7 +146,7 @@ h2 i {
 	color: #000;
 }
 .listStyle a:hover {
-	color: #ddd;
+	color: #d34e24;
 }
 @media (min-width: 768px) and (max-width: 927px){
 	.content {
@@ -173,33 +180,70 @@ h2 i {
 
 /* ------- GAMES --------- */
 #gameTable {
-	margin: 30px;
-	margin-left: 0;
+	margin-top: 30px; 
+	border-collapse: collapse;
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+#gameTable tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+form label {
+	font-family: lato, sans-serif;
+	font-size: 12pt; 
+	font-weight: 300; 
+	margin: 0px 5px 0px 10px;
 }
 .category {
 		font-family: lato, sans-serif; 
 		text-align: right;
 		color: #D34E24;
 		font-weight: 300;
-		font-size: 12px;
+		font-size: 12pt;
 		margin: 10px;
 		padding: 4px; 
 }
 .headList {
 		font-family: lato, sans-serif; 
-		font-weight: 300;
-		font-size: 12px;
-		margin: 10px;
+		font-weight: 600;
+		font-size: 12pt;
+		margin: 0;
 		padding: 4px;
 		color: #FDCD01;
 		border-bottom: 1px #FDCD01 solid;
+		text-transform: uppercase;
 }
+
+#cat {
+	text-align: right; 
+}
+
+#gameTable tr:hover {
+	background-color: #ddd;
+}
+
+#gameTable .head
 .headForm {
 		font-family: lato, sans-serif; 
 		font-weight: 300;
-		font-size: 12px;
+		font-size: 12pt;
 		margin: 10px;
 		padding: 4px;
+		
+}
+
+@media (min-width: 928px) {
+	#gameTable {
+		/*width: 425px;*/
+	}
+}
+
+@media (min-width: 768px) and (max-width: 927px) {
+	#gameTable {
+		/*width: 600px;*/
+	}
 }
 /* ------- DRINKS -------- */
 
@@ -234,6 +278,14 @@ h2 i {
 
 
 /* ------- SIDEBAR ------- */
+
+#login {
+	color: #ddd !important; 
+}
+
+#login:hover {
+	color: #efc100;
+}
 
 .ulli.open {
 	display: block;
@@ -455,7 +507,7 @@ h2 i {
 		}
 
 		.ulli li {
-			padding-top: 50px;
+			padding-top: 40px;
 			color: #F7E431;
 			font-family: "lato";
 			box-sizing: border-box;
@@ -466,7 +518,7 @@ h2 i {
 		.ulli li a {
 			color: #FDCD01;
 			font-weight: 700;
-			font-size: 25px;
+			font-size: 20px;
 		}
 
 		#nav-icon3{

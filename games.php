@@ -13,7 +13,7 @@
 
 		<form action="games.php" method="POST">
 			<input class="searchField" type="text" name="searchgame" placeholder="ex. Kings Cup"/>
-			<label class="headForm"> Category: </label> 
+			<label> Category: </label> 
 			<select name="searchcategory" class="dropDown">
 				<option value="">All</option>
 				<option value="card">Card</option>
@@ -27,7 +27,8 @@
 			$searchgame = "";
 			$searchcategory = "";
 
-			@ $db = new mysqli('localhost', 'root', '', 'forkrok');
+			@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
+
 
 			if (isset($_POST) && !empty($_POST)) {
 
@@ -44,11 +45,11 @@
 				$searchcategory = addslashes ($searchcategory);
 			}
 
-				   /* if ($db->connect_error) {
+			if ($db->connect_error) {
 						echo "could not connect: " . $db->connect_error;
 						printf("<br><a href=index.php>Return to home page </a>");
 						exit();
-					}*/
+					}
 
 			$query = "SELECT games.gameID, games.name, gameCat.categoryID, gameCat.term FROM games 
 			JOIN gameCat ON games.categoryID = gameCat.categoryID";
@@ -67,11 +68,11 @@
 			$stmt->bind_result($gameID, $name, $catID, $term);
 			$stmt->execute();
 
-			echo '<table id="gameTable" cellpadding="6">';
-   			echo '<tr><b><td class="headList">Name of game</td> <td class="headList">Category</td> </b> </tr>';
+			echo '<table id="gameTable">';
+   			echo '<tr><b><td class="headList">Name of game</td> <td class="headList" id="cat">Category</td> </b> </tr>';
 			while ($stmt->fetch()) {
 				echo "<tr>";
-				echo " <td class='listStyle'><a href='games/gameBase.php'> $name</a></td> <td class='category'> $term </td>";
+				echo " <td class='listStyle'><a href='gameBase.php'> $name</a></td> <td class='category'> $term </td>";
 				echo "</tr>";
 			}
 		?>
