@@ -348,11 +348,9 @@
 	
 	<?php 
 	# Open the database
-<<<<<<< HEAD
 @ $db = new mysqli('localhost', 'user', 'user', 'Forkrok');
-=======
-@ $db = new mysqli('localhost', 'root', 'root', 'Forkrok');
->>>>>>> c7ec9838fe194c1d050f4778491688140068e078
+
+
 
 	//IF the database can't connect
 if ($db->connect_error) {
