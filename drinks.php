@@ -67,7 +67,7 @@
     echo '<table bgcolor="#fff" cellpadding="6">';
 	while ($stmt->fetch()) {
         echo "<tr>";
-        echo "<td class='listStyle'><a href='drinks/drinkBase.php'>$name</a></td>";
+        echo "<td class='listStyle'><a href='drinkBase.php'>$name</a></td>";
         echo "</tr>";
     }
 ?>

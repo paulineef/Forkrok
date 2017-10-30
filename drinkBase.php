@@ -10,8 +10,8 @@
 				
 				<tbody>
 				<tr>
-					<th>
-						<h2>Klara's Special</h2>
+					<th class="th-width">
+						<h2>Titel</h2>
 					</th>
 				<tr/>
 				<tr>
@@ -37,11 +37,23 @@
 			</tbody>
 			</table>
 
-			<span><i class="fa fa-chevron-left" aria-hidden="true"></i>Back</span>
+			<h6 class="back"><i class="fa fa-chevron-left" aria-hidden="true"></i>Back</h6>
 		</div>
 	</div>
 
 <style type="text/css">
+	
+	.back:hover {
+		color: #d34e24;
+	}
+
+	.back {
+		color: #d34e24;
+	}
+
+	.th-width {
+		width: 270px;
+	}
 
 	#drink{
 		max-width: 120px;
@@ -88,7 +100,16 @@
 		font-size: 12pt; 
 	}
 
+
 	@media (min-width: 928px){
+
+		.back {
+			color: #000;
+		}
+
+		.th-width {
+			width: 250px
+		}
 		.drink h5 {
 			font-size: 14px; 
 		}
