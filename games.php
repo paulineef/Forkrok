@@ -27,7 +27,8 @@
 			$searchgame = "";
 			$searchcategory = "";
 
-			@ $db = new mysqli('localhost', 'root', '', 'forkrok');
+			@ $db = new mysqli('localhost', 'root', 'forkrok');
+
 
 			if (isset($_POST) && !empty($_POST)) {
 
@@ -44,11 +45,11 @@
 				$searchcategory = addslashes ($searchcategory);
 			}
 
-				   /* if ($db->connect_error) {
+			if ($db->connect_error) {
 						echo "could not connect: " . $db->connect_error;
 						printf("<br><a href=index.php>Return to home page </a>");
 						exit();
-					}*/
+					}
 
 			$query = "SELECT games.gameID, games.name, gameCat.categoryID, gameCat.term FROM games 
 			JOIN gameCat ON games.categoryID = gameCat.categoryID";
