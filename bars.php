@@ -450,6 +450,7 @@ if ($db->connect_error) {
 		
 	}
 	#listBar #indexNEO.open{
+		cursor: pointer;
 		display: none;
 	}
 	#indexBongo p {
