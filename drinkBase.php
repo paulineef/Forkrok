@@ -11,7 +11,7 @@
 				<tbody>
 				<tr>
 					<th class="th-width">
-						<h2>Titel</h2>
+						<h2>Titel<i class="fa fa-star-o" aria-hidden="true"></i></h2>
 					</th>
 				<tr/>
 				<tr>
