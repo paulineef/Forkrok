@@ -136,6 +136,8 @@
 
 <div class="content">
 
+	<div class="placement">
+
 	<h2>Bars &amp; Clubs<i class="fa fa-beer" aria-hidden="true"></i></h2>
 	
 	<div id="indexBongo">
@@ -342,10 +344,11 @@
 			<i class="fa fa-arrow-left" aria-hidden="true"></i>
 		</div>
 	</div>
+</div>
 	
 	<?php 
 	# Open the database
-@ $db = new mysqli('localhost', 'root', '', 'Forkrok');
+@ $db = new mysqli('localhost', 'root', 'root', 'Forkrok');
 
 	//IF the database can't connect
 if ($db->connect_error) {
