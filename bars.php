@@ -345,7 +345,7 @@
 	
 	<?php 
 	# Open the database
-@ $db = new mysqli('localhost', 'root', '', 'Forkrok');
+@ $db = new mysqli('localhost', 'user', 'user', 'Forkrok');
 
 	//IF the database can't connect
 if ($db->connect_error) {
