@@ -13,7 +13,7 @@
 
 		<form action="games.php" method="POST">
 			<input class="searchField" type="text" name="searchgame" placeholder="ex. Kings Cup"/>
-			<label class="headForm"> Category: </label> 
+			<label> Category: </label> 
 			<select name="searchcategory" class="dropDown">
 				<option value="">All</option>
 				<option value="card">Card</option>
@@ -68,11 +68,11 @@
 			$stmt->bind_result($gameID, $name, $catID, $term);
 			$stmt->execute();
 
-			echo '<table id="gameTable" cellpadding="6">';
-   			echo '<tr><b><td class="headList">Name of game</td> <td class="headList">Category</td> </b> </tr>';
+			echo '<table id="gameTable">';
+   			echo '<tr><b><td class="headList">Name of game</td> <td class="headList" id="cat">Category</td> </b> </tr>';
 			while ($stmt->fetch()) {
 				echo "<tr>";
-				echo " <td class='listStyle'><a href='games/gameBase.php'> $name</a></td> <td class='category'> $term </td>";
+				echo " <td class='listStyle'><a href='gameBase.php'> $name</a></td> <td class='category'> $term </td>";
 				echo "</tr>";
 			}
 		?>
