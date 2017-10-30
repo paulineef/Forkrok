@@ -27,7 +27,7 @@
 			$searchgame = "";
 			$searchcategory = "";
 
-			@ $db = new mysqli('localhost', 'root', 'forkrok');
+			@ $db = new mysqli('localhost', 'root', 'root', 'forkrok');
 
 
 			if (isset($_POST) && !empty($_POST)) {
