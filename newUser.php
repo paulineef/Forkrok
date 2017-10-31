@@ -1,67 +1,109 @@
 <?php include ("sidebar.php") ?>
 
 <div class="content">
-	<h2>Login<i class="fa fa-unlock-alt" aria-hidden="true"></h2>
-	<?php 
-		@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
-
-if ($db->connect_error) {
-    echo "could not connect: " . $db->connect_error;
-    printf("<br><a href=index.php>Return to home page </a>");
-    exit();
-}
-
-
-if (isset($_POST['username'], $_POST['password'])) {
-    #with statement under we're making it SQL Injection-proof
-	//makes it to a string, fjonks won't work
-    $uname = mysqli_real_escape_string($db, $_POST['username']);
-	$upass = mysqli_real_escape_string($db, $_POST['password']);
-	
-    
-    $upass = SHA1($_POST['password']);
-    
-    #just to see what we are selecting, and we can use it to test in phpmyadmin/heidisql
-    
-    //echo "SELECT * FROM users WHERE username = '{$uname}' AND password = '{$upass}'";
-    
-    $query = ("SELECT * FROM users WHERE username = '{$uname}' "."AND password = '{$upass}'");
-       
-    $stmt = $db->prepare($query);
-    $stmt->execute();
-    $stmt->store_result(); 
-    
-    #here we create a new variable 'totalcount' just to check if there's at least
-    #one user with the right combination. If there is, we later on print out "access granted"
-    $totalcount = $stmt->num_rows();
-    
+	<?php
+//PUT THIS HEADER ON TOP OF EACH UNIQUE PAGE
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("sidebar.php");
 }
 ?>
- <?php    
-        
-        if (isset($totalcount)) {
-            if ($totalcount == 0) {
-                echo '<h2>You got it wrong. Can\'t break in here!</h2>';
-				//IF the password and username is right
-            } else {
-                echo '<h2>Welcome! Correct password.</h2>';
-            }
-        }
-        ?>
-        <form background="#dd00dd" method="POST" action="">
-            <input type="text" name="username">
-            <input type="password" name="password">
-            <input type="submit" value="Go">
-        </form>
-        <a href="newUser.php">Add new user</a>
-</div>
-       
 
-<?php include ("footer.php") ?>
+<?php
+if (isset($_POST['newUsername'])) {
+    // This is the postback so add the book to the database
+    # Get data from form
+    $newUsername = trim($_POST['newUsername']);
+    $newPassword = trim($_POST['newPassword']);
+	$copyPassword = trim($_POST['copyPassword']);
+
+    if (!$newUsername || !$newPassword) {
+        printf("You must specify both a username and an password");
+        printf("<br><a href=index.php>Return to home page </a>");
+        exit();
+    }
+
+    $newUsername = addslashes($newUsername);
+    /*$newPassword = addslashes ($newPassword);*/
+	$newPassword = addslashes(sha1($newPassword));
+	$copyPassword = addslashes(sha1($copyPassword));
+    # Open the database using the "forkrok" account
+@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
+
+    if ($db->connect_error) {
+        echo "could not connect: " . $db->connect_error;
+        printf("<br><a href=index.php>Return to home page </a>");
+        exit();
+    }
+	//make sure the password fields are matching, if NOT, do not add user
+	if ($newPassword == $copyPassword ){
+		// Prepare an insert statement and execute it
+    $stmt = $db->prepare("insert into users(userID, username, password) values ('', ?, ?)");
+    $stmt->bind_param('ss', $newUsername, $newPassword);
+    $stmt->execute();
+    printf("<br><h2>User added!</h2>");
+    printf("<br><a href=login.php>Click to login</a>");
+    exit;
+		
+		//IF passwords doesn't match
+	}else {
+		echo "Password doesn't match";
+	}
+ 
+}
+
+// Not a postback, so present the book entry form
+?>
+<h3>Add a new user</h3>
+<form action="" method="POST">
+    <table bgcolor="#fd896d" cellpadding="6">
+        <tbody id="tbody">
+            <tr>
+                <td>Username:</td>
+                <td><INPUT type="text" name="newUsername"></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><INPUT type="password" name="newPassword"></td>
+            </tr>
+            <tr>
+                <td>Repeat password:</td>
+                <td><INPUT type="password" name="copyPassword"></td>
+            </tr>
+            <tr>
+            	<td>I'm not a robot</td>
+				<td><input id="checkBox" type="checkbox"></td>
+			</tr>
+            <tr>
+                <td></td>
+                <td><INPUT id="submit" type="submit" name="submit" value="Add User"></td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+</div>
+<?php include("footer.php"); ?>
+
 <style>
-	form {
-		position: absolute;
-		right: 100px;
-		top: 200px;
-	}	
+	#ulwrapper {
+		margin: 0;
+	}
+	checkbox {
+		width: 20px;
+		height: 20px;
+	}
+	td {
+		font-family: 'lato';
+	}
+	#tbody input{
+		border: none;
+	}
+	#submit {
+		padding: 6px 5px;
+		background: white;
+	}
+	#submit:hover{
+		background: #dd00dd;
+		color: white;
+	}
 </style>

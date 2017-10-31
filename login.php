@@ -34,7 +34,6 @@ if (isset($_POST['username'], $_POST['password'])) {
     #here we create a new variable 'totalcount' just to check if there's at least
     #one user with the right combination. If there is, we later on print out "access granted"
     $totalcount = $stmt->num_rows();
-    
 }
 ?>
  <?php    
@@ -44,13 +43,13 @@ if (isset($_POST['username'], $_POST['password'])) {
                 echo '<h2>You got it wrong. Can\'t break in here!</h2>';
 				//IF the password and username is right
             } else {
-                echo '<h2>Welcome! Correct password.</h2>';
+                echo "<h2>Welcome, $uname!</h2>";
             }
         }
         ?>
         <form background="#dd00dd" method="POST" action="">
-            <input type="text" name="username">
-            <input type="password" name="password">
+            <input type="text" placeholder="Username" name="username">
+            <input type="password" placeholder="password" name="password">
             <input type="submit" value="Go">
         </form>
         <a href="newUser.php">Add new user</a>
