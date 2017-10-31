@@ -8,10 +8,10 @@
 		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 		<script type="text/javascript" charset="utf-8">
 			
-			$(document).ready(function() {	
+			$(document).ready(function() {
 					
-			$("#nav-icon3").click(function(){
-				event.preventDefault();	
+			$("#nav-icon3").click(function(e){
+				e.preventDefault();	
 				$("#header").toggleClass('open');
 				$("#nav-icon3").toggleClass('open');
 
