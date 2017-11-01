@@ -88,7 +88,6 @@
    <?php
     echo '<ul id="listDrink">';
     while ($stmt->fetch()) {
-
 		
 	echo "<li ><img class='specificimage' src=\"uploadedfiles/" . $picture . "\"> </li></li>";
 	}
