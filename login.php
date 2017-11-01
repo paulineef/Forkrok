@@ -1,4 +1,13 @@
-<?php include ("sidebar.php") ?>
+<?php
+	include('config.php');
+?> 
+<?php
+	session_start();
+	if (isset($_SESSION['username'])) {
+		header("location:index.php");
+	}
+?>
+
 <body class="logBox">
 <div class="content">
 	<div class="placement">
@@ -19,7 +28,6 @@ if (isset($_POST['username'], $_POST['password'])) {
 	//makes it to a string, fjonks won't work
     $uname = mysqli_real_escape_string($db, $_POST['username']);
 	$upass = mysqli_real_escape_string($db, $_POST['password']);
-	
     
     $upass = SHA1($_POST['password']);
     
@@ -38,14 +46,20 @@ if (isset($_POST['username'], $_POST['password'])) {
     $totalcount = $stmt->num_rows();
 }
 ?>
- <?php    
-        
+ <?php         
         if (isset($totalcount)) {
             if ($totalcount == 0) {
                 echo '<h2>You got it wrong. Can\'t break in here!</h2>';
 				//IF the password and username is right
             } else {
                 echo "<h2>Welcome, $uname!</h2>";
+				echo('<a href="favourites.php">Click here to see your favourite drinks</a>');
+				include('favouritesLogin.php');
+				include('footer.php');
+				exit();
+				
+				
+				
             }
         }
         ?>
@@ -58,11 +72,11 @@ if (isset($_POST['username'], $_POST['password'])) {
             </tr>
              <a id="new" href="newUser.php">Create new user</a>
         </form>
-       
 </div>
        
 	</body>
 <?php include ("footer.php") ?>
+
 <style>
 	form {
 		position: absolute;
