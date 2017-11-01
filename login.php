@@ -1,7 +1,9 @@
 <?php include ("sidebar.php") ?>
 
 <div class="content">
-	<h2>Login<i class="fa fa-unlock-alt" aria-hidden="true"></h2>
+	<div class="placement">
+		<h2>Login<i class="fa fa-unlock-alt" aria-hidden="true"></h2>
+	</div>
 	<?php 
 		@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
 
@@ -48,9 +50,12 @@ if (isset($_POST['username'], $_POST['password'])) {
         }
         ?>
         <form background="#dd00dd" method="POST" action="">
-            <input type="text" placeholder="Username" name="username">
-            <input type="password" placeholder="password" name="password">
-            <input type="submit" value="Go">
+           <tr>
+           <td><input type="text" placeholder="Username" name="username"></td>
+            <td><input type="password" placeholder="Password" name="password"></td>
+            
+            <input id="submit" type="submit" value="Go">
+            </tr>
         </form>
         <a href="newUser.php">Add new user</a>
 </div>
@@ -60,7 +65,25 @@ if (isset($_POST['username'], $_POST['password'])) {
 <style>
 	form {
 		position: absolute;
-		right: 100px;
-		top: 200px;
+		margin-top: 24px;
+		max-width: 450px;
+		background: #fd896d;
+		height: 100px;
+		text-align: center;
 	}	
+	form input {
+		width: 180px;
+		margin: 0 10px;
+		border: none;
+		margin-top: 32px;
+		padding: 6px;
+	}
+	#submit {
+		margin: 0 auto;
+		text-align: left;
+		width: 50px;
+		padding: 3px;
+		float: left;
+		margin-left: 10px;
+	}
 </style>
