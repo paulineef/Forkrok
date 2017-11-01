@@ -60,32 +60,70 @@
         $query = $query . " where name like '%" . $searchdrink . "%' and term like '%" . $searchingredients . "%'";
     }
 
-    $stmt = $db->prepare($query);
-    $stmt->bind_result($drinkID, $name, $ingredientID, $term);
-    $stmt->execute();
+ //    $stmt = $db->prepare($query);
+ //    $stmt->bind_result($drinkID, $name, $ingredientID, $term);
+ //    $stmt->execute();
 
-    echo '<table bgcolor="#fff" cellpadding="6">';
-	while ($stmt->fetch()) {
-        echo "<tr>";
-        echo "<td class='listStyle'><a href='drinkBase.php'>$name</a></td>";
-        echo "</tr>";
-    }
+ //    echo '<table bgcolor="#fff" cellpadding="6">';
+	// while ($stmt->fetch()) {
+ //        echo "<tr>";
+ //        echo "<td class='listStyle'><a href='drinkBase.php'>$name</a></td>";
+ //        echo "</tr>";
+ //    }
 ?>
 <!-- Gallery -->
 	<div id="gallerycontent">
+		<?php 
+		$query = "SELECT drinkID, name, picture FROM drinks";
+	
+	
+	# Here's the query using bound result parameters
+    // echo "we are now using bound result parameters <br/>";
+    $stmt = $db->prepare($query);
+    //takes the result of the search and create variables from it
+    $stmt->bind_result($drinkID, $name, $picture);
+    $stmt->execute();
+    ?>
+
+   <?php
+    echo '<ul id="listDrink">';
+    while ($stmt->fetch()) {
+
+		
+	echo "<li ><img class='specificimage' src=\"uploadedfiles/" . $picture . "\"> </li></li>";
+	}
+	echo "</ul>";
+
+	?>
+
+	
 
 
-		<?php
+
+
+
+		<!-- <?php
 		//https://stackoverflow.com/questions/11903289/pull-all-images-from-a-specified-directory-and-then-display-them
 		//the code for creating a simple gallery is inspired by the link above
+
+		  $stmt = $db->prepare($query);
+		  $stmt->bind_result($drinkID, $name, $ingredientID, $term, $picture);
+		  $stmt->execute();
 
 		$files = glob("uploadedfiles/*.*");
 
 		for ($i=0; $i<count($files); $i++) {
 			$image = $files[$i];
-			echo '<img src="'.$image .'" alt="Random image" class="imagebox" />'."<br /><br />";
+			// echo "<td class='listStyle'><a href='drinkBase.php'>$name</a></td>";
+			echo '<img class="specificimage" src="'.$image .'" alt="Random image" class="imagebox" />'."<br /><br />";
 		}
-		?>	
+		?>	 -->
+
+
+
+
+
+
 
 	</div>
 
