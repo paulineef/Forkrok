@@ -148,6 +148,26 @@ label {
 .listStyle a:hover {
 	color: #d34e24;
 }
+
+#listDrink {
+		list-style-type: none;
+		overflow: hidden;
+		max-width: 100%;
+		padding: 0px;
+
+	}
+
+	.specificimage {
+		width: 30%;
+		float: left;
+		display: inline;
+
+	}
+
+	.specificimage:hover {
+	width: 29%;
+	}
+
 @media (min-width: 768px) and (max-width: 927px){
 	.content {
 		padding: 100px;
@@ -233,23 +253,6 @@ form label {
 		padding: 4px;
 		
 }
-
-#listDrink {
-		list-style-type: none;
-		overflow: hidden;
-		max-width: 100%;
-
-	}
-
-	.specificimage {
-		width: 30%;
-		float: left;
-		display: inline;
-
-	}
-
-	.specificimage:hover {
-	}
 
 @media (min-width: 928px) {
 	#gameTable {
