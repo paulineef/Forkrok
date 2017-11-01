@@ -1,8 +1,8 @@
 <?php include ("sidebar.php") ?>
-
+<body class="logBox">
 <div class="content">
 	<div class="placement">
-		<h2>Login<i class="fa fa-unlock-alt" aria-hidden="true"></h2>
+		<h2>Login<i class="fa fa-lock" aria-hidden="true"></i></h2>
 	</div>
 	<?php 
 		@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
@@ -54,36 +54,63 @@ if (isset($_POST['username'], $_POST['password'])) {
            <td><input type="text" placeholder="Username" name="username"></td>
             <td><input type="password" placeholder="Password" name="password"></td>
             
-            <input id="submit" type="submit" value="Go">
+            <input id="submit" type="submit" value="Login">
             </tr>
+             <a id="new" href="newUser.php">Create new user</a>
         </form>
-        <a href="newUser.php">Add new user</a>
+       
 </div>
        
-
+	</body>
 <?php include ("footer.php") ?>
 <style>
 	form {
 		position: absolute;
 		margin-top: 24px;
-		max-width: 450px;
-		background: #fd896d;
-		height: 100px;
 		text-align: center;
+		padding: 30px 12px 12px 12px;
+		background: white;
+		height: 200px;
+		max-width: 300px;
+	
 	}	
 	form input {
 		width: 180px;
-		margin: 0 10px;
 		border: none;
-		margin-top: 32px;
+		margin: 16px 0px 14px 0;
 		padding: 6px;
+		border-bottom: 2px solid #d34e24;
+		box-sizing: border-box;
 	}
 	#submit {
 		margin: 0 auto;
-		text-align: left;
 		width: 50px;
-		padding: 3px;
-		float: left;
-		margin-left: 10px;
+		padding: 6px 5px;
+		background: #fd896d;
+		width: 180px;
+		display: block;
+	}
+	#submit:hover {
+		background: #d34e24;
+		color: white;
+	}
+	#new {
+		text-decoration: none;
+		color: black;
+		font-family: 'lato';
+		padding: 6px 0px;
+		display: block;
+		font-size: 11px;
+		float: right;
+		margin-top: 16px;
+		color: #666666;
+	}
+	#new:hover {
+		color: black;
+	}
+	.logBox {
+		height: 100%;
+		width: 100%;
+		background: #dddddd;
 	}
 </style>

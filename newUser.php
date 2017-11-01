@@ -1,6 +1,9 @@
 <?php include ("sidebar.php") ?>
-
+<body class="logBox">
 <div class="content">
+<div class="placement">
+		<h2>Add new user<i class="fa fa-plus" aria-hidden="true"></i></h2>
+	</div>
 	<?php
 //PUT THIS HEADER ON TOP OF EACH UNIQUE PAGE
 session_start();
@@ -18,9 +21,9 @@ if (isset($_POST['newUsername'])) {
 	$copyPassword = trim($_POST['copyPassword']);
 
     if (!$newUsername || !$newPassword) {
-        printf("You must specify both a username and an password");
-        printf("<br><a href=index.php>Return to home page </a>");
-        exit();
+        echo("<h3>You must specify both username and password</h3>");
+        echo("<br><a id='hej' href=newUser.php>Go back</a>");
+		exit();
     }
 
     $newUsername = addslashes($newUsername);
@@ -36,7 +39,7 @@ if (isset($_POST['newUsername'])) {
         exit();
     }
 	//make sure the password fields are matching, if NOT, do not add user
-	if ($newPassword == $copyPassword ){
+	if ($newPassword == $copyPassword && $newPassword != "" ){
 		// Prepare an insert statement and execute it
     $stmt = $db->prepare("insert into users(userID, username, password) values ('', ?, ?)");
     $stmt->bind_param('ss', $newUsername, $newPassword);
@@ -49,42 +52,47 @@ if (isset($_POST['newUsername'])) {
 	}else {
 		echo "Password doesn't match";
 	}
- 
 }
 
 // Not a postback, so present the book entry form
 ?>
-<h3>Add a new user</h3>
 <form action="" method="POST">
-    <table bgcolor="#fd896d" cellpadding="6">
+    <table id="newTable" bgcolor="#fd896d" cellpadding="6">
         <tbody id="tbody">
             <tr>
-                <td>Username:</td>
-                <td><INPUT type="text" name="newUsername"></td>
+                <td><INPUT type="text" placeholder="Username" name="newUsername"></td>
             </tr>
             <tr>
-                <td>Password:</td>
-                <td><INPUT type="password" name="newPassword"></td>
+                <td><INPUT type="password" placeholder="Password" name="newPassword"></td>
             </tr>
             <tr>
-                <td>Repeat password:</td>
-                <td><INPUT type="password" name="copyPassword"></td>
+                <td><INPUT type="password" placeholder="Repeat password" name="copyPassword"></td>
             </tr>
-            <tr>
+          <!--  <tr>
             	<td>I'm not a robot</td>
 				<td><input id="checkBox" type="checkbox"></td>
-			</tr>
+			</tr>-->
             <tr>
-                <td></td>
                 <td><INPUT id="submit" type="submit" name="submit" value="Add User"></td>
             </tr>
         </tbody>
     </table>
 </form>
 </div>
+</body>
 <?php include("footer.php"); ?>
 
 <style>
+	#newTable {
+		padding: 30px 12px 12px 12px;
+		height: 200px;
+		width: 324px;
+		text-align: center;
+	}
+	#tbody input {
+		padding: 3px;
+		margin: 16px 0px 14px 0;
+	}
 	#ulwrapper {
 		margin: 0;
 	}
@@ -94,16 +102,44 @@ if (isset($_POST['newUsername'])) {
 	}
 	td {
 		font-family: 'lato';
+		padding: 0;
+	}
+	form table {
+		background: white;
 	}
 	#tbody input{
 		border: none;
+		border-bottom: 2px solid #d34e24;
+		width: 180px;
+		box-sizing: border-box;
 	}
 	#submit {
-		padding: 6px 5px;
-		background: white;
+		padding: 6px 5px !important;
+		background: #fd896d;
+		border: none !important;
+		width: 100%;
 	}
 	#submit:hover{
-		background: #dd00dd;
+		background: #d34e24;
 		color: white;
+	}
+	.logBox {
+		height: 100%;
+		width: 100%;
+		background: #dddddd;
+		text-decoration: none;
+		color: black;
+		font-family: 'lato';
+		overflow: hidden;
+	}
+	.logBox a {
+		text-decoration: none;
+		font-family: 'lato';
+	}
+	h3 {
+		padding-bottom: 10px;
+	}
+	#hej a {
+		color: black;
 	}
 </style>
