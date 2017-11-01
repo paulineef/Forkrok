@@ -51,7 +51,7 @@
 
 	
 	if ($searchdrink && !$searchingredients) {
-		$query = $query . " where name like '%" . $searchdrink . "%'";
+		$query = $query . " where name like '%" . $searchdrink . "%' GROUP BY drinks.name";
 	}
 	if (!$searchdrink && $searchingredients) {
         $query = $query . " where term like '%" . $searchingredients . "%'";
@@ -88,9 +88,8 @@
    <?php
     echo '<ul id="listDrink">';
     while ($stmt->fetch()) {
-
 		
-	echo "<li ><img class='specificimage' src=\"uploadedfiles/" . $picture . "\"> </li></li>";
+	echo "<li ><a href='drinkBase.php?drinkID=$drinkID'><img class='specificimage' src=\"uploadedfiles/" . $picture . "\"> </a></li></li>";
 	}
 	echo "</ul>";
 
