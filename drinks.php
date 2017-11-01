@@ -43,7 +43,7 @@
                 exit();
             }*/
 
-	$query = "SELECT drinks.drinkID, drinks.name, ingredients.ingredientID, ingredients.term FROM drinks
+	$query = "SELECT drinks.drinkID, drinks.name, ingredients.ingredientID, ingredients.term, drinks.picture FROM drinks
 	JOIN drinks_ingredients ON drinks.drinkID = drinks_ingredients.drinkID
 	JOIN ingredients ON ingredients.ingredientID = drinks_ingredients.ingredientID";
 
@@ -71,17 +71,17 @@
  //        echo "</tr>";
  //    }
 ?>
+
 <!-- Gallery -->
 	<div id="gallerycontent">
 		<?php 
-		$query = "SELECT drinkID, name, picture FROM drinks";
 	
 	
 	# Here's the query using bound result parameters
     // echo "we are now using bound result parameters <br/>";
     $stmt = $db->prepare($query);
     //takes the result of the search and create variables from it
-    $stmt->bind_result($drinkID, $name, $picture);
+    $stmt->bind_result($drinkID, $name, $ingredientID, $term, $picture);
     $stmt->execute();
     ?>
 
