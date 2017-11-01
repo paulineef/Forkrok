@@ -1,31 +1,27 @@
 <?php include ('sidebar.php') ?>
-
 <?php 
 
 	@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
 
-	$query = "SELECT drinks.drinkID, drinks.name, ingredients.ingredientID, ingredients.term, drinks.picture FROM drinks
-	JOIN drinks_ingredients ON drinks.drinkID = drinks_ingredients.drinkID
-	JOIN ingredients ON ingredients.ingredientID = drinks_ingredients.ingredientID";
+	$query = "SELECT drinks.drinkID, drinks.name, drinks.picture FROM drinks";
 
  	$stmt = $db->prepare($query);
-    $stmt->bind_result($drinkID, $name, $ingredientID, $term, $picture);
+    $stmt->bind_result($drinkid, $name, $picture);
     $stmt->execute();
-
 ?>
-
 <body>
 	
 	<div class="content">		
 		<div class="placement">	
-			
-			
-			<table class="drink">
-				
+			<table class="drink">		
 				<tbody>
 				<tr>
 					<th>
-						<h2> <?php echo $drinkID=1, $name; ?> </h2>
+						<h2> <?php 	while ($stmt->fetch()) {
+			if("drinkID" == $drinkid) {
+         echo "$drinkid";
+			}
+     }?> </h2>
 					</th>
 				<tr/>
 				<tr>
