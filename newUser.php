@@ -84,10 +84,13 @@ if (isset($_POST['newUsername'])) {
 
 <style>
 	#newTable {
-		padding: 30px 12px 12px 12px;
+		padding: 30px 12px 30px 12px;
 		height: 200px;
 		width: 324px;
 		text-align: center;
+		border: 1px solid #dddddd;
+		margin-top: 24px;
+		position: absolute;
 	}
 	#tbody input {
 		padding: 3px;
@@ -118,6 +121,7 @@ if (isset($_POST['newUsername'])) {
 		background: #fd896d;
 		border: none !important;
 		width: 100%;
+		margin-top: 0 !important;
 	}
 	#submit:hover{
 		background: #d34e24;
@@ -126,7 +130,7 @@ if (isset($_POST['newUsername'])) {
 	.logBox {
 		height: 100%;
 		width: 100%;
-		background: #dddddd;
+		background: white;
 		text-decoration: none;
 		color: black;
 		font-family: 'lato';

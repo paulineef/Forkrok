@@ -72,6 +72,7 @@ if (isset($_POST['username'], $_POST['password'])) {
 		background: white;
 		height: 200px;
 		max-width: 300px;
+		border: 1px solid #dddddd;
 	
 	}	
 	form input {
@@ -89,6 +90,7 @@ if (isset($_POST['username'], $_POST['password'])) {
 		background: #fd896d;
 		width: 180px;
 		display: block;
+		border: none !important;
 	}
 	#submit:hover {
 		background: #d34e24;
@@ -111,6 +113,6 @@ if (isset($_POST['username'], $_POST['password'])) {
 	.logBox {
 		height: 100%;
 		width: 100%;
-		background: #dddddd;
+		background: white;
 	}
 </style>
