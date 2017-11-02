@@ -1,10 +1,14 @@
-<?php include('config.php'); ?> 
+<?php
+	include('config.php');
+?> 
 <?php
 	session_start();
 	if (isset($_SESSION['username'])) {
 		header("location:index.php");
 	}
-?><body class="logBox">
+?>
+
+<body class="logBox">
 <div class="content">
 	<div class="placement">
 		<h2>Login<i class="fa fa-lock" aria-hidden="true"></i></h2>
@@ -42,7 +46,23 @@ if (isset($_POST['username'], $_POST['password'])) {
     $totalcount = $stmt->num_rows();
 }
 ?>
- 
+ <?php         
+        if (isset($totalcount)) {
+            if ($totalcount == 0) {
+                echo '<h2>You got it wrong. Can\'t break in here!</h2>';
+				//IF the password and username is right
+            } else {
+                echo "<h2>Welcome, $uname!</h2>";
+				echo('<a href="favourites.php">Click here to see your favourite drinks</a>');
+				include('favouritesLogin.php');
+				include('footer.php');
+				exit();
+				
+				
+				
+            }
+        }
+        ?>
         <form background="#dd00dd" method="POST" action="">
            <tr>
            <td><input type="text" placeholder="Username" name="username"></td>
@@ -56,34 +76,8 @@ if (isset($_POST['username'], $_POST['password'])) {
        
 	</body>
 <?php include ("footer.php") ?>
-<?php         
-        if (isset($totalcount)) {
-            if ($totalcount == 0) {
-                echo '<h3 id="wrong">Either wrong password or username</h3>';
-				//IF the password and username is right
-            } else {
-                echo "<h2>Welcome, $uname!</h2>";
-				echo('<a href="back/favourites.php">Click here to see your favourite drinks</a>');
-				?>
-				<script type="text/javascript" charset="utf-8">
-					document.clear();
-				</script>
-				<?php
-				header("location:login/index.php");
-				exit();			
-				
-            }
-        }
-        ?>
-
 
 <style>
-	#wrong {
-		display: inline;
-		
-		left: 30px;
-		top: 135px;
-	}
 	form {
 		position: absolute;
 		margin-top: 24px;
@@ -134,13 +128,5 @@ if (isset($_POST['username'], $_POST['password'])) {
 		height: 100%;
 		width: 100%;
 		background: white;
-	}
-	@media (min-width: 928px){
-		#wrong {
-		display: inline;
-		position: absolute;
-		left: 530px;
-		top: 135px;
-	}
 	}
 </style>
