@@ -2,7 +2,7 @@
 <html>
 	<head>
 		
-		<link rel="stylesheet" type="text/css" href="forkrok.css">
+		<link rel="stylesheet" type="text/css" href="../forkrok.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
 		<script src="https://use.fontawesome.com/6f2a9fca0c.js"></script>
@@ -29,13 +29,11 @@
 	  		<span></span>
 		</div>
 		
-		
-		
 		<ul id="header" class="ulli">
 
 			<div class="imgCont">
-				<a href="index.php"><img id="logoSide" src="img/logo_icon.svg"/><a/>
-				<a href="index.php"><img id="forkrok" src="img/logo.svg"/><a/>
+				<a href="index.php"><img id="logoSide" src="../img/logo_icon.svg"/><a/>
+				<a href="index.php"><img id="forkrok" src="../img/logo.svg"/><a/>
 			</div>
 
 				<li id="first">
@@ -53,14 +51,12 @@
 				<li>
 					<a href="bars.php"><i class="fa fa-beer" aria-hidden="true"></i>Bars &amp; Clubs</a>
 				</li>
-
 				<li>
 					<a href="favourites.php"><i class="fa fa-star" aria-hidden="true"></i>Favourites</a>
 				</li>
-				<!--<li>
-					<a id="login" href="login.php"><i class="fa fa-unlock-alt" aria-hidden="true"></i>Login</a> 
-				</li>-->
-
+				<li>
+					<a id="login" href="../favourites.php"><i class="fa fa-unlock-alt" aria-hidden="true"></i>Log Out</a>
+				</li>
 		</ul>
 			
 	</header>

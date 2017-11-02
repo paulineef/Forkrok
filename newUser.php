@@ -1,5 +1,4 @@
-<?php include ("sidebar.php") ?>
-<body class="logBox">
+<?php include ("sidebar.php") ?><body class="logBox">
 <div class="content">
 <div class="placement">
 		<h2>Add new user<i class="fa fa-plus" aria-hidden="true"></i></h2>
@@ -54,7 +53,6 @@ if (isset($_POST['newUsername'])) {
 	}
 }
 
-// Not a postback, so present the book entry form
 ?>
 <form action="" method="POST">
     <table id="newTable" bgcolor="#fd896d" cellpadding="6">
@@ -68,10 +66,6 @@ if (isset($_POST['newUsername'])) {
             <tr>
                 <td><INPUT type="password" placeholder="Repeat password" name="copyPassword"></td>
             </tr>
-          <!--  <tr>
-            	<td>I'm not a robot</td>
-				<td><input id="checkBox" type="checkbox"></td>
-			</tr>-->
             <tr>
                 <td><INPUT id="submit" type="submit" name="submit" value="Add User"></td>
             </tr>
