@@ -23,7 +23,7 @@
  -->
  	<?php
    		echo '<ul id="drinkStuff">';
-    		echo "<h2>" . $_GET["drinkID"] . "</h2>";
+   			echo "<h2>drink id  " . $_GET["drinkID"] . "</h2>";
     		echo "name";
 
 
