@@ -46,12 +46,11 @@
 	$query = "SELECT drinks.drinkID, drinks.name, ingredients.ingredientID, ingredients.term, drinks.picture FROM drinks
 	JOIN drinks_ingredients ON drinks.drinkID = drinks_ingredients.drinkID 
 	JOIN ingredients ON ingredients.ingredientID = drinks_ingredients.ingredientID";
-
 	//$query = "SELECT drinkID, name FROM drinks";
 
 	
 	if ($searchdrink && !$searchingredients) {
-		$query = $query . " where name like '%" . $searchdrink . "%' GROUP BY drinks.name";
+		$query = $query . " where name like '%" . $searchdrink . "%' GROUP BY drinks.name ";
 	}
 	if (!$searchdrink && $searchingredients) {
         $query = $query . " where term like '%" . $searchingredients . "%'";
@@ -89,7 +88,7 @@
     echo '<ul id="listDrink">';
     while ($stmt->fetch()) {
 		
-	echo "<li ><a href='drinkBase.php?drinkID=$drinkID'><img class='specificimage' src=\"uploadedfiles/" . $picture . "\"> </a></li></li>";
+	echo "<li><a href='drinkBase.php?drinkID=$drinkID'><img class='specificimage' src=\"uploadedfiles/" . $picture . "\"> </a></li>";
 	}
 	echo "</ul>";
 
