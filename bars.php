@@ -48,7 +48,6 @@ if ($db->connect_error) {
     echo '<ul id="listBar">';
 	$test = 1;
     while ($stmt->fetch()) {
-		echo $header . " ";
 	echo "<li id='$test' class='pic'><img src=\"img/" .
 		$picture . "\"> <h3 class='header'> $header </h3></li>";
 		$test ++;
