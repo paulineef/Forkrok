@@ -55,7 +55,7 @@
 					<a href="favourites.php"><i class="fa fa-star" aria-hidden="true"></i>Favourites</a>
 				</li>
 				<li>
-					<a id="login" href="../favourites.php"><i class="fa fa-unlock-alt" aria-hidden="true"></i>Log Out</a>
+					<a id="login" href="logout.php"><i class="fa fa-unlock-alt" aria-hidden="true"></i>Log Out</a>
 				</li>
 		</ul>
 			
