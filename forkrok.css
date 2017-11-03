@@ -165,7 +165,7 @@ label {
 	}
 
 	.specificimage:hover {
-	width: 29%;
+		opacity: 0.5;
 	}
 
 @media (min-width: 768px) and (max-width: 927px){
