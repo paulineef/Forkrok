@@ -11,9 +11,9 @@
 
 	<!-- Searchfield -->
 	<form action ="drinks.php" method="POST" id="drinksearch">
-		<input type="text" name="searchdrink" placeholder="Search by drink" class="searchField">
-		<input type="text" name="searchingredients" placeholder="or by ingredients" class="searchField">
-		<input type="submit" value="Submit" class="submit">
+		<input type="text" name="searchdrink" placeholder="Search by drink" class="searchFieldDrink">
+		<input type="text" name="searchingredients" placeholder="or by ingredients" class="searchFieldDrink" id="right">
+		<input type="submit" value="Submit" class="submit" id="drinks">
 	</form>
 
 	<?php

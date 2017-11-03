@@ -135,6 +135,7 @@ h2 i {
 	border: 1px solid #ddd;
 }
 
+
 label {
 	font-size: 12pt; 
 }
@@ -197,6 +198,14 @@ label {
 		float: left;
 		margin: 0px 0px 0px 500px;
 		max-width: 600px; 
+	}
+
+	.searchCat {
+		width: 45%;
+	}
+
+	.submit {
+		width: 45%;
 	}
 }
 
@@ -270,6 +279,25 @@ form label {
 
 /* ------- DRINKS -------- */
 
+.searchFieldDrink {
+	width: 93%;
+	margin-bottom: 10px;
+	padding: 6px 10px;
+	font-size: 12pt;
+	font-family: lato, sans-serif; 
+	text-align: left;
+	font-weight: 300;
+	border: 1px solid #ddd;
+}
+
+#right {
+	float: left; 
+}
+
+#drinks {
+	width: 100%;
+}
+
 #listDrink {
 	list-style-type: none;
 	overflow: hidden;
@@ -289,13 +317,21 @@ form label {
 	opacity: 0.5;
 }
 
+#gallerycontent {
+	float: left; 
+	width: 100%;
+}
+
 @media(min-width: 928px) {
+
+	.searchFieldDrink {
+		width: 44%;
+	}
 
 	#gallerycontent {
 	   /* column-count: 3;
 	    column-gap: 0;
 	    line-height: 0;*/
-	    width: 100%;
 	}
 
 	h3 {
@@ -307,7 +343,24 @@ form label {
 	.submit {
 		display: inline-block;
 	}
+
+	#right {
+		float: right; 
+	}
 }
+
+@media (min-width: 768px) and (max-width: 927px){
+
+	.searchFieldDrink {
+		width: 44%;
+	}
+
+	#right {
+		float: right; 
+	}
+
+	}
+
 
 /* ------- SIDEBAR ------- */
 
