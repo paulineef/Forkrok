@@ -91,7 +91,6 @@
 	echo "<li><a href='drinkBase.php?drinkID=$drinkID'><img class='specificimage' src=\"uploadedfiles/" . $picture . "\"> </a></li>";
 	}
 	echo "</ul>";
-
 	?>
 
 	

@@ -13,7 +13,6 @@
 		<p>
 			Small and nice place for both a chill night out and more energized with mixed hip-hop and reggae music. Entrance for 60:- and you get the first glass for free.<br><br>
 		</p>
-		<?php echo($test) ?>
 		<div class="social">
 			<a href="https://www.facebook.com/bongojkpg/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
 			<a href="http://bongobar.se/jonkoping/" target="_blank"><i class="fa fa-internet-explorer" aria-hidden="true"></i></a>
