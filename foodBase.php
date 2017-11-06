@@ -3,7 +3,6 @@
 	<script src="https://use.fontawesome.com/6f2a9fca0c.js"></script>
 </head>
 	<?php include ("sidebar.php") ?>
-	
 	<?php 
 		$foodID = trim($_GET["foodID"]);
 	
@@ -16,6 +15,9 @@
 		//takes the result of the search and create variables from it
 		$stmt->bind_result($foodID, $header, $categoryID, $term, $maps, $facebook);
 		$stmt->execute();
+
+		while ($stmt->fetch()) {
+	 }
 	?> 
 	<div id="indexBongo">
 		<h2 class="place"> <?php echo $categoryID ?></h2>
