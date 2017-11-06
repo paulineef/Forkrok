@@ -16,6 +16,7 @@
 		<input type="submit" value="Submit" class="submit" id="drinks">
 	</form>
 
+		
 	<?php
 	$searchdrink = "";
 	$searchingredients = "";
@@ -86,7 +87,7 @@
    <?php
     echo '<ul id="listDrink">';
     while ($stmt->fetch()) {
-		echo "<li><a href='drinkBase.php?drinkID=$drinkID'><img class='specificimage' src=\"uploadedfiles/" . $picture . "\"> </a></li>";
+		echo "<li><a href='drinkBase.php?drinkID=$drinkID'><img class='specificimage' src=\"uploadedfiles/" . $picture . "\" GROUP BY drinks.picture> </a></li>";
 	}
 		echo "</ul>";
 	?>

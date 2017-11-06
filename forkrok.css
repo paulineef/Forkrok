@@ -5,6 +5,15 @@ body {
 	cursor: default;
 }
 
+#namestyle {
+	color: #000;
+	position: absolute;
+}
+
+#linkclass {
+	position: relative;
+}
+
 h1,h2,h3,h4,h5,h6 {
 	font-family: lato, sans-serif; 
 	font-weight: 600;
@@ -352,6 +361,7 @@ form label {
 .specificimage {
 	width: 30%;
 	float: left;
+
 }
 
 .specificimage:hover {

@@ -6,7 +6,6 @@
 <body>
 
 <div class="content">
-
 	<div class="placement">
 
 		<h2>Games<i class="fa fa-trophy" aria-hidden="true"></i></h2>
@@ -24,7 +23,7 @@
 			</div>
 			<input class="submit" type="submit" name="search" value="Search">
 		</form>
-
+		
 	
 		<?php
 			$searchgame = "";
@@ -76,7 +75,7 @@
    			echo '<tr><b><td class="headList">Name of game</td> <td class="headList" id="cat">Category</td> </b> </tr>';
 			while ($stmt->fetch()) {
 				echo "<tr>";
-				echo " <td class='listStyle'><a href='gameBase.php'> $name</a></td> <td class='category'> $term </td>";
+				echo " <td class='listStyle'><a href='gameBase.php?gameID=$gameID'> $name</a></td> <td class='category'> $term </td>";
 				echo "</tr>";
 			}
 		?>
