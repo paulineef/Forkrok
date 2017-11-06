@@ -37,7 +37,7 @@
 							}
 						?>
 						</ul>
-						<p class="pdrinkbase">
+						<p id="pdrinkbase">
 							Lorem ipsum dolor sit amet, sapientem patrioque voluptatibus ne ius, sea cu nobis praesent. 
 						</p>
 						<?php 
