@@ -32,7 +32,7 @@
 					<td>
 						<h5> Ingredients</h5>
 						<ul>
-						<?php foreach($ingredients as $var) {
+						<?php foreach($ingredients as $var) { //same as [i];
 								echo "<li>" . $var . "</li>";
 							}
 						?>
@@ -40,6 +40,9 @@
 						<p>
 							Lorem ipsum dolor sit amet, sapientem patrioque voluptatibus ne ius, sea cu nobis praesent. 
 						</p>
+						<?php 
+						echo "<img class='Showimg' src=\"uploadedfiles/" . $picture . "\">";
+						?>
 					</td>
 					<td class="t-left">
 						<img id="drink" src="uploadedfiles/Klaras.png">
