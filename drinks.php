@@ -69,7 +69,7 @@
    <?php
     echo '<ul id="listDrink">';
     while ($stmt->fetch()) {
-		echo "<li><a href='drinkBase.php?drinkID=$drinkID'><img class='specificimage' src=\"uploadedfiles/" . $picture . "\" GROUP BY drinks.picture> </a></li>";
+		echo "<li><a href='drinkBase.php?drinkID=$drinkID' class='linkclass' ><img class='specificimage' src=\"uploadedfiles/" . $picture ."\"> <h3 id='namestyle'>$name</h3> </a></li>";
 	}
 		echo "</ul>";
 	?>
