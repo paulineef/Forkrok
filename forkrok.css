@@ -284,22 +284,28 @@ form label {
 
 	/* --- DRINK BASE --- */
 
-	#game #instructions {
+	.game #instructions {
 		padding: 0px;
 		max-width: 200px; 
 	}
 
-	#game h6 {
+	.game h6 {
 		margin: 0px;
 	}
 
-	#game td {
+	.game td {
+		vertical-align: top; 
 		max-width: 20px; 
 	}
 
-	#game td img {
+	.game td img {
 		max-width: 100%; 
 	}
+
+	.game tbody {
+		max-width: 100%; 
+	}
+
 
 
 
@@ -335,8 +341,6 @@ form label {
 .specificimage {
 	width: 30%;
 	float: left;
-	display: inline;
-
 }
 
 .specificimage:hover {
@@ -348,21 +352,6 @@ form label {
 	width: 100%;
 }
 
-#tdparent{
-	overflow: hidden;
-}
-
-#containerdrinkbase {
-	float: left;
-	width: 60%;
-}
-
-#ShowImg {
-	float: right;
-	width: 40%;
-
-
-}
 
 @media(min-width: 928px) {
 
@@ -407,6 +396,7 @@ form label {
 
 	#drink{
 		max-width: 120px;
+		margin-right: 30px; 
 	}
 
 	.drink table {
@@ -433,6 +423,10 @@ form label {
 		padding-left: 30px; 
 	}
 
+	.t-left img {
+		width: 150%; 
+	}
+
 	.drink td h5 {
 		margin: 0;
 		font-size: 15pt; 
@@ -450,6 +444,19 @@ form label {
 		font-size: 12pt; 
 	}
 
+	@media (min-width: 768px) and (max-width: 927px) {
+
+		.drink td {
+			max-width: 400px; 
+		}
+
+		.t-left img {
+			width: 100%;
+		}
+
+	}
+
+
 	@media (min-width: 928px){
 		.drink h5 {
 			font-size: 14px; 
@@ -460,6 +467,10 @@ form label {
 
 		#drink {
 			max-width: 100px; 
+		}
+
+		.t-left img {
+			width: 300%;
 		}
 	}
 

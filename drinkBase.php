@@ -22,15 +22,16 @@
 	<div class="content">		
 		<div class="placement">	
 			<table class="drink">		
-				<tbody>
-				<tr>
+				<thead>
+				<tr colspan="2">
 					<th>
 				<?php echo "<h2> $name </h2>";?>
  					</th>
 				<tr/>
+				</thead>
+				<tbody>
 				<tr>
 					<td id="tdparent">
-					<div id=containerdrinkbase>
 						<h5> Ingredients</h5>
 						<ul>
 						<?php foreach($ingredients as $var) { //same as [i];
@@ -41,11 +42,9 @@
 						<p>
 							Lorem ipsum dolor sit amet, sapientem patrioque voluptatibus ne ius, sea cu nobis praesent. 
 						</p>
-					</div>
-						<?php echo "<img id='ShowImg' src=\"uploadedfiles/" . $picture . "\">"; ?>
 					</td>
 					<td class="t-left">
-						<img id="drink" src="uploadedfiles/Klaras.png">
+						<?php echo "<img src=\"uploadedfiles/" . $picture . "\">"; ?>
 					</td>
 				</tr>
 			</tbody>
