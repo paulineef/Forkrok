@@ -45,7 +45,7 @@
 			</tbody>
 			</table>
 
-			<a href="drinks.php"><span><i class="fa fa-arrow-left" aria-hidden="true"></i></span></a>
+			<span><a href="drinks.php"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span>
 		</div>
 	</div>
 
