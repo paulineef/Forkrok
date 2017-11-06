@@ -5,11 +5,17 @@
 
 	$query = "SELECT drinks.drinkID, drinks.name, ingredients.ingredientID, ingredients.term, drinks.picture FROM drinks
 	JOIN drinks_ingredients ON drinks.drinkID = drinks_ingredients.drinkID 
-	JOIN ingredients ON ingredients.ingredientID = drinks_ingredients.ingredientID";
+	JOIN ingredients ON ingredients.ingredientID = drinks_ingredients.ingredientID
+	WHERE drinkID = $drinkID";
 
  	$stmt = $db->prepare($query);
     $stmt->bind_result($drinkID, $name, $ingredientID, $term, $picture);
     $stmt->execute();
+	$ingredients = array();
+
+	while($stmt->fetch()) {
+		array_push($ingredients, $term);
+	}
 ?>
 <body>
 	
@@ -19,28 +25,29 @@
 				<tbody>
 				<tr>
 					<th>
-<!-- 						<h2><?php echo $name;?><h2>
+<!-- 				<h2><?php echo "<h2> $name </h2>";?><h2>
  -->
  	<?php
-   		echo '<ul id="drinkStuff">';
-   			echo "<h2>" . $_GET["drinkID"] . "</h2>";
-			echo "<h2>" . $_GET["name"] . "</h2>";
-
-
-				// echo "<li><h2 class='stuff'>$drinkID</li>";
-	
-		// echo "<li><h2 class='stuff'> $name </li>";
-		// }
-		
-		// echo "</ul>";
-	?>
-					</th>
+// 		echo '<ul id="drinkStuff">';
+//  			echo "<h2>" . $_GET["drinkID"] . "</h2>";
+//			echo "<h2>" . $_GET["name"] . "</h2>";
+//			echo "<li><h2 class='stuff'>$drinkID</li>";
+//	
+////		echo "<li><h2 class='stuff'> $name </li>";
+////		 }
+////		
+////		 echo "</ul>";
+//	?>
+ 			</th>
 				<tr/>
 				<tr>
 					<td>
 						<h5> Ingredients</h5>
 						<ul>
-							<li>Vodka</li>
+						<?php foreach($ingredients as $var) {
+								echo "<li>" . $var . "</li>";
+							}
+						?>
 							<li>Lime juice</li>
 							<li>Lemon juice</li>
 							<li>Lemon slices</li>

@@ -92,13 +92,7 @@
 	}
 	echo "</ul>";
 	?>
-
 	
-
-
-
-
-
 		<!-- <?php
 		//https://stackoverflow.com/questions/11903289/pull-all-images-from-a-specified-directory-and-then-display-them
 		//the code for creating a simple gallery is inspired by the link above
