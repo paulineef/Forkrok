@@ -61,7 +61,7 @@
    			echo '<tr><b><td class="headList">Restaurant</td> <td class="headList" id="cat">Category</td> </b> </tr>';
 			while ($stmt->fetch()) {
 				echo "<tr>";
-				echo " <td class='listStyle'><a href='foodBase.php'> $header</a></td> <td class='category'> $term </td>";
+				echo " <td class='listStyle'><a href='foodBase.php?foodID=$foodID'> $header</a></td> <td class='category'> $term </td>";
 				echo "</tr>";
 			}
 		?>

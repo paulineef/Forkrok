@@ -7,19 +7,19 @@
 		<div class="placement">
 			<table class="game">
 				<thead>
-					<tr colspan="2">
-						<th><h2>Name of the Game</h2></th>
+					<tr>
+						<th colspan="2"><h2>Name of the Game</h2></th>
 					</tr>
 				<thead>
 				<tbody>
 				<tr>
-					<td class="t-right"><i>What you need:</i>
+					<td class="drink" id="need"><i>What you need:</i>
 						<ul>
 							<li>A deck of cards</li>
 							<li>A mug</li>
 						</ul>
 					</td>
-					<td id="instructions">
+					<td id="inst">
 						<h6>Instructions</h6>
 						<p>
 							Sit around a table with your friends. Put a large cup in the middle of the table (a red cup works fine too). Tell your guys and gals to stop snapchatting or texting their exes, because this game only works when people are paying attention. Grab a deck of cards. Each card has an action everyone must follow during the game. Spread the cards around the cup, making a circle shape…still with us? Great, keep reading. The game comes to an end (sadly) when the fourth King is pulled from the deck of cards.
