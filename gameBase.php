@@ -5,11 +5,13 @@
 <body>
 	<div class="content">
 		<div class="placement">
-			<table class="drink" id="game">
+			<table class="game">
+				<thead>
+					<tr colspan="2">
+						<th><h2>Name of the Game</h2></th>
+					</tr>
+				<thead>
 				<tbody>
-				<tr class="th-width">
-					<th><h2>Name of the Game</h2></th>
-				</tr>
 				<tr>
 					<td class="t-right"><i>What you need:</i>
 						<ul>
@@ -27,12 +29,14 @@
 						</p>
 					</td>
 				</tr>
+				<tbody>
+				<tfoot>
 				<tr>
-					<th class="th-width">
+					<td colspan="2">
 						<img src="kings.jpg"/>
-					</th>
+					</td>
 				</tr>
-			</tbody>
+			</tfoot>
 			</table>
 		</div>
 	</div>

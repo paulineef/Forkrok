@@ -22,17 +22,19 @@
 	<div class="content">		
 		<div class="placement">	
 			<table class="drink">		
-				<tbody>
-				<tr>
+				<thead>
+				<tr colspan="2">
 					<th>
 				<?php echo "<h2> $name </h2>";?>
  					</th>
 				<tr/>
+				</thead>
+				<tbody>
 				<tr>
-					<td>
+					<td id="tdparent">
 						<h5> Ingredients</h5>
 						<ul>
-						<?php foreach($ingredients as $var) {
+						<?php foreach($ingredients as $var) { //same as [i];
 								echo "<li>" . $var . "</li>";
 							}
 						?>
@@ -40,7 +42,7 @@
 						<?php echo "<p> $description </p>";?>
 					</td>
 					<td class="t-left">
-						<img id="drink" src="uploadedfiles/Klaras.png">
+						<?php echo "<img src=\"uploadedfiles/" . $picture . "\">"; ?>
 					</td>
 				</tr>
 			</tbody>
