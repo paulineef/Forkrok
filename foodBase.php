@@ -16,9 +16,12 @@
 		//takes the result of the search and create variables from it
 		$stmt->bind_result($foodID, $header, $categoryID, $term, $maps, $facebook);
 		$stmt->execute();
+
+while ($stmt->fetch()) {
+		}
 	?> 
 	<div id="indexBongo">
-		<h2 class="place"> <?php echo $categoryID ?></h2>
+		<h2 class="place"> <?php echo $header ?></h2>
 		<div class="map">
 			<iframe frameborder="0" style="border:0" src=" <?php echo $maps ?>" allowfullscreen></iframe>
 		</div>
@@ -29,7 +32,7 @@
 			<a href="https://www.facebook.com/<?php echo $facebook?>" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
 		</div>
 		<div class="back">
-			<a href="bars.php"><i class="fa fa-times" aria-hidden="true"></i></a>
+			<a href="food.php"><i class="fa fa-times" aria-hidden="true"></i></a>
 		</div>
 	</div>
 	<?php include ("footer.php") ?>
