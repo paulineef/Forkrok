@@ -33,7 +33,7 @@
 				<tfoot>
 				<tr>
 					<td colspan="2">
-						<img src="kings.jpg"/>
+						<img src="kingscup.svg"/>
 					</td>
 				</tr>
 			</tfoot>
