@@ -9,12 +9,12 @@
 	
 		@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
 	
-		$query = "SELECT food.foodID, food.header, foodCat.categoryID, foodCat.term FROM food 
+		$query = "SELECT food.foodID, food.header, foodCat.categoryID, foodCat.term, food.maps, food.facebook FROM food 
 		JOIN foodCat ON food.categoryID = foodCat.categoryID WHERE food.foodID = $foodID";
 
 		$stmt = $db->prepare($query);
 		//takes the result of the search and create variables from it
-		$stmt->bind_result($foodID, $header, $categoryID, $term);
+		$stmt->bind_result($foodID, $header, $categoryID, $term, $maps, $facebook);
 		$stmt->execute();
 	?> 
 	<div id="indexBongo">
@@ -26,7 +26,7 @@
 			<?php echo $term ?><br><br>
 		</p>
 		<div class="social">
-			<a href="https://www.facebook.com/<?php echo $facebook?>/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+			<a href="https://www.facebook.com/<?php echo $facebook?>" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
 		</div>
 		<div class="back">
 			<a href="bars.php"><i class="fa fa-times" aria-hidden="true"></i></a>

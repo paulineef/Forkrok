@@ -28,7 +28,7 @@
 			<?php echo $description ?><br><br>
 		</p>
 		<div class="social">
-			<a href="https://www.facebook.com/<?php echo $facebook?>/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+			<a href="https://www.facebook.com/<?php echo $facebook?>" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
 		</div>
 		<div class="back">
 			<a href="bars.php"><i class="fa fa-times" aria-hidden="true"></i></a>

@@ -46,7 +46,6 @@
 	$query = "SELECT drinks.drinkID, drinks.name, ingredients.ingredientID, ingredients.term, drinks.picture FROM drinks
 	JOIN drinks_ingredients ON drinks.drinkID = drinks_ingredients.drinkID 
 	JOIN ingredients ON ingredients.ingredientID = drinks_ingredients.ingredientID";
-	//$query = "SELECT drinkID, name FROM drinks";
 
 	
 	if ($searchdrink && !$searchingredients) {
