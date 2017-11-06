@@ -50,7 +50,7 @@
     }
     if ($searchdrink && $searchingredients) { 
         $query = $query . " where name like '%" . $searchdrink . "%' and term like '%" . $searchingredients . "%'";
-    }
+    } //j
 ?>
 
 <!-- Gallery -->
