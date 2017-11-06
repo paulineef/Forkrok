@@ -18,6 +18,7 @@
 
 		while ($stmt->fetch()) {
 	 }
+
 	?> 
 	<div id="indexBongo">
 		<h2 class="place"> <?php echo $header ?></h2>
