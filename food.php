@@ -12,6 +12,7 @@
 		<h2>Food<i class="fa fa-trophy" aria-hidden="true"></i></h2>
 
 		<form action="food.php" method="POST">
+			<input class="searchField" type="text" name="searchgame" placeholder="ex. McDonalds"/>
 			<div class="searchCat">
 			Category :
 			<select name="searchcategory" class="dropDown">
