@@ -41,7 +41,7 @@
 							Lorem ipsum dolor sit amet, sapientem patrioque voluptatibus ne ius, sea cu nobis praesent. 
 						</p>
 						<?php 
-						echo "<img class='ShowImg' src=\"uploadedfiles/" . $picture . "\">";
+						echo "<img id='ShowImg' src=\"uploadedfiles/" . $picture . "\">";
 						?>
 					</td>
 					<td class="t-left">
