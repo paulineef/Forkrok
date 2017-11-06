@@ -284,18 +284,14 @@ form label {
 
 	/* --- DRINK BASE --- */
 
-	.game #instructions {
-		padding: 0px;
-		max-width: 200px; 
-	}
-
 	.game h6 {
 		margin: 0px;
+		font-weight: 300; 
 	}
 
 	.game td {
 		vertical-align: top; 
-		max-width: 20px; 
+		max-width: 500px; 
 	}
 
 	.game td img {
@@ -304,6 +300,21 @@ form label {
 
 	.game tbody {
 		max-width: 100%; 
+	}
+
+	.game th {
+		text-align: left; 
+	}
+
+	#need {
+		font-family: 'lato', sans-serif; 
+		font-weight: 300;
+		min-width: 120px;
+	}
+
+	#inst {
+		padding-left: 30px; 
+		box-sizing: border-box;
 	}
 
 
