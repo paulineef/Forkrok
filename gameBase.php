@@ -2,30 +2,40 @@
 <head>
 	<title>Förkrök</title>
 </head>
+<?php 
+	$gameID = trim($_GET["gameID"]);
+	
+	@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
+	
+	$query = "SELECT games.gameID, games.name, gameCat.categoryID, gameCat.term, games.need FROM games 
+	JOIN gameCat ON games.categoryID = gameCat.categoryID WHERE games.gameID = $gameID";
+
+	$stmt = $db->prepare($query);
+	//takes the result of the search and create variables from it
+	$stmt->bind_result($gameID, $name, $categoryID, $term, $need);
+	$stmt->execute();
+
+	while ($stmt->fetch()) {
+	}
+?> 
 <body>
 	<div class="content">
 		<div class="placement">
 			<table class="game">
 				<thead>
 					<tr>
-						<th colspan="2"><h2>Name of the Game</h2></th>
+						<th colspan="2"><h2><?php echo $name?></h2></th>
 					</tr>
 				<thead>
 				<tbody>
 				<tr>
 					<td class="drink" id="need"><i>What you need:</i>
-						<ul>
-							<li>A deck of cards</li>
-							<li>A mug</li>
-						</ul>
+						<p class="need"> <?php echo $need ?> </p>
 					</td>
 					<td id="inst">
 						<h6>Instructions</h6>
 						<p>
-							Sit around a table with your friends. Put a large cup in the middle of the table (a red cup works fine too). Tell your guys and gals to stop snapchatting or texting their exes, because this game only works when people are paying attention. Grab a deck of cards. Each card has an action everyone must follow during the game. Spread the cards around the cup, making a circle shape…still with us? Great, keep reading. The game comes to an end (sadly) when the fourth King is pulled from the deck of cards.
- 
-							Now that you’re all set up and ready to go, let’s breakdown what each card means, which are shown in the illustration.
-
+							<?php echo $instructions ?>
 						</p>
 					</td>
 				</tr>
@@ -41,7 +51,9 @@
 		</div>
 	</div>
 	<style type="text/css">
-		
+		.need {
+			font-weight: 400;
+		}
 	</style>
 </body>
 <?php include('footer.php');?>
