@@ -87,18 +87,11 @@
    <?php
     echo '<ul id="listDrink">';
     while ($stmt->fetch()) {
-		
-	echo "<li><a href='drinkBase.php?drinkID=$drinkID'><img class='specificimage' src=\"uploadedfiles/" . $picture . "\"> </a></li>";
+		echo "<li><a href='drinkBase.php?drinkID=$drinkID'><img class='specificimage' src=\"uploadedfiles/" . $picture . "\"> </a></li>";
 	}
-	echo "</ul>";
+		echo "</ul>";
 	?>
-
 	
-
-
-
-
-
 		<!-- <?php
 		//https://stackoverflow.com/questions/11903289/pull-all-images-from-a-specified-directory-and-then-display-them
 		//the code for creating a simple gallery is inspired by the link above
