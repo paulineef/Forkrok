@@ -16,6 +16,7 @@
 		<input type="submit" value="Submit" class="submit" id="drinks">
 	</form>
 
+		
 	<?php
 	$searchdrink = "";
 	$searchingredients = "";
