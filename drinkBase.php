@@ -21,6 +21,8 @@
 <body>
 	<div class="content">		
 		<div class="placement">	
+			<div id="back">
+			<a href="drinks.php"><i class="fa fa-times" aria-hidden="true"></i></a></div>
 			<table class="drink">		
 				<thead>
 				<tr colspan="2">
@@ -47,7 +49,6 @@
 				</tr>
 			</tbody>
 			</table>
-			<a href="drinks.php"><i class="fa fa-arrow-left" aria-hidden="true"></i><a>
 		</div>
 	</div>
 

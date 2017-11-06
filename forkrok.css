@@ -494,6 +494,7 @@ form label {
 	.drink td h5 {
 		margin: 0;
 		font-size: 15pt; 
+		color: #FDCD01;
 	}
 
 	.drink ul {
@@ -523,7 +524,7 @@ form label {
 
 	@media (min-width: 928px){
 		.drink h5 {
-			font-size: 14px; 
+			font-size: 14pt; 
 		}
 		.drink ul li {
 			font-size: 10pt; 
