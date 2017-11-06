@@ -4,13 +4,13 @@
 
 	@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
 
-	$query = "SELECT drinks.drinkID, drinks.name, ingredients.ingredientID, ingredients.term, drinks.picture FROM drinks
+	$query = "SELECT drinks.drinkID, drinks.name, ingredients.ingredientID, ingredients.term, drinks.picture, drinks.description FROM drinks
 	JOIN drinks_ingredients ON drinks.drinkID = drinks_ingredients.drinkID 
 	JOIN ingredients ON ingredients.ingredientID = drinks_ingredients.ingredientID
 	WHERE drinks.drinkID = $drinkID";
 
  	$stmt = $db->prepare($query);
-    $stmt->bind_result($drinkID, $name, $ingredientID, $term, $picture);
+    $stmt->bind_result($drinkID, $name, $ingredientID, $term, $picture, $description);
     $stmt->execute();
 	$ingredients = array();
 
@@ -37,9 +37,7 @@
 							}
 						?>
 						</ul>
-						<p>
-							Lorem ipsum dolor sit amet, sapientem patrioque voluptatibus ne ius, sea cu nobis praesent. 
-						</p>
+						<?php echo "<p> $description </p>";?>
 					</td>
 					<td class="t-left">
 						<img id="drink" src="uploadedfiles/Klaras.png">
