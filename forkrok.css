@@ -24,7 +24,7 @@
 	color: #000;
 	position: absolute;
 	margin: auto auto;
-	font-weight: 300;
+	font-weight: 800;
 	text-transform: uppercase;
 }
 
@@ -162,7 +162,7 @@ h2 i {
 .searchCat {
 	text-transform: uppercase;
 	float: left;
-	width: 95%;
+	width: 100%;
 	font-family: lato; 
 	font-weight: 300; 
 	font-size: 10pt; 
@@ -172,7 +172,7 @@ h2 i {
 }
 
 .searchField {
-	width: 95%;
+	width: 100%;
 	float: left; 
 	margin-bottom: 10px;
 	padding: 6px 10px;
@@ -232,6 +232,14 @@ label {
 	color: #efc100;
 }
 
+#star {
+	color: #FDCD01;
+}
+
+#star:hover {
+	
+}
+
 @media (min-width: 768px) and (max-width: 927px){
 	.content {
 		padding: 100px;
@@ -242,11 +250,11 @@ label {
 	}
 
 	.searchCat {
-		width: 45%;
+		width: 48%;
 	}
 
 	.submit {
-		width: 45%;
+		width: 48%;
 	}
 
 	#back a {
@@ -264,11 +272,11 @@ label {
 	}
 
 	.searchCat {
-		width: 45%;
+		width: 48%;
 	}
 
 	.submit {
-		width: 45%;
+		width: 48%;
 	}
 
 	#back a {
@@ -425,7 +433,7 @@ form label {
 @media(min-width: 928px) {
 
 	.searchFieldDrink {
-		width: 44%;
+		width: 48%;
 	}
 
 	#gallerycontent {
@@ -452,7 +460,7 @@ form label {
 @media (min-width: 768px) and (max-width: 927px){
 
 	.searchFieldDrink {
-		width: 44%;
+		width: 48%;
 	}
 
 	#right {

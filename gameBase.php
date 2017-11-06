@@ -26,7 +26,12 @@
 			<table class="game">
 				<thead>
 					<tr>
-						<th colspan="2"><h2><?php echo $name?></h2></th>
+						<th colspan="2">
+							<h2>
+								<?php echo $name?>
+								<i id="star" class="fa fa-star-o" aria-hidden="true"></i>
+							</h2>
+						</th>
 					</tr>
 				<thead>
 				<tbody>

@@ -21,6 +21,9 @@
 
 	?> 
 	<div id="indexBongo">
+		<div id="back">
+			<a href="food.php"><i class="fa fa-times" aria-hidden="true"></i></a>
+		</div>
 		<h2 class="place"> <?php echo $header ?></h2>
 		<div class="map">
 			<iframe frameborder="0" style="border:0" src=" <?php echo $maps ?>" allowfullscreen></iframe>
@@ -31,11 +34,11 @@
 		<div class="social">
 			<a href="https://www.facebook.com/<?php echo $facebook?>" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
 		</div>
-		<div class="back">
-			<a href="food.php"><i class="fa fa-times" aria-hidden="true"></i></a>
-		</div>
+		
 	</div>
 	<?php include ("footer.php") ?>
+
+
 <style type="text/css">	
 	.b {
 		display: inline;
@@ -66,7 +69,7 @@
 		height: 100vh;
 		padding: 0;
 		top: 0px;
-		left: 500px;
+		left: 450px;
 		padding-top: 32px;
 		padding: 48px 18px;
 		box-sizing: border-box;
