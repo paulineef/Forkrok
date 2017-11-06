@@ -1,7 +1,4 @@
 <?php include ("sidebar.php") ?>
-<?php
-				include('login.php');
-			?>
 <head>
 	<title>Förkrök - Favourites</title>
 </head>
@@ -10,13 +7,14 @@
 <div class="content">
 
 	<div class="placement">
-			
-	</div>
+
+		<h2>Favourites<i class="fa fa-trophy" aria-hidden="true"></i></h2>
+	</div>	
 	
 </div>
 
 </body>
-<?php include ("footer.php") ?>
+<?php include ("footer.php")?>
 
 
 

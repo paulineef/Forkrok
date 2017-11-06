@@ -11,9 +11,9 @@
 
 	<!-- Searchfield -->
 	<form action ="drinks.php" method="POST" id="drinksearch">
-		<input type="text" name="searchdrink" placeholder="Search by drink" class="searchFieldDrink">
-		<input type="text" name="searchingredients" placeholder="or by ingredients" class="searchFieldDrink" id="right">
-		<input type="submit" value="Submit" class="submit" id="drinks">
+		<input type="text" name="searchdrink" placeholder="Search by drink" class="searchField">
+		<input type="text" name="searchingredients" placeholder="or by ingredients" class="searchField">
+		<input type="submit" value="Submit" class="submit">
 	</form>
 
 	<?php
@@ -44,13 +44,14 @@
             }*/
 
 	$query = "SELECT drinks.drinkID, drinks.name, ingredients.ingredientID, ingredients.term, drinks.picture FROM drinks
-	JOIN drinks_ingredients ON drinks.drinkID = drinks_ingredients.drinkID 
+	JOIN drinks_ingredients ON drinks.drinkID = drinks_ingredients.drinkID
 	JOIN ingredients ON ingredients.ingredientID = drinks_ingredients.ingredientID";
+
 	//$query = "SELECT drinkID, name FROM drinks";
 
 	
 	if ($searchdrink && !$searchingredients) {
-		$query = $query . " where name like '%" . $searchdrink . "%' GROUP BY drinks.name ";
+		$query = $query . " where name like '%" . $searchdrink . "%' GROUP BY drinks.name";
 	}
 	if (!$searchdrink && $searchingredients) {
         $query = $query . " where term like '%" . $searchingredients . "%'";
@@ -88,9 +89,10 @@
     echo '<ul id="listDrink">';
     while ($stmt->fetch()) {
 		
-	echo "<li><a href='drinkBase.php?drinkID=$drinkID'><img class='specificimage' src=\"uploadedfiles/" . $picture . "\"> </a></li>";
+	echo "<li ><a href='drinkBase.php?drinkID=$drinkID'><img class='specificimage' src=\"uploadedfiles/" . $picture . "\"> </a></li></li>";
 	}
 	echo "</ul>";
+
 	?>
 
 	

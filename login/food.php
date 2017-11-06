@@ -12,15 +12,13 @@
 		<h2>Food<i class="fa fa-trophy" aria-hidden="true"></i></h2>
 
 		<form action="food.php" method="POST">
-			<div class="searchCat">
-			Category :
+			<label> Category: </label> 
 			<select name="searchcategory" class="dropDown">
 				<option value="">All</option>
 				<option value="hamburger">Hamburger</option>
 				<option value="pasta">Pasta</option>
 				<option value="pizza">Pizza</option>
 			</select>
-		</div>
 			<input class="submit" type="submit" name="search" value="Search">
 		</form>
 	
@@ -57,10 +55,10 @@
 			$stmt->execute();
 
 			echo '<table id="gameTable">';
-   			echo '<tr><b><td class="headList">Restaurant</td> <td class="headList" id="cat">Category</td> </b> </tr>';
+   			echo '<tr><b><td class="headList">Name of game</td> <td class="headList" id="cat">Category</td> </b> </tr>';
 			while ($stmt->fetch()) {
 				echo "<tr>";
-				echo " <td class='listStyle'><a href='foodBase.php'> $header</a></td> <td class='category'> $term </td>";
+				echo " <td class='listStyle'><a href='gameBase.php'> $header</a></td> <td class='category'> $term </td>";
 				echo "</tr>";
 			}
 		?>

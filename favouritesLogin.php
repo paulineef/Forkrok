@@ -1,7 +1,4 @@
 <?php include ("sidebar.php") ?>
-<?php
-				include('login.php');
-			?>
 <head>
 	<title>Förkrök - Favourites</title>
 </head>
@@ -10,7 +7,9 @@
 <div class="content">
 
 	<div class="placement">
-			
+
+		<h2>Favourites<i class="fa fa-star" aria-hidden="true"></i></h2>
+
 	</div>
 	
 </div>
