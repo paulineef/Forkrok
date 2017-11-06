@@ -29,7 +29,7 @@
  					</th>
 				<tr/>
 				<tr>
-					<td>
+					<td id="tdparent">
 						<h5> Ingredients</h5>
 						<ul>
 						<?php foreach($ingredients as $var) { //same as [i];
