@@ -9,25 +9,26 @@
 	
 		@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
 	
-		$query = "SELECT barID, header, description, facebook FROM bars WHERE barID = $barID";
+		$query = "SELECT barID, header, description, facebook, maps FROM bars WHERE barID = $barID";
 
 		$stmt = $db->prepare($query);
 		//takes the result of the search and create variables from it
-		$stmt->bind_result($barID, $header, $description, $facebook);
+		$stmt->bind_result($barID, $header, $description, $facebook, $maps);
 		$stmt->execute();
 
+		while ($stmt->fetch()) {
+		}
 	?> 
 	<div id="indexBongo">
 		<h2 class="place"> <?php echo $header ?></h2>
 		<div class="map">
-			<iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJqf_BLehtWkYRn8yFbMIzcqk&key=AIzaSyCmCQXDN3el8D7bvNcoj7-5hnGf9C3gzw0" allowfullscreen></iframe>
+			<iframe frameborder="0" style="border:0" src=" <?php echo $maps ?>" allowfullscreen></iframe>
 		</div>
 		<p>
 			<?php echo $description ?><br><br>
 		</p>
 		<div class="social">
 			<a href="https://www.facebook.com/<?php echo $facebook?>/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-			<a href="http://bongobar.se/jonkoping/" target="_blank"><i class="fa fa-internet-explorer" aria-hidden="true"></i></a>
 		</div>
 		<div class="back">
 			<a href="bars.php"><i class="fa fa-times" aria-hidden="true"></i></a>
