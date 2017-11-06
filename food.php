@@ -55,10 +55,10 @@
 			$stmt->execute();
 
 			echo '<table id="gameTable">';
-   			echo '<tr><b><td class="headList">Name of game</td> <td class="headList" id="cat">Category</td> </b> </tr>';
+   			echo '<tr><b><td class="headList">Restaurant</td> <td class="headList" id="cat">Category</td> </b> </tr>';
 			while ($stmt->fetch()) {
 				echo "<tr>";
-				echo " <td class='listStyle'><a href='gameBase.php'> $header</a></td> <td class='category'> $term </td>";
+				echo " <td class='listStyle'><a href='foodBase.php'> $header</a></td> <td class='category'> $term </td>";
 				echo "</tr>";
 			}
 		?>
