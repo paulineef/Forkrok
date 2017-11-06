@@ -87,10 +87,9 @@
    <?php
     echo '<ul id="listDrink">';
     while ($stmt->fetch()) {
-		
-	echo "<li><a href='drinkBase.php?drinkID=$drinkID'><img class='specificimage' src=\"uploadedfiles/" . $picture . "\"> </a></li>";
+		echo "<li><a href='drinkBase.php?drinkID=$drinkID'><img class='specificimage' src=\"uploadedfiles/" . $picture . "\"> </a></li>";
 	}
-	echo "</ul>";
+		echo "</ul>";
 	?>
 	
 		<!-- <?php

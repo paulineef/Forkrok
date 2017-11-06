@@ -1,12 +1,13 @@
 <?php include ('sidebar.php') ?>
 <?php 
+	$drinkID = trim($_GET["drinkID"]);
 
 	@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
 
 	$query = "SELECT drinks.drinkID, drinks.name, ingredients.ingredientID, ingredients.term, drinks.picture FROM drinks
 	JOIN drinks_ingredients ON drinks.drinkID = drinks_ingredients.drinkID 
 	JOIN ingredients ON ingredients.ingredientID = drinks_ingredients.ingredientID
-	WHERE drinkID = $drinkID";
+	WHERE drinks.drinkID = $drinkID";
 
  	$stmt = $db->prepare($query);
     $stmt->bind_result($drinkID, $name, $ingredientID, $term, $picture);
@@ -18,27 +19,14 @@
 	}
 ?>
 <body>
-	
 	<div class="content">		
 		<div class="placement">	
 			<table class="drink">		
 				<tbody>
 				<tr>
 					<th>
-<!-- 				<h2><?php echo "<h2> $name </h2>";?><h2>
- -->
- 	<?php
-// 		echo '<ul id="drinkStuff">';
-//  			echo "<h2>" . $_GET["drinkID"] . "</h2>";
-//			echo "<h2>" . $_GET["name"] . "</h2>";
-//			echo "<li><h2 class='stuff'>$drinkID</li>";
-//	
-////		echo "<li><h2 class='stuff'> $name </li>";
-////		 }
-////		
-////		 echo "</ul>";
-//	?>
- 			</th>
+				<?php echo "<h2> $name </h2>";?>
+ 					</th>
 				<tr/>
 				<tr>
 					<td>
@@ -48,10 +36,6 @@
 								echo "<li>" . $var . "</li>";
 							}
 						?>
-							<li>Lime juice</li>
-							<li>Lemon juice</li>
-							<li>Lemon slices</li>
-							<li>Soda</li>
 						</ul>
 						<p>
 							Lorem ipsum dolor sit amet, sapientem patrioque voluptatibus ne ius, sea cu nobis praesent. 
