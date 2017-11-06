@@ -5,13 +5,13 @@
 </head>
 	<?php include ("sidebar.php") ?>
 		<div id="indexBongo">
-			<h2 class="place">Bongo Bar</h2>
+			<h2 class="place"><?php echo $header?></h2>
 		
 		<div class="map">
 			<iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJqf_BLehtWkYRn8yFbMIzcqk&key=AIzaSyCmCQXDN3el8D7bvNcoj7-5hnGf9C3gzw0" allowfullscreen></iframe>
 		</div>
 		<p>
-			Small and nice place for both a chill night out and more energized with mixed hip-hop and reggae music. Entrance for 60:- and you get the first glass for free.<br><br>
+			<?php echo $description ?><br><br>
 		</p>
 		<?php echo($test) ?>
 		<div class="social">
