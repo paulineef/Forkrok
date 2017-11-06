@@ -21,6 +21,8 @@
 <body>
 	<div class="content">
 		<div class="placement">
+			<div id="back">
+			<a href="games.php"><i class="fa fa-times" aria-hidden="true"></i></a></div>
 			<table class="game">
 				<thead>
 					<tr>
@@ -29,11 +31,13 @@
 				<thead>
 				<tbody>
 				<tr>
-					<td class="drink" id="need"><i>What you need:</i>
+					<td class="drink" id="need"><h5>What you need:</h5>
 						<p class="need"> <?php echo $need ?> </p>
 					</td>
+				</tr>
+				<tr>
 					<td id="inst">
-						<h6>Instructions</h6>
+						<h5>Instructions</h5>
 						<p>
 							<?php echo $instructions ?>
 						</p>
@@ -43,20 +47,15 @@
 				<tfoot>
 				<tr>
 					<td colspan="2">
-						<img src="kingscup.svg"/>
+						<?php echo "<img src=\"uploadedfiles/" . $picture . "\">"; ?>
 					</td>
 				</tr>
 			</tfoot>
 			</table>
-			<div class="back">
-			<a href="games.php"><i class="fa fa-times" aria-hidden="true"></i></a>
-		</div>
 		</div>
 	</div>
 	<style type="text/css">
-		.need {
-			font-weight: 400;
-		}
+
 	</style>
 </body>
 <?php include('footer.php');?>
