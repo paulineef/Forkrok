@@ -7,12 +7,12 @@
 	
 	@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
 	
-	$query = "SELECT games.gameID, games.name, gameCat.categoryID, gameCat.term, games.need FROM games 
+	$query = "SELECT games.gameID, games.name, gameCat.categoryID, gameCat.term, games.need, games.instructions FROM games 
 	JOIN gameCat ON games.categoryID = gameCat.categoryID WHERE games.gameID = $gameID";
 
 	$stmt = $db->prepare($query);
 	//takes the result of the search and create variables from it
-	$stmt->bind_result($gameID, $name, $categoryID, $term, $need);
+	$stmt->bind_result($gameID, $name, $categoryID, $term, $need, $instructions);
 	$stmt->execute();
 
 	while ($stmt->fetch()) {
@@ -48,6 +48,9 @@
 				</tr>
 			</tfoot>
 			</table>
+			<div class="back">
+			<a href="games.php"><i class="fa fa-times" aria-hidden="true"></i></a>
+		</div>
 		</div>
 	</div>
 	<style type="text/css">
