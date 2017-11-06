@@ -284,24 +284,21 @@ form label {
 
 	/* --- DRINK BASE --- */
 
-
-	.game h6 {
-		margin: 0;
-		padding: 0;
-	}
-
-	.game td {
+	#game #instructions {
 		padding: 0px;
+		max-width: 200px; 
 	}
 
-	.game ul {
-		padding: 0;
+	#game h6 {
+		margin: 0px;
 	}
 
-	.game li {
-		list-style-type: none; 
-		font-family: 'lato', sans-serif; 
-		font-size: 10pt; 
+	#game td {
+		max-width: 20px; 
+	}
+
+	#game td img {
+		max-width: 100%; 
 	}
 
 
@@ -388,7 +385,7 @@ form label {
 		float: right; 
 	}
 
-	}
+}
 
 	/* --- DRINK BASE --- */
 
