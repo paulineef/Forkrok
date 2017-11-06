@@ -348,6 +348,22 @@ form label {
 	width: 100%;
 }
 
+#tdparent{
+	overflow: hidden;
+}
+
+#containerdrinkbase {
+	float: left;
+	width: 60%;
+}
+
+#ShowImg {
+	float: right;
+	width: 40%;
+
+
+}
+
 @media(min-width: 928px) {
 
 	.searchFieldDrink {
