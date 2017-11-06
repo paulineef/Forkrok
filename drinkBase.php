@@ -30,6 +30,7 @@
 				<tr/>
 				<tr>
 					<td id="tdparent">
+					<div id=containerdrinkbase>
 						<h5> Ingredients</h5>
 						<ul>
 						<?php foreach($ingredients as $var) { //same as [i];
@@ -37,12 +38,11 @@
 							}
 						?>
 						</ul>
-						<p id="pdrinkbase">
+						<p>
 							Lorem ipsum dolor sit amet, sapientem patrioque voluptatibus ne ius, sea cu nobis praesent. 
 						</p>
-						<?php 
-						echo "<img id='ShowImg' src=\"uploadedfiles/" . $picture . "\">";
-						?>
+					</div>
+						<?php echo "<img id='ShowImg' src=\"uploadedfiles/" . $picture . "\">"; ?>
 					</td>
 					<td class="t-left">
 						<img id="drink" src="uploadedfiles/Klaras.png">
