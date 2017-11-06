@@ -13,7 +13,7 @@ body {
 }
 
 #namestyle {
-	
+	visibility: hidden;
 	top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -22,16 +22,25 @@ body {
 	position: absolute;
 	margin: auto auto;
 	font-weight: 300;
+	text-transform: uppercase;
 }
 
-#listunage:hover #namestyle{
+#listimage:hover #namestyle{
+	visibility: visible;
 	display: block;
+}
+#listimage:hover #specificimage{
+	opacity: 0.5;
 }
 
 .specificimage {
 	display:inline-block;
 	width:100%;
 	float: left;
+}
+
+.specificimage:hover {
+	opacity: 0.5;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -400,10 +409,6 @@ form label {
 	max-width: 100%;
 	padding: 0px;
 
-}
-
-.specificimage:hover {
-	opacity: 0.5;
 }
 
 #gallerycontent {
