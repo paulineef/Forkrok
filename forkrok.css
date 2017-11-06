@@ -5,13 +5,33 @@ body {
 	cursor: default;
 }
 
-#namestyle {
-	color: #000;
-	position: absolute;
+#listimage{
+	display:inline-block;
+	position: relative;
+	width: 32%;
+	text-align: center;
 }
 
-#linkclass {
-	position: relative;
+#namestyle {
+	
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	width:100%;
+	color: #000;
+	position: absolute;
+	margin: auto auto;
+	font-weight: 300;
+}
+
+#listunage:hover #namestyle{
+	display: block;
+}
+
+.specificimage {
+	display:inline-block;
+	width:100%;
+	float: left;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -379,12 +399,6 @@ form label {
 	overflow: hidden;
 	max-width: 100%;
 	padding: 0px;
-
-}
-
-.specificimage {
-	width: 30%;
-	float: left;
 
 }
 
