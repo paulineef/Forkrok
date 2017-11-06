@@ -45,13 +45,16 @@
 
 	
 	if ($searchdrink && !$searchingredients) {
-		$query = $query . " where name like '%" . $searchdrink . "%' GROUP BY drinks.name ";
+		$query = $query . " where name like '%" . $searchdrink . "%' GROUP BY drinks.name";
 	}
 	if (!$searchdrink && $searchingredients) {
         $query = $query . " where term like '%" . $searchingredients . "%'";
     }
     if ($searchdrink && $searchingredients) { 
         $query = $query . " where name like '%" . $searchdrink . "%' and term like '%" . $searchingredients . "%'";
+    }
+    if (!$searchdrink && !$searchingredients) {
+    	 $query = $query . " GROUP BY drinks.name";
     }
 
 ?>
