@@ -44,7 +44,7 @@ if (isset($_POST['newUsername'])) {
     $stmt->bind_param('ss', $newUsername, $newPassword);
     $stmt->execute();
     printf("<br><h2>User added!</h2>");
-    printf("<br><a href=login.php>Click to login</a>");
+    printf("<br><a href=favourites.php>Click to login</a>");
     exit;
 		
 		//IF passwords doesn't match

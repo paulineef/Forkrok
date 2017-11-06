@@ -84,7 +84,11 @@ h2 i {
 .content {
 	padding: 30px;
 }
-
+.content a {
+	color: black !important;
+	text-decoration: none;
+	list-style-type: none;
+}
 .placement {
 	margin: 0 auto;
 	padding-top: 60px;
