@@ -6,11 +6,10 @@
 <body>
 
 <div class="content">
-
 	<div class="placement">
 
 		<h2>Games<i class="fa fa-trophy" aria-hidden="true"></i></h2>
-
+	</div>	
 		<form action="games.php" method="POST">
 			<input class="searchField" type="text" name="searchgame" placeholder="ex. Kings Cup"/>
 			<div class="searchCat">
@@ -24,40 +23,7 @@
 			</div>
 			<input class="submit" type="submit" name="search" value="Search">
 		</form>
-
-		<style type="text/css">
-
-		@media (min-width: 928px) {
-		.content {
-			width: 100%;
-		}
-	}
-
-		.searchCat {
-			font-family: lato; 
-			font-weight: 300; 
-		}
-
-		.gameBox {
-			width: 30%;
-			float: left; 
-			background: red; 
-			margin-right: 10px;
-			margin-bottom: 10px; 
-			text-align: center;
-		}
-
-		.gameBox h3 {
-			margin-top: 10px;
-			margin-bottom: 2px; 
-		}
-
-		.gameBox h6 {
-			margin-top: 0px;
-			margin-bottom: 10px;
-		}
-
-		</style>
+		
 	
 		<?php
 			$searchgame = "";
@@ -109,7 +75,7 @@
    			echo '<tr><b><td class="headList">Name of game</td> <td class="headList" id="cat">Category</td> </b> </tr>';
 			while ($stmt->fetch()) {
 				echo "<tr>";
-				echo " <td class='listStyle'><a href='gameBase.php'> $name</a></td> <td class='category'> $term </td>";
+				echo " <td class='listStyle'><a href='gameBase.php?gameID=$gameID'> $name</a></td> <td class='category'> $term </td>";
 				echo "</tr>";
 			}
 		?>

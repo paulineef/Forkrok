@@ -3,14 +3,7 @@
 	<link rel="stylesheet" type="text/css" href="forkrok.css">
 	<script src="https://use.fontawesome.com/6f2a9fca0c.js"></script>
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script type="text/javascript" charset="utf-8">
-			$(document).ready(function() {	
-				$(".pic").click(function(){
-				event.preventDefault();	
-				window.location.href='barBase.php';
-				});	
-			});	
-		</script>
+
 </head>
 <body>
 <?php include ("sidebar.php") ?>
@@ -23,7 +16,7 @@
 </div>
 	<?php 
 	# Open the database
-@ $db = new mysqli('localhost', 'user', 'user', 'Forkrok');
+@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
 
 
 
@@ -40,7 +33,7 @@ if ($db->connect_error) {
 	# Here's the query using bound result parameters
     // echo "we are now using bound result parameters <br/>";
     $stmt = $db->prepare($query);
-//takes the result of the search and create variables from it
+	//takes the result of the search and create variables from it
     $stmt->bind_result($barID, $header, $picture);
     $stmt->execute();
 ?>
@@ -48,12 +41,12 @@ if ($db->connect_error) {
     echo '<ul id="listBar">';
 	$test = 1;
     while ($stmt->fetch()) {
-		
-	echo "<li id='$test' class='pic'><img src=\"img/" .
-		$picture . "\"> <h3 class='header'> $header </h3></li>";
+	echo "<a href='barBase.php?barID=$barID'<li id='$test' class='pic'><img src=\"img/" .
+		$picture . "\"> <h3 class='header'> $header </h3></li></a>";
 		$test ++;
     }
 	echo "</ul>";
+	
 
 	?>
 	

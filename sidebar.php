@@ -15,21 +15,19 @@
 				e.preventDefault();	
 				$("#header").toggleClass('open');
 				$("#nav-icon3").toggleClass('open');
-
 				});
 			});
 		</script>
 	</head>
 	<header>
 		
+		<!--navigation menu-->
 		<div id="nav-icon3">
 	  		<span></span>
 	 		<span></span>
 	  		<span></span>
 	  		<span></span>
 		</div>
-		
-		
 		
 		<ul id="header" class="ulli">
 
@@ -57,9 +55,6 @@
 				<li>
 					<a href="favourites.php"><i class="fa fa-star" aria-hidden="true"></i>Favourites</a>
 				</li>
-				<!--<li>
-					<a id="login" href="login.php"><i class="fa fa-unlock-alt" aria-hidden="true"></i>Login</a> 
-				</li>-->
 
 		</ul>
 			

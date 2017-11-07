@@ -26,26 +26,11 @@
 	<?php
 	while($stmt->fetch()) {
 		array_push($favArr, $name);
-		 echo "<li id='listimage'><a href='drinkBase.php?drinkID=$drinkID&userID=$userID'><img class='specificimage' src=\"../uploadedfiles/" . $picture . "\" GROUP BY drinks.picture> <h3 id='namestyle'>" . $name . "</h3> </a></li>";
+		 echo "<li id='listimage'><a href='drinkBase.php?drinkID=$drinkID&userID=$userID'><img class='specificimage' src=\"../uploadedfiles/" . $picture . "\" > <h3 id='namestyle'>" . $name . "</h3> </a></li>";
 	}
 
 ?>
-	 
-
-
-		
-	<!--<ul id="favCont">
-		<?php //foreach($favArr as $var) { //same as [i];
-				//				echo "<li>" . $var . "</li>";
-					//		}
-		
-						?>
-		
-	</ul>-->
 </div>
 
 </body>
-<?php include ("footer.php")?>
-
-
-
+<?php include ("../footer.php")?>

@@ -1,7 +1,7 @@
 <?php include ("sidebar.php") ?>
 <head>
 	<title>Förkrök - Drinks</title>
-	<link rel="stylesheet" type="text/css" href="forkrok.css">
+	<link rel="stylesheet" type="text/css" href="../forkrok.css">
 </head>
 <body>
 
@@ -75,17 +75,10 @@
    <?php
     echo '<ul id="listDrink">';
     while ($stmt->fetch()) {
-		echo "<li id='listimage'><a href='drinkBase.php?drinkID=$drinkID'><img class='specificimage' src=\"uploadedfiles/" . $picture . "\" GROUP BY drinks.picture> <h3 id='namestyle'>" . $name . "</h3> </a></li>";
+		echo "<li id='listimage'><a href='drinkBase.php?drinkID=$drinkID'><img class='specificimage' src=\"../uploadedfiles/" . $picture . "\" GROUP BY drinks.picture> <h3 id='namestyle'>" . $name . "</h3> </a></li>";
 	}
 		echo "</ul>";
 	?>
-	
-		
-
-
-
-
-
 
 
 	</div>
@@ -95,4 +88,4 @@
 
 </body>
 
-<?php include ("footer.php") ?>
+<?php include ("../footer.php") ?>

@@ -52,7 +52,7 @@
 				<tfoot>
 				<tr>
 					<td colspan="2">
-						<?php echo "<img src=\"uploadedfiles/" . $picture . "\">"; ?>
+						<?php //echo "<img src=\"uploadedfiles/" . $picture . "\">"; ?>
 					</td>
 				</tr>
 			</tfoot>

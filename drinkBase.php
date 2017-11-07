@@ -33,9 +33,9 @@
 				</thead>
 				<tbody>
 				<tr>
-					<a href='drinkBase.php?userID=$userID'<i class="fa fa-star-o" aria-hidden="true"></i>
+					<!--<a href='drinkBase.php?userID=$userID'<i class="fa fa-star-o" aria-hidden="true"></i>-->
 					<td id="tdparent">
-						<h5> Ingredients</h5>
+						<h5>Ingredients</h5>
 						<ul>
 						<?php foreach($ingredients as $var) { //same as [i];
 								echo "<li>" . $var . "</li>";

@@ -15,12 +15,13 @@
 				e.preventDefault();	
 				$("#header").toggleClass('open');
 				$("#nav-icon3").toggleClass('open');
-
 				});
 			});
 		</script>
 	</head>
 	<header>
+		
+		<!--navigation menu-->
 		<div id="nav-icon3">
 	  		<span></span>
 	 		<span></span>
@@ -36,26 +37,28 @@
 			</div>
 
 				<li id="first">
-					<a href=" games.php"><i class="fa fa-trophy" aria-hidden="true"></i>Games</a>
+					<a href=" games.php?userID=2"><i class="fa fa-trophy" aria-hidden="true"></i>Games</a>
 				</li>
 				
 				<li>
-					<a href="drinks.php"><i class="fa fa-glass" aria-hidden="true"></i>Drinks</a>
+					<a href="drinks.php?userID=2"><i class="fa fa-glass" aria-hidden="true"></i>Drinks</a>
 				</li>
 				
 				<li>
-					<a href="food.php"><i class="fa fa-cutlery" aria-hidden="true"></i>Food</a>
+					<a href="food.php?userID=2"><i class="fa fa-cutlery" aria-hidden="true"></i>Food</a>
 				</li>
 					
 				<li>
-					<a href="bars.php"><i class="fa fa-beer" aria-hidden="true"></i>Bars &amp; Clubs</a>
+					<a href="bars.php?userID=2"><i class="fa fa-beer" aria-hidden="true"></i>Bars &amp; Clubs</a>
 				</li>
+
 				<li>
-					<a href="favourites.php"><i class="fa fa-star" aria-hidden="true"></i>Favourites</a>
+					<a href="favourites.php?userID=2"><i class="fa fa-star" aria-hidden="true"></i>Favourites</a>
 				</li>
-				<li>
-					<a id="login" href="logout.php"><i class="fa fa-unlock-alt" aria-hidden="true"></i>Log Out</a>
+					<li>
+					<a href="logout.php"><i class="fa fa-lock" aria-hidden="true"></i>Log out</a>
 				</li>
+
 		</ul>
 			
 	</header>
