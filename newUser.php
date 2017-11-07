@@ -19,6 +19,7 @@ if (isset($_POST['newUsername'])) {
     $newPassword = trim($_POST['newPassword']);
 	$copyPassword = trim($_POST['copyPassword']);
 
+	//IF there's an empty field
     if (!$newUsername || !$newPassword) {
         echo("<h3>You must specify both username and password</h3>");
         echo("<br><a id='hej' href=newUser.php>Go back</a>");
@@ -27,6 +28,7 @@ if (isset($_POST['newUsername'])) {
 
     $newUsername = addslashes($newUsername);
     /*$newPassword = addslashes ($newPassword);*/
+	//make sha1
 	$newPassword = addslashes(sha1($newPassword));
 	$copyPassword = addslashes(sha1($copyPassword));
     # Open the database using the "forkrok" account

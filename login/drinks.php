@@ -11,11 +11,12 @@
 
 	<!-- Searchfield -->
 	<form action ="drinks.php" method="POST" id="drinksearch">
-		<input type="text" name="searchdrink" placeholder="Search by drink" class="searchField">
-		<input type="text" name="searchingredients" placeholder="or by ingredients" class="searchField">
-		<input type="submit" value="Submit" class="submit">
+		<input type="text" name="searchdrink" placeholder="Search by drink" class="searchFieldDrink">
+		<input type="text" name="searchingredients" placeholder="or by ingredients" class="searchFieldDrink" id="right">
+		<input type="submit" value="Submit" class="submit" id="drinks">
 	</form>
 
+		
 	<?php
 	$searchdrink = "";
 	$searchingredients = "";
@@ -37,17 +38,10 @@
 		$searchingredients = addslashes($searchingredients);
 	}
 
-           /* if ($db->connect_error) {
-                echo "could not connect: " . $db->connect_error;
-                printf("<br><a href=index.php>Return to home page </a>");
-                exit();
-            }*/
-
+        
 	$query = "SELECT drinks.drinkID, drinks.name, ingredients.ingredientID, ingredients.term, drinks.picture FROM drinks
-	JOIN drinks_ingredients ON drinks.drinkID = drinks_ingredients.drinkID
+	JOIN drinks_ingredients ON drinks.drinkID = drinks_ingredients.drinkID 
 	JOIN ingredients ON ingredients.ingredientID = drinks_ingredients.ingredientID";
-
-	//$query = "SELECT drinkID, name FROM drinks";
 
 	
 	if ($searchdrink && !$searchingredients) {
@@ -59,17 +53,10 @@
     if ($searchdrink && $searchingredients) { 
         $query = $query . " where name like '%" . $searchdrink . "%' and term like '%" . $searchingredients . "%'";
     }
+    if (!$searchdrink && !$searchingredients) {
+    	 $query = $query . " GROUP BY drinks.name";
+    }
 
- //    $stmt = $db->prepare($query);
- //    $stmt->bind_result($drinkID, $name, $ingredientID, $term);
- //    $stmt->execute();
-
- //    echo '<table bgcolor="#fff" cellpadding="6">';
-	// while ($stmt->fetch()) {
- //        echo "<tr>";
- //        echo "<td class='listStyle'><a href='drinkBase.php'>$name</a></td>";
- //        echo "</tr>";
- //    }
 ?>
 
 <!-- Gallery -->
@@ -88,35 +75,12 @@
    <?php
     echo '<ul id="listDrink">';
     while ($stmt->fetch()) {
-		
-	echo "<li ><a href='drinkBase.php?drinkID=$drinkID'><img class='specificimage' src=\"uploadedfiles/" . $picture . "\"> </a></li></li>";
+		echo "<li id='listimage'><a href='drinkBase.php?drinkID=$drinkID'><img class='specificimage' src=\"uploadedfiles/" . $picture . "\" GROUP BY drinks.picture> <h3 id='namestyle'>" . $name . "</h3> </a></li>";
 	}
-	echo "</ul>";
-
+		echo "</ul>";
 	?>
-
 	
-
-
-
-
-
-		<!-- <?php
-		//https://stackoverflow.com/questions/11903289/pull-all-images-from-a-specified-directory-and-then-display-them
-		//the code for creating a simple gallery is inspired by the link above
-
-		  $stmt = $db->prepare($query);
-		  $stmt->bind_result($drinkID, $name, $ingredientID, $term, $picture);
-		  $stmt->execute();
-
-		$files = glob("uploadedfiles/*.*");
-
-		for ($i=0; $i<count($files); $i++) {
-			$image = $files[$i];
-			// echo "<td class='listStyle'><a href='drinkBase.php'>$name</a></td>";
-			echo '<img class="specificimage" src="'.$image .'" alt="Random image" class="imagebox" />'."<br /><br />";
-		}
-		?>	 -->
+		
 
 
 

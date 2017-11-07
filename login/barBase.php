@@ -1,26 +1,39 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="forkrok.css">
 	<script src="https://use.fontawesome.com/6f2a9fca0c.js"></script>
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 	<?php include ("sidebar.php") ?>
-		<div id="indexBongo">
-			<h2 class="place"><?php echo $header?></h2>
-		
+	
+	<?php 
+		$barID = trim($_GET["barID"]);
+	
+		@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
+	
+		$query = "SELECT barID, header, description, facebook, maps FROM bars WHERE barID = $barID";
+
+		$stmt = $db->prepare($query);
+		//takes the result of the search and create variables from it
+		$stmt->bind_result($barID, $header, $description, $facebook, $maps);
+		$stmt->execute();
+
+		while ($stmt->fetch()) {
+		}
+	?> 
+	<div id="indexBongo">
+		<div id="back">
+			<a href="bars.php"><i class="fa fa-times" aria-hidden="true"></i></a>
+		</div>
+		<h2 class="place"> <?php echo $header ?></h2>
 		<div class="map">
-			<iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJqf_BLehtWkYRn8yFbMIzcqk&key=AIzaSyCmCQXDN3el8D7bvNcoj7-5hnGf9C3gzw0" allowfullscreen></iframe>
+			<iframe frameborder="0" style="border:0" src=" <?php echo $maps ?>" allowfullscreen></iframe>
 		</div>
 		<p>
 			<?php echo $description ?><br><br>
 		</p>
-		<?php echo($test) ?>
 		<div class="social">
-			<a href="https://www.facebook.com/bongojkpg/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-			<a href="http://bongobar.se/jonkoping/" target="_blank"><i class="fa fa-internet-explorer" aria-hidden="true"></i></a>
+			<a href="https://www.facebook.com/<?php echo $facebook?>" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
 		</div>
-		<div class="back">
-			<a href="bars.php"><i class="fa fa-times" aria-hidden="true"></i></a>
-		</div>
+		
 	</div>
 	<?php include ("footer.php") ?>
 <style type="text/css">	
@@ -53,7 +66,7 @@
 		height: 100vh;
 		padding: 0;
 		top: 0px;
-		left: 500px;
+		left: 450px;
 		padding-top: 32px;
 		padding: 48px 18px;
 		box-sizing: border-box;

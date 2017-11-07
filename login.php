@@ -2,13 +2,14 @@
 <?php
 	session_start();
 	if (isset($_SESSION['username'])) {
-		header("location:index.php");
+		header("location:login/index.php");
 	}
-?><body class="logBox">
-<div class="content">
-	<div class="placement">
-		<h2>Login<i class="fa fa-lock" aria-hidden="true"></i></h2>
-	</div>
+?>
+<body class="logBox">
+	<div class="content">
+		<div class="placement">
+			<h2>Login<i class="fa fa-lock" aria-hidden="true"></i></h2>
+		</div>
 	<?php 
 		@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
 
@@ -17,7 +18,6 @@ if ($db->connect_error) {
     printf("<br><a href=index.php>Return to home page </a>");
     exit();
 }
-
 
 if (isset($_POST['username'], $_POST['password'])) {
     #with statement under we're making it SQL Injection-proof
@@ -35,14 +35,13 @@ if (isset($_POST['username'], $_POST['password'])) {
        
     $stmt = $db->prepare($query);
     $stmt->execute();
-    $stmt->store_result(); 
+    $stmt->store_result();
     
     #here we create a new variable 'totalcount' just to check if there's at least
     #one user with the right combination. If there is, we later on print out "access granted"
     $totalcount = $stmt->num_rows();
 }
 ?>
- 
         <form background="#dd00dd" method="POST" action="">
            <tr>
            <td><input type="text" placeholder="Username" name="username"></td>
@@ -55,32 +54,26 @@ if (isset($_POST['username'], $_POST['password'])) {
 </div>
        
 	</body>
-<?php include ("footer.php") ?>
-<?php         
+<?php 
+	include ("footer.php");     
+
         if (isset($totalcount)) {
             if ($totalcount == 0) {
                 echo '<h3 id="wrong">Either wrong password or username</h3>';
 				//IF the password and username is right
             } else {
-                echo "<h2>Welcome, $uname!</h2>";
-				echo('<a href="back/favourites.php">Click here to see your favourite drinks</a>');
-				?>
-				<script type="text/javascript" charset="utf-8">
-					document.clear();
-				</script>
-				<?php
-				header("location:login/index.php");
-				exit();			
 				
+                echo "<h2>Welcome, $userID!</h2>";
+				echo("$uname2");
+
+				header("location:login/favourites.php?userID=2");				
+				exit();							
             }
         }
         ?>
-
-
 <style>
 	#wrong {
 		display: inline;
-		
 		left: 30px;
 		top: 135px;
 	}
@@ -93,7 +86,6 @@ if (isset($_POST['username'], $_POST['password'])) {
 		height: 200px;
 		max-width: 300px;
 		border: 1px solid #dddddd;
-	
 	}	
 	form input {
 		width: 180px;
@@ -142,5 +134,5 @@ if (isset($_POST['username'], $_POST['password'])) {
 		left: 530px;
 		top: 135px;
 	}
-	}
+}
 </style>

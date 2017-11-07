@@ -1,113 +1,60 @@
 <?php include ('sidebar.php') ?>
 <?php 
+	$drinkID = trim($_GET["drinkID"]);
 
 	@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
 
-	$query = "SELECT drinks.drinkID, drinks.name, drinks.picture FROM drinks";
+	$query = "SELECT drinks.drinkID, drinks.name, ingredients.ingredientID, ingredients.term, drinks.picture, drinks.description FROM drinks
+	JOIN drinks_ingredients ON drinks.drinkID = drinks_ingredients.drinkID 
+	JOIN ingredients ON ingredients.ingredientID = drinks_ingredients.ingredientID
+	WHERE drinks.drinkID = $drinkID";
 
  	$stmt = $db->prepare($query);
-    $stmt->bind_result($drinkid, $name, $picture);
+    $stmt->bind_result($drinkID, $name, $ingredientID, $term, $picture, $description);
     $stmt->execute();
+	$ingredients = array();
+
+	while($stmt->fetch()) {
+		array_push($ingredients, $term);
+	}
 ?>
 <body>
-	
 	<div class="content">		
 		<div class="placement">	
+			<div id="back">
+			<a href="drinks.php"><i class="fa fa-times" aria-hidden="true"></i></a></div>
 			<table class="drink">		
+				<thead>
+				<tr colspan="2">
+					<th>
+				<?php echo "<h2> $name </h2>";?>
+ 					</th>
+				<tr/>
+				</thead>
 				<tbody>
 				<tr>
-					<th>
-						<h2> <?php 	while ($stmt->fetch()) {
-			if("drinkID" == $drinkid) {
-         echo "$drinkid";
-			}
-     }?> </h2>
-					</th>
-				<tr/>
-				<tr>
-					<td>
+					<i class="fa fa-star-o" aria-hidden="true"></i>
+					<td id="tdparent">
 						<h5> Ingredients</h5>
 						<ul>
-							<li>Vodka</li>
-							<li>Lime juice</li>
-							<li>Lemon juice</li>
-							<li>Lemon slices</li>
-							<li>Soda</li>
+						<?php foreach($ingredients as $var) { //same as [i];
+								echo "<li>" . $var . "</li>";
+							}
+						?>
 						</ul>
-						<p>
-							Lorem ipsum dolor sit amet, sapientem patrioque voluptatibus ne ius, sea cu nobis praesent. 
-						</p>
+						<?php echo "<p> $description </p>";?>
 					</td>
 					<td class="t-left">
-						<img id="drink" src="uploadedfiles/Klaras.png">
+						<?php echo "<img src=\"uploadedfiles/" . $picture . "\">"; ?>
 					</td>
 				</tr>
 			</tbody>
 			</table>
-
-			<span><a href="drinks.php"><i class="fa fa-arrow-left" aria-hidden="true"></i></a></span>
 		</div>
 	</div>
 
 <style type="text/css">
 
-	#drink{
-		max-width: 120px;
-	}
-
-	.drink table {
-		width: 100%; 
-		border-collapse: collapse;
-		padding: 0;
-		margin: 0;
-	}
-
-	.drink t-body {
-		width: 100%;
-	}
-
-	.drink th {
-		text-align: left; 
-	}
-
-	.drink td {
-		vertical-align: top; 
-		max-width: 100px; 
-	}
-
-	.t-left {
-		padding-left: 30px; 
-	}
-
-	.drink td h5 {
-		margin: 0;
-		font-size: 15pt; 
-	}
-
-	.drink ul {
-		padding:0;
-		margin-top: 10px; 
-	}
-
-	.drink ul li {
-		list-style-type: none; 
-		font-family: 'lato', sans-serif; 
-		font-weight: 400;
-		font-size: 12pt; 
-	}
-
-	@media (min-width: 928px){
-		.drink h5 {
-			font-size: 14px; 
-		}
-		.drink ul li {
-			font-size: 10pt; 
-		}
-
-		#drink {
-			max-width: 100px; 
-		}
-	}
 
 
 </style>

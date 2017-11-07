@@ -33,6 +33,7 @@
 				</thead>
 				<tbody>
 				<tr>
+					<a href='drinkBase.php?userID=$userID'<i class="fa fa-star-o" aria-hidden="true"></i>
 					<td id="tdparent">
 						<h5> Ingredients</h5>
 						<ul>
