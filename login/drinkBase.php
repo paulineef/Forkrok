@@ -22,7 +22,7 @@
 	<div class="content">		
 		<div class="placement">	
 			<div id="back">
-			<a href="drinks.php"><i class="fa fa-times" aria-hidden="true"></i></a></div>
+			<a href='favourites.php?drinkID=$drinkID&userID=2'><i class="fa fa-times" aria-hidden="true"></i></a></div>
 			<table class="drink">		
 				<thead>
 				<tr colspan="2">
@@ -33,7 +33,7 @@
 				</thead>
 				<tbody>
 				<tr>
-					<i class="fa fa-star-o" aria-hidden="true"></i>
+					<a href='favourites.php'<i class="fa fa-star-o" aria-hidden="true"></i>
 					<td id="tdparent">
 						<h5> Ingredients</h5>
 						<ul>
@@ -45,7 +45,7 @@
 						<?php echo "<p> $description </p>";?>
 					</td>
 					<td class="t-left">
-						<?php echo "<img src=\"uploadedfiles/" . $picture . "\">"; ?>
+						<?php echo "<img src=\"../uploadedfiles/" . $picture . "\">"; ?>
 					</td>
 				</tr>
 			</tbody>

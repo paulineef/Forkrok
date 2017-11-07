@@ -17,28 +17,31 @@
     $stmt->bind_result($userID, $drinkID, $name, $picture);
     $stmt->execute();
 	$favArr = array();
-
-	while($stmt->fetch()) {
-		array_push($favArr, $name);
-		 echo "<img src=\"../uploadedfiles/" . $picture . "\">"; 
-	}
-echo("$userID");
 ?>
-	 
-<div class="content">
-
+<div class="content" id="favDrink">
 	<div class="placement">
 
 		<h2>Favourites<i class="fa fa-star" aria-hidden="true"></i></h2>
-	</div>	
-	<ul>
-		<?php foreach($favArr as $var) { //same as [i];
-								echo "<li>" . $var . "</li>";
-							}
+	</div>
+	<?php
+	while($stmt->fetch()) {
+		array_push($favArr, $name);
+		 echo "<li id='listimage'><a href='drinkBase.php?drinkID=$drinkID&userID=$userID'><img class='specificimage' src=\"../uploadedfiles/" . $picture . "\" GROUP BY drinks.picture> <h3 id='namestyle'>" . $name . "</h3> </a></li>";
+	}
+
+?>
+	 
+
+
+		
+	<!--<ul id="favCont">
+		<?php //foreach($favArr as $var) { //same as [i];
+				//				echo "<li>" . $var . "</li>";
+					//		}
 		
 						?>
 		
-	</ul>
+	</ul>-->
 </div>
 
 </body>
