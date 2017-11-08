@@ -23,13 +23,13 @@
 
 	$query = ("SELECT * FROM favourites WHERE drinkID = '{$drinkID}' "."AND userID = '{$userID}'");
 	$stmt = $db->prepare($query);
-    $stmt->bind_result($drinkID2, $userID2);
+    $stmt->bind_result($drinkIDfav, $userID2);
     $stmt->execute();
 
 	while($stmt->fetch()) {
 		
 	}
-	echo("$drinkID2, $userID");
+	echo("$drinkIDfav, $userID");
 	echo('hej');
 
 ?>
@@ -37,7 +37,7 @@
 	<div class="content">		
 		<div class="placement">	
 			<div id="back">
-		<?php if($drinkID2 == $drinkID){
+		<?php if($drinkIDfav == $drinkID){
 					echo("hej");
 				} else {
 					echo("<a href=addFav.php?drinkID=$drinkID&userID=$userID><i class='fa fa-star-o' aria-hidden='true'></i></a>");
