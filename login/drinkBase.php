@@ -18,21 +18,23 @@
 	while($stmt->fetch()) {
 		array_push($ingredients, $term);
 	}
+
+	$query2 = ("SELECT drinkID, userID FROM favourites WHERE drinkID = '{$drinkID}' "."AND userID = '{$userID}'");
+	$stmt2 = $db->prepare($query2);
+    $stmt2->bind_result($drinkID2, $userID2);
+    $stmt2->execute();
+	echo("$drinkID2");
+echo('hej');
 ?>
 <body>
 	<div class="content">		
 		<div class="placement">	
-			
-			<!--
-			FEL
--->
-			<?php echo("<a href=addFav.php?drinkID=$drinkID&userID=$userID><i class='fa fa-star-o' aria-hidden='true'></i></a>")?>
 			<div id="back">
-				
-				<!--
-			HÄR VAR DET FEL
-
--->
+		<?php if($drinkID2 == $drinkID){
+			echo("<a href=addFav.php?drinkID=$drinkID&userID=$userID><i class='fa fa-star-o' aria-hidden='true'></i></a>");
+}
+		?>		
+			
 			<?php echo("<a href=drinks.php?userID=$userID><i class='fa fa-times' aria-hidden='true'></i></a>")?></div>
 			<table class="drink">		
 				<thead>
