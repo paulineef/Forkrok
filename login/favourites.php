@@ -11,7 +11,7 @@
 	$query = "SELECT users.userID, drinks.drinkID, drinks.name, drinks.picture FROM users
 	JOIN favourites ON users.userID = favourites.userID 
 	JOIN drinks ON drinks.drinkID = favourites.drinkID
-	WHERE favourites.userID = $userID";
+	WHERE favourites.userID = $userID GROUP BY drinks.drinkID ";
 
  	$stmt = $db->prepare($query);
     $stmt->bind_result($userID, $drinkID, $name, $picture);

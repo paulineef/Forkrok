@@ -1,6 +1,7 @@
 <?php include ('sidebar.php') ?>
 <?php 
 	$drinkID = trim($_GET["drinkID"]);
+	$userID = trim($_GET["userID"]);
 
 	@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
 
@@ -21,14 +22,24 @@
 <body>
 	<div class="content">		
 		<div class="placement">	
-			<i class="fa fa-star-o" aria-hidden="true"></i>
+			
+			<!--
+			FEL
+-->
+			<?php echo("<a href=addFav.php?drinkID=$drinkID&userID=$userID><i class='fa fa-star-o' aria-hidden='true'></i></a>")?>
 			<div id="back">
-			<a href="drinks.php?drinkID=$drinkID&userID=2"><i class="fa fa-times" aria-hidden="true"></i></a></div>
+				
+				<!--
+			HÄR VAR DET FEL
+
+-->
+			<?php echo("<a href=drinks.php?userID=$userID><i class='fa fa-times' aria-hidden='true'></i></a>")?></div>
 			<table class="drink">		
 				<thead>
 				<tr colspan="2">
 					<th>
-				<?php echo "<h2> $name </h2>";?>
+				<?php echo "<h2> $name </h2>";
+						echo("$userID");?>
  					</th>
 				<tr/>
 				</thead>
@@ -36,7 +47,7 @@
 				<tr>
 					<!--<a href='favourites.php'<i class="fa fa-star-o" aria-hidden="true"></i>-->
 					<td id="tdparent">
-						<h5> Ingredients</h5>
+						<h5>Ingredients</h5>
 						<ul>
 						<?php foreach($ingredients as $var) { //same as [i];
 								echo "<li>" . $var . "</li>";
@@ -61,4 +72,4 @@
 </style>
 
 </body>
-<?php include ('footer.php')  ?>
+<?php include ('../footer.php')  ?>

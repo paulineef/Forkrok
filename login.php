@@ -31,14 +31,18 @@ if (isset($_POST['username'], $_POST['password'])) {
     //echo "SELECT * FROM users WHERE username = '{$uname}' AND password = '{$upass}'";
     
     $query = ("SELECT * FROM users WHERE username = '{$uname}' "."AND password = '{$upass}'");
-       
+    
     $stmt = $db->prepare($query);
     $stmt->execute();
-    $stmt->store_result();
-    
+
+	$result = $stmt->get_result();
+	$user = $result ->fetch_assoc();
+	
     #here we create a new variable 'totalcount' just to check if there's at least
     #one user with the right combination. If there is, we later on print out "access granted"
-    $totalcount = $stmt->num_rows();
+    $totalcount = $result->num_rows;
+	$userID = $user['userID'];
+	echo ($userID);
 }
 ?>
         <form background="#dd00dd" method="POST" action="">
@@ -60,24 +64,22 @@ if (isset($_POST['username'], $_POST['password'])) {
             if ($totalcount == 0) {
                 echo '<h3 id="wrong">Either wrong password or username</h3>';
 				//IF the password and username is right
-            } else {
 				
-                echo "<h2>Welcome, $userID!</h2>";
-				echo("$uname2");
-
-				header("location:login/favourites.php?userID=2");				
-				exit();							
+            } else {
+				echo("<a href ='./login/favourites.php?userID=$userID'> skb</a>");?>
+					<?php
+				//header("location:login/favourites.php?userID=2");				
+				exit();	
+				
             }
         }
         ?>
-
 <style>
 	#wrong {
 		display: inline;
 		left: 30px;
 		top: 135px;
-	}
-	
+	}	
 	form {
 		position: absolute;
 		margin-top: 24px;

@@ -1,4 +1,7 @@
-<?php include ("sidebar.php") ?>
+<?php include ("sidebar.php");
+$userID = trim($_GET["userID"]);
+?>
+
 <head>
 	<title>Förkrök - Drinks</title>
 	<link rel="stylesheet" type="text/css" href="../forkrok.css">
@@ -10,7 +13,7 @@
 	<h2>Drinks<i class="fa fa-glass" aria-hidden="true"></i></h2>
 
 	<!-- Searchfield -->
-	<form action ="drinks.php" method="POST" id="drinksearch">
+	<form action ='drinks.php?userID=$userID' method="POST" id="drinksearch">
 		<input type="text" name="searchdrink" placeholder="Search by drink" class="searchFieldDrink">
 		<input type="text" name="searchingredients" placeholder="or by ingredients" class="searchFieldDrink" id="right">
 		<input type="submit" value="Submit" class="submit" id="drinks">
@@ -70,16 +73,13 @@
     //takes the result of the search and create variables from it
     $stmt->bind_result($drinkID, $name, $ingredientID, $term, $picture);
     $stmt->execute();
-    ?>
 
-   <?php
     echo '<ul id="listDrink">';
     while ($stmt->fetch()) {
-		echo "<li id='listimage'><a href='drinkBase.php?drinkID=$drinkID'><img class='specificimage' src=\"../uploadedfiles/" . $picture . "\" GROUP BY drinks.picture> <h3 id='namestyle'>" . $name . "</h3> </a></li>";
+		echo "<li id='listimage'><a href='drinkBase.php?drinkID=$drinkID&userID=$userID'><img class='specificimage' src=\"../uploadedfiles/" . $picture . "\" GROUP BY drinks.picture> <h3 id='namestyle'>" . $name . "</h3> </a></li>";
 	}
 		echo "</ul>";
 	?>
-
 
 	</div>
 
