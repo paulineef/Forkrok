@@ -4,8 +4,7 @@
 	if (isset($_SESSION['username'])) {
 		header("location:login/index.php");
 	}
-?>
-<body class="logBox">
+?><body class="logBox">
 	<div class="content">
 		<div class="placement">
 			<h2>Login<i class="fa fa-lock" aria-hidden="true"></i></h2>
@@ -71,6 +70,7 @@ if (isset($_POST['username'], $_POST['password'])) {
             }
         }
         ?>
+
 <style>
 	#wrong {
 		display: inline;
@@ -83,8 +83,9 @@ if (isset($_POST['username'], $_POST['password'])) {
 		text-align: center;
 		padding: 30px 12px 12px 12px;
 		background: white;
-		height: 200px;
+		min-height: 200px;
 		max-width: 300px;
+		min-width: 200px;
 		border: 1px solid #dddddd;
 	}	
 	form input {
