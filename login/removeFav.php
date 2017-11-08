@@ -2,6 +2,7 @@
 
 
 <?php
+include('sidebar.php');
 $drinkID = trim($_GET["drinkID"]);
 $userID = trim($_GET["userID"]);
 
@@ -10,7 +11,7 @@ $userID = trim($_GET["userID"]);
 $stmt = $db->prepare("DELETE FROM favourites WHERE drinkID = $drinkID");
         $stmt->bind_param('s', $drinkID);
         $response = $stmt->execute();
-        printf("<br>Book deleted!");
+        printf("<br>Drink!");
         printf("<br><a href=drinks.php?drinkID=$drinkID&userID=$userID>Return to previous page </a>");
     
     

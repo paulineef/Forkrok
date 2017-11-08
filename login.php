@@ -2,9 +2,13 @@
 <?php
 	session_start();
 	if (isset($_SESSION['username'])) {
-		header("location:login/index.php");
-	}
-?><body class="logBox">
+		//header("location:login/index.php");?>
+	<script>
+		window.location ="login/index.php";
+	</script>
+	<?php }
+?>
+			<body class="logBox">
 	<div class="content">
 		<div class="placement">
 			<h2>Login<i class="fa fa-lock" aria-hidden="true"></i></h2>
