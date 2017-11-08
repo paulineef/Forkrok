@@ -10,15 +10,16 @@
 	<div class="placement">
 
 		<h2>Food<i class="fa fa-trophy" aria-hidden="true"></i></h2>
-
 		<form action="food.php" method="POST">
-			<label> Category: </label> 
-			<select name="searchcategory" class="dropDown">
-				<option value="">All</option>
-				<option value="hamburger">Hamburger</option>
-				<option value="pasta">Pasta</option>
-				<option value="pizza">Pizza</option>
-			</select>
+			<div class="searchCat">
+				Category :
+				<select name="searchcategory" class="dropDown">
+					<option value="">All</option>
+					<option value="hamburger">Hamburger</option>
+					<option value="pasta">Pasta</option>
+					<option value="pizza">Pizza</option>
+				</select>
+			</div>
 			<input class="submit" type="submit" name="search" value="Search">
 		</form>
 	
