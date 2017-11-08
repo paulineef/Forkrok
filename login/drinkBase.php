@@ -8,7 +8,9 @@
 	$query = "SELECT drinks.drinkID, drinks.name, ingredients.ingredientID, ingredients.term, drinks.picture, drinks.description FROM drinks
 	JOIN drinks_ingredients ON drinks.drinkID = drinks_ingredients.drinkID 
 	JOIN ingredients ON ingredients.ingredientID = drinks_ingredients.ingredientID
-	WHERE drinks.drinkID = $drinkID";
+	WHERE drinks.drinkID = $drinkID
+	
+	";
 
  	$stmt = $db->prepare($query);
     $stmt->bind_result($drinkID, $name, $ingredientID, $term, $picture, $description);
@@ -19,20 +21,27 @@
 		array_push($ingredients, $term);
 	}
 
-	$query2 = ("SELECT drinkID, userID FROM favourites WHERE drinkID = '{$drinkID}' "."AND userID = '{$userID}'");
-	$stmt2 = $db->prepare($query2);
-    $stmt2->bind_result($drinkID2, $userID2);
-    $stmt2->execute();
-	echo("$drinkID2");
-echo('hej');
+	$query = ("SELECT * FROM favourites WHERE drinkID = '{$drinkID}' "."AND userID = '{$userID}'");
+	$stmt = $db->prepare($query);
+    $stmt->bind_result($drinkID2, $userID2);
+    $stmt->execute();
+
+	while($stmt->fetch()) {
+		
+	}
+	echo("$drinkID2, $userID");
+	echo('hej');
+
 ?>
 <body>
 	<div class="content">		
 		<div class="placement">	
 			<div id="back">
 		<?php if($drinkID2 == $drinkID){
-			echo("<a href=addFav.php?drinkID=$drinkID&userID=$userID><i class='fa fa-star-o' aria-hidden='true'></i></a>");
-}
+					echo("hej");
+				} else {
+					echo("<a href=addFav.php?drinkID=$drinkID&userID=$userID><i class='fa fa-star-o' aria-hidden='true'></i></a>");
+				}
 		?>		
 			
 			<?php echo("<a href=drinks.php?userID=$userID><i class='fa fa-times' aria-hidden='true'></i></a>")?></div>
