@@ -77,6 +77,7 @@ if (isset($_POST['username'], $_POST['password'])) {
 		left: 30px;
 		top: 135px;
 	}
+	
 	form {
 		position: absolute;
 		margin-top: 24px;
