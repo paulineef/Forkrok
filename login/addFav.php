@@ -16,6 +16,6 @@ $userID = trim($_GET["userID"]);
     $stmt->execute();
     printf("<br>Drink Added!");
 	
-    printf("<br><a href=drinkBase.php?$drinkID&userID=$userID>Return to previous page </a>");
+    printf("<br><a href=drinkBase.php?drinkID=$drinkID&userID=$userID>Return to previous page </a>");
     exit;
 ?>

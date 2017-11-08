@@ -10,10 +10,12 @@ $userID = trim($_GET["userID"]);
 
 $stmt = $db->prepare("DELETE FROM favourites WHERE drinkID = $drinkID");
         $stmt->bind_param('s', $drinkID);
-        $response = $stmt->execute();
-        printf("<br>Drink!");
-        printf("<br><a href=drinks.php?drinkID=$drinkID&userID=$userID>Return to previous page </a>");
-    
-    
-    //exit;
+        $response = $stmt->execute(); ?>
+<div class="content">
+	<?php
+        printf("<br><p>Drink removed</p>");
+        printf("<br><a href=drinks.php?drinkID=$drinkID&userID=$userID>Return to previous page </a>");?>
+	
+</div>
 ?>
+	
