@@ -35,9 +35,9 @@
 		<div class="placement">	
 			<div id="back">
 		<?php if($drinkID2 == $drinkID){
-					echo("<a href=removeFav.php?drinkID=$drinkID&userID=$userID><i class='fa fa-star' aria-hidden='true'></i></a>");
+					echo("<a href=removeFav.php?drinkID=$drinkID&userID=$userID><i id='favvis' class='fa fa-star' aria-hidden='true'></i></a>");
 				} else {
-					echo("<a href=addFav.php?drinkID=$drinkID&userID=$userID><i class='fa fa-star-o' aria-hidden='true'></i></a>");
+					echo("<a href=addFav.php?drinkID=$drinkID&userID=$userID><i id='ejfavvis' class='fa fa-star-o' aria-hidden='true'></i></a>");
 				}
 		?>		
 			
@@ -74,7 +74,9 @@
 
 <style type="text/css">
 
-
+	#favvis, #ejfavvis {
+		float: right;
+	}
 
 </style>
 
