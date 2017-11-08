@@ -27,10 +27,6 @@
 	font-weight: 300;
 	text-transform: uppercase;
 }
-.hover {
-	overflow: hidden;
-}
-
 #listimage:hover #namestyle{
 	visibility: visible;
 	display: block;
