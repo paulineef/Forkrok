@@ -21,6 +21,7 @@
 <body>
 	<div class="content">		
 		<div class="placement">	
+			<i class="fa fa-star-o" aria-hidden="true"></i>
 			<div id="back">
 			<a href="drinks.php?drinkID=$drinkID&userID=2"><i class="fa fa-times" aria-hidden="true"></i></a></div>
 			<table class="drink">		
