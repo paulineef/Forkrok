@@ -29,7 +29,6 @@
 						<th colspan="2">
 							<h2>
 								<?php echo $name?>
-								<i id="star" class="fa fa-star-o" aria-hidden="true"></i>
 							</h2>
 						</th>
 					</tr>
@@ -52,7 +51,6 @@
 				<tfoot>
 				<tr>
 					<td colspan="2">
-						<?php// echo "<img src=\"../uploadedfiles/" . $picture . "\">"; ?>
 					</td>
 				</tr>
 			</tfoot>

@@ -56,7 +56,6 @@
     if (!$searchdrink && !$searchingredients) {
     	 $query = $query . " GROUP BY drinks.name";
     }
-
 ?>
 
 <!-- Gallery -->
@@ -75,7 +74,7 @@
    <?php
     echo '<ul id="listDrink">';
     while ($stmt->fetch()) {
-		echo "<li id='listimage'><a href='drinkBase.php?drinkID=$drinkID'><img class='specificimage' src=\"uploadedfiles/" . $picture . "\" GROUP BY drinks.picture> <h3 id='namestyle'>" . $name . "</h3> </a></li>";
+		echo "<li id='listimage'><a href='drinkBase.php?drinkID=$drinkID'><img class='specificimage' src=\"uploadedfiles/" . $picture . "\"> <h3 id='namestyle'>" . $name . "</h3> </a></li>";
 	}
 		echo "</ul>";
 	?>

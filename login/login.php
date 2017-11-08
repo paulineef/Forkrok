@@ -6,9 +6,7 @@
 	if (isset($_SESSION['username'])) {
 		header("location:index.php");
 	}
-?>
-
-<body class="logBox">
+?><body class="logBox">
 <div class="content">
 	<div class="placement">
 		<h2>Login<i class="fa fa-lock" aria-hidden="true"></i></h2>
@@ -21,7 +19,6 @@ if ($db->connect_error) {
     printf("<br><a href=index.php>Return to home page </a>");
     exit();
 }
-
 
 if (isset($_POST['username'], $_POST['password'])) {
     #with statement under we're making it SQL Injection-proof
@@ -53,13 +50,9 @@ if (isset($_POST['username'], $_POST['password'])) {
 				//IF the password and username is right
             } else {
                 echo "<h2>Welcome, $uname!</h2>";
-				echo('<a href="favourites.php">Click here to see your favourite drinks</a>');
 				include('favouritesLogin.php');
 				include('footer.php');
-				exit();
-				
-				
-				
+				exit();	
             }
         }
         ?>
@@ -69,13 +62,16 @@ if (isset($_POST['username'], $_POST['password'])) {
             <td><input type="password" placeholder="Password" name="password"></td>
             
             <input id="submit" type="submit" value="Login">
+			<a id="new" href="newUser.php">Create new user</a>
             </tr>
-             <a id="new" href="newUser.php">Create new user</a>
+            
         </form>
 </div>
        
 	</body>
 <?php include ("footer.php") ?>
+
+
 
 <style>
 	form {
