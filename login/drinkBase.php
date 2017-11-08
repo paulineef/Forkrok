@@ -29,16 +29,13 @@
 	while($stmt->fetch()) {
 		
 	}
-	echo("$drinkID2, $userID");
-	echo('hej');
-
 ?>
 <body>
 	<div class="content">		
 		<div class="placement">	
 			<div id="back">
 		<?php if($drinkID2 == $drinkID){
-					echo("hej");
+					echo("<a href=removeFav.php?drinkID=$drinkID&userID=$userID><i class='fa fa-star' aria-hidden='true'></i></a>");
 				} else {
 					echo("<a href=addFav.php?drinkID=$drinkID&userID=$userID><i class='fa fa-star-o' aria-hidden='true'></i></a>");
 				}
@@ -49,8 +46,7 @@
 				<thead>
 				<tr colspan="2">
 					<th>
-				<?php echo "<h2> $name </h2>";
-						echo("$userID");?>
+				<?php echo "<h2> $name </h2>";?>
  					</th>
 				<tr/>
 				</thead>
