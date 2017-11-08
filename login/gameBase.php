@@ -4,15 +4,16 @@
 </head>
 <?php 
 	$gameID = trim($_GET["gameID"]);
+	$userID = trim($_GET["userID"]);
 	
 	@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
 	
-	$query = "SELECT games.gameID, games.name, gameCat.categoryID, gameCat.term, games.need, games.instructions FROM games 
+	$query = "SELECT games.gameID, games.name, gameCat.categoryID, gameCat.term, games.need, games.instructions, games.picture FROM games 
 	JOIN gameCat ON games.categoryID = gameCat.categoryID WHERE games.gameID = $gameID";
 
 	$stmt = $db->prepare($query);
 	//takes the result of the search and create variables from it
-	$stmt->bind_result($gameID, $name, $categoryID, $term, $need, $instructions);
+	$stmt->bind_result($gameID, $name, $categoryID, $term, $need, $instructions, $picture);
 	$stmt->execute();
 
 	while ($stmt->fetch()) {
@@ -22,7 +23,7 @@
 	<div class="content">
 		<div class="placement">
 			<div id="back">
-			<a href="games.php"><i class="fa fa-times" aria-hidden="true"></i></a></div>
+			<?php echo("<a href=games.php?userID=$userID><i class='fa fa-times' aria-hidden='true'></i></a></div>")?>
 			<table class="game">
 				<thead>
 					<tr>
@@ -51,6 +52,7 @@
 				<tfoot>
 				<tr>
 					<td colspan="2">
+						<?php echo "<img src=\"../uploadedfiles/" . $picture . "\">"; ?>
 					</td>
 				</tr>
 			</tfoot>

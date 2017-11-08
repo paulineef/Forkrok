@@ -1,8 +1,8 @@
 <?php include ("sidebar.php") ?>
 <head>
 	<title>Förkrök - Food</title>
+	<link rel="stylesheet" type="text/css" href="../forkrok.css">
 </head>
-
 <body>
 
 <div class="content">
@@ -10,6 +10,7 @@
 	<div class="placement">
 
 		<h2>Food<i class="fa fa-trophy" aria-hidden="true"></i></h2>
+
 		<form action="food.php" method="POST">
 			<div class="searchCat">
 				Category :
@@ -56,10 +57,10 @@
 			$stmt->execute();
 
 			echo '<table id="gameTable">';
-   			echo '<tr><b><td class="headList">Name of game</td> <td class="headList" id="cat">Category</td> </b> </tr>';
+   			echo '<tr><b><td class="headList">Restaurant</td> <td class="headList" id="cat">Category</td> </b> </tr>';
 			while ($stmt->fetch()) {
 				echo "<tr>";
-				echo " <td class='listStyle'><a href='gameBase.php'> $header</a></td> <td class='category'> $term </td>";
+				echo " <td class='listStyle'><a href='foodBase.php?foodID=$foodID&userID=$userID'> $header</a></td> <td class='category'> $term </td>";
 				echo "</tr>";
 			}
 		?>
@@ -67,4 +68,4 @@
 	
 </div>
 </body>
-<?php include ("footer.php") ?>
+<?php include ("../footer.php") ?>

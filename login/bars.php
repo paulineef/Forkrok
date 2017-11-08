@@ -1,12 +1,14 @@
 <head>
 	<title>Förkrök - Bars &amp; Clubs</title>
-	<link rel="stylesheet" type="text/css" href="forkrok.css">
+	<link rel="stylesheet" type="text/css" href="../forkrok.css">
 	<script src="https://use.fontawesome.com/6f2a9fca0c.js"></script>
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 </head>
 <body>
-<?php include ("sidebar.php") ?>
+<?php include ("sidebar.php");
+	
+$userID = trim($_GET["userID"]); ?>
 
 <div class="content">
 
@@ -41,7 +43,7 @@ if ($db->connect_error) {
     echo '<ul id="listBar">';
 	$test = 1;
     while ($stmt->fetch()) {
-	echo "<a href='barBase.php?barID=$barID'<li id='$test' class='pic'><img src=\"img/" .
+	echo "<a href='barBase.php?barID=$barID&userID=$userID'<li id='$test' class='pic'><img src=\"../img/" .
 		$picture . "\"> <h3 class='header'> $header </h3></li></a>";
 		$test ++;
     }
@@ -52,7 +54,7 @@ if ($db->connect_error) {
 	
 </div>
 
-<?php include ("footer.php") ?>
+<?php include ("../footer.php") ?>
 <style type="text/css">	
 	.b {
 		display: inline;

@@ -1,4 +1,5 @@
-<?php include ("sidebar.php") ?>
+<?php include ("sidebar.php");
+$userID = trim($_GET["userID"]); ?>
 <head>
 	<title>Förkrök - Games</title>
 </head>
@@ -75,7 +76,7 @@
    			echo '<tr><b><td class="headList">Name of game</td> <td class="headList" id="cat">Category</td> </b> </tr>';
 			while ($stmt->fetch()) {
 				echo "<tr>";
-				echo " <td class='listStyle'><a href='gameBase.php?gameID=$gameID'> $name</a></td> <td class='category'> $term </td>";
+				echo " <td class='listStyle'><a href='gameBase.php?gameID=$gameID&userID=$userID'> $name</a></td> <td class='category'> $term </td>";
 				echo "</tr>";
 			}
 		?>
@@ -83,4 +84,4 @@
 	
 </div>
 </body>
-<?php include ("footer.php") ?>
+<?php include ("../footer.php") ?>

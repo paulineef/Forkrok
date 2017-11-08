@@ -3,33 +3,33 @@
 	<script src="https://use.fontawesome.com/6f2a9fca0c.js"></script>
 </head>
 	<?php include ("sidebar.php") ?>
-	
 	<?php 
-		$barID = trim($_GET["barID"]);
-		$userID = trim($_GET["userID"]);
+		$foodID = trim($_GET["foodID"]);
 	
 		@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
 	
-		$query = "SELECT barID, header, description, facebook, maps FROM bars WHERE barID = $barID";
+		$query = "SELECT food.foodID, food.header, foodCat.categoryID, foodCat.term, food.maps, food.facebook FROM food 
+		JOIN foodCat ON food.categoryID = foodCat.categoryID WHERE food.foodID = $foodID";
 
 		$stmt = $db->prepare($query);
 		//takes the result of the search and create variables from it
-		$stmt->bind_result($barID, $header, $description, $facebook, $maps);
+		$stmt->bind_result($foodID, $header, $categoryID, $term, $maps, $facebook);
 		$stmt->execute();
 
 		while ($stmt->fetch()) {
-		}
+	 }
+
 	?> 
 	<div id="indexBongo">
 		<div id="back">
-			<?php echo("<a href=bars.php?userID=$userID><i class='fa fa-times' aria-hidden='true'></i></a>") ?>
+			<?php echo("<a href=food.php?userID=$userID><i class='fa fa-times' aria-hidden='true'></i></a>")?>
 		</div>
 		<h2 class="place"> <?php echo $header ?></h2>
 		<div class="map">
 			<iframe frameborder="0" style="border:0" src=" <?php echo $maps ?>" allowfullscreen></iframe>
 		</div>
 		<p>
-			<?php echo $description ?><br><br>
+			<?php echo $term ?><br><br>
 		</p>
 		<div class="social">
 			<a href="https://www.facebook.com/<?php echo $facebook?>" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
@@ -37,6 +37,8 @@
 		
 	</div>
 	<?php include ("../footer.php") ?>
+
+
 <style type="text/css">	
 	.b {
 		display: inline;

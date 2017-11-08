@@ -17,5 +17,5 @@ $stmt = $db->prepare("DELETE FROM favourites WHERE drinkID = $drinkID");
         printf("<br><a href=drinks.php?drinkID=$drinkID&userID=$userID>Return to previous page </a>");?>
 	
 </div>
-?>
+
 	
