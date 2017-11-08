@@ -9,7 +9,7 @@ $userID = trim($_GET["userID"]);
 @ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
 
 $stmt = $db->prepare("DELETE FROM favourites WHERE drinkID = $drinkID");
-        $stmt->bind_param('s', $drinkID);
+        $stmt->bind_param('s', $drinkID); 
         $response = $stmt->execute(); ?>
 <div class="content">
 	<?php

@@ -7,8 +7,7 @@
 		window.location ="login/index.php";
 	</script>
 	<?php }
-?>
-			<body class="logBox">
+?><body class="logBox">
 	<div class="content">
 		<div class="placement">
 			<h2>Login<i class="fa fa-lock" aria-hidden="true"></i></h2>
@@ -69,7 +68,7 @@ if (isset($_POST['username'], $_POST['password'])) {
                 echo '<h3 id="wrong">Either wrong password or username</h3>';
 				//IF the password and username is right
 				
-            } else {
+            } else { 
 				echo("<a href ='./login/favourites.php?userID=$userID'> skb</a>");?>
 					<?php
 				//header("location:login/favourites.php?userID=2");				
@@ -78,7 +77,8 @@ if (isset($_POST['username'], $_POST['password'])) {
             }
         }
         ?>
-<style>
+
+			<style>
 	#wrong {
 		display: inline;
 		left: 30px;
