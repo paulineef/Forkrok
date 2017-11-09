@@ -14,6 +14,15 @@
 		<div class="placement">
 			<h2>Login<i class="fa fa-lock" aria-hidden="true"></i></h2>
 		</div>
+		<form background="#dd00dd" method="POST" action="favourites.php" <?php //if (isset($totalcount)) { echo 'style="display:none;"'; } ?>>
+           <tr>
+           <td><input type="text" placeholder="Username" name="username"></td>
+            <td><input type="password" placeholder="Password" name="password"></td>
+            
+            <input id="submit" type="submit" value="Login">
+            </tr>
+             <a id="new" href="newUser.php">Create new user</a>
+        </form>
 	<?php 
 		//open the database
 		@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
@@ -48,18 +57,8 @@
 		#one user with the right combination.
 		$totalcount = $result->num_rows;
 		$userID = $user['userID'];
-		echo ($userID);
 	}
 ?>
-        <form background="#dd00dd" method="POST" action="">
-           <tr>
-           <td><input type="text" placeholder="Username" name="username"></td>
-            <td><input type="password" placeholder="Password" name="password"></td>
-            
-            <input id="submit" type="submit" value="Login">
-            </tr>
-             <a id="new" href="newUser.php">Create new user</a>
-        </form>
 </div>
        
 	</div>
@@ -73,16 +72,17 @@
 				
             } else { ?>
 				<script>//window.location ="login/favourites.php";</script> 
-				<?php echo("<a href ='./login/favourites.php?userID=$userID'> skb</a>");?>
+				<?php echo("<div id='formLink' style='background-color: #fff; width: 100%; height: 100vh; z-index: 100; position: absolute; top:0;'><a id='hej' href ='./login/favourites.php?userID=$userID' style='text-decoration: none; color: black; font-family: lato; margin: 50px; margin-top: 200px; position: absolute; right: 30%;'> Click here to see your favourites </a></div>");?>
 					<?php
 				//header("location:login/favourites.php?userID=2");				
 				exit();	
-				
             }
         }
         ?>
-
-			<style>
+<style>
+	#hej:hover {
+		color:#d34e24 !important;
+	}
 	#wrong {
 		display: inline;
 		left: 30px;
@@ -98,6 +98,8 @@
 		max-width: 300px;
 		min-width: 200px;
 		border: 1px solid #dddddd;
+		z-index: -2;
+		top: 30%;
 	}	
 	form input {
 		width: 180px;
