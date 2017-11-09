@@ -1,5 +1,6 @@
 <?php include ('sidebar.php') ?>
 <?php 
+	//GET userID and drinkID from url and put them into varables
 	$drinkID = trim($_GET["drinkID"]);
 	$userID = trim($_GET["userID"]);
 

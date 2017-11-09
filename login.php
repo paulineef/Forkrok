@@ -1,5 +1,6 @@
-<?php include('config.php'); ?> 
-<?php
+<?php include('config.php'); 
+
+	//IF there's a session already going on
 	session_start();
 	if (isset($_SESSION['username'])) {
 		//header("location:login/index.php");?>
@@ -7,46 +8,48 @@
 		window.location ="login/index.php";
 	</script>
 	<?php }
-?><body class="logBox">
+?>
+<div class="logBox">
 	<div class="content">
 		<div class="placement">
 			<h2>Login<i class="fa fa-lock" aria-hidden="true"></i></h2>
 		</div>
 	<?php 
+		//open the database
 		@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
 
-if ($db->connect_error) {
-    echo "could not connect: " . $db->connect_error;
-    printf("<br><a href=index.php>Return to home page </a>");
-    exit();
-}
+		//IF the database can't connect
+	if ($db->connect_error) {
+		echo "could not connect: " . $db->connect_error;
+		printf("<br><a href=index.php>Return to home page </a>");
+		exit();
+	}
 
-if (isset($_POST['username'], $_POST['password'])) {
-    #with statement under we're making it SQL Injection-proof
-	//makes it to a string, fjonks won't work
-    $uname = mysqli_real_escape_string($db, $_POST['username']);
-	$upass = mysqli_real_escape_string($db, $_POST['password']);
-    
-    $upass = SHA1($_POST['password']);
-    
-    #just to see what we are selecting, and we can use it to test in phpmyadmin/heidisql
-    
-    //echo "SELECT * FROM users WHERE username = '{$uname}' AND password = '{$upass}'";
-    
-    $query = ("SELECT * FROM users WHERE username = '{$uname}' "."AND password = '{$upass}'");
-    
-    $stmt = $db->prepare($query);
-    $stmt->execute();
+	if (isset($_POST['username'], $_POST['password'])) {
+		#with statement under we're making it SQL Injection-proof
+		//makes it to a string, fjonks won't work
+		$uname = mysqli_real_escape_string($db, $_POST['username']);
+		$upass = mysqli_real_escape_string($db, $_POST['password']);
 
-	$result = $stmt->get_result();
-	$user = $result ->fetch_assoc();
-	
-    #here we create a new variable 'totalcount' just to check if there's at least
-    #one user with the right combination. If there is, we later on print out "access granted"
-    $totalcount = $result->num_rows;
-	$userID = $user['userID'];
-	echo ($userID);
-}
+		$upass = SHA1($_POST['password']);
+
+		#just to see what we are selecting, and we can use it to test in phpmyadmin/heidisql
+
+		//SELECT ALL from users where the username and password is what was typed in
+		$query = ("SELECT * FROM users WHERE username = '{$uname}' "."AND password = '{$upass}'");
+
+		$stmt = $db->prepare($query);
+		$stmt->execute();
+
+		$result = $stmt->get_result();
+		$user = $result ->fetch_assoc();
+
+		#here we create a new variable 'totalcount' just to check if there's at least
+		#one user with the right combination.
+		$totalcount = $result->num_rows;
+		$userID = $user['userID'];
+		echo ($userID);
+	}
 ?>
         <form background="#dd00dd" method="POST" action="">
            <tr>
@@ -59,7 +62,7 @@ if (isset($_POST['username'], $_POST['password'])) {
         </form>
 </div>
        
-	</body>
+	</div>
 <?php 
 	include ("footer.php");     
 
