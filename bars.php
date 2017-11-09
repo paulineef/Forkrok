@@ -28,20 +28,20 @@ if ($db->connect_error) {
 }
 	$query = "SELECT barID, header, picture FROM bars";
 	
-	# Here's the query using bound result parameters
-    // echo "we are now using bound result parameters <br/>";
+    //using the query to bind the result to parameters
     $stmt = $db->prepare($query);
+	
 	//takes the result of the search and create variables from it
     $stmt->bind_result($barID, $header, $picture);
     $stmt->execute();
 ?>
    <?php
+	//make a list out of the objects in the database
     echo '<ul id="listBar">';
-	$test = 1;
+	//as long as there are objects, echo out the header and picture of them
     while ($stmt->fetch()) {
-	echo "<a href='barBase.php?barID=$barID'<li id='$test' class='pic'><img src=\"img/" .
+	echo "<a href='barBase.php?barID=$barID'<li class='pic'><img src=\"img/" .
 		$picture . "\"> <h3 class='header'> $header </h3></li></a>";
-		$test ++;
     }
 	echo "</ul>";
 
