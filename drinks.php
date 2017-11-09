@@ -31,6 +31,8 @@
 
 				if (isset($_POST) && !empty($_POST)) {
 				
+					#with statement under we're making it SQL Injection-proof
+					//makes it to a string, fjonks won't work
 					$searchdrink = trim($_POST['searchdrink']);
 					$searchingredients = trim ($_POST['searchingredients']);
 					
@@ -42,6 +44,7 @@
 
 					$searchdrink = addslashes ($searchdrink);
 					$searchingredients = addslashes($searchingredients);
+					
 				}
 
 		        
