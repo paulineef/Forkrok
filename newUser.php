@@ -1,8 +1,10 @@
-<?php include ("sidebar.php") ?><body class="logBox">
-<div class="content">
-<div class="placement">
+<?php include ("sidebar.php") ?>
+<body class="logBox">
+	<div class="content">
+		<div class="placement">
 		<h2>Add new user<i class="fa fa-plus" aria-hidden="true"></i></h2>
 	</div>
+	
 	<?php
 //PUT THIS HEADER ON TOP OF EACH UNIQUE PAGE
 session_start();
@@ -12,12 +14,16 @@ if (!isset($_SESSION['username'])) {
 ?>
 
 <?php
+@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
+
+
 if (isset($_POST['newUsername'])) {
     // This is the postback so add the book to the database
     # Get data from form
     $newUsername = trim($_POST['newUsername']);
     $newPassword = trim($_POST['newPassword']);
 	$copyPassword = trim($_POST['copyPassword']);
+
 
 	//IF there's an empty field
     if (!$newUsername || !$newPassword) {
@@ -26,13 +32,30 @@ if (isset($_POST['newUsername'])) {
 		exit();
     }
 
+    //Check users
+	if(isset($newUsername)){
+	$get_users = mysql_query("SELECT users.username FROM users");
+
+	$get_rows = mysql_affected_rows($db);
+
+	if($get_rows >=1){
+	echo "<h1>user exists</h1>";
+	die();
+	}
+
+	else{
+	echo "user do not exists";
+	}
+
+}
+
     $newUsername = addslashes($newUsername);
     /*$newPassword = addslashes ($newPassword);*/
 	//make sha1
 	$newPassword = addslashes(sha1($newPassword));
 	$copyPassword = addslashes(sha1($copyPassword));
     # Open the database using the "forkrok" account
-@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
+
 
     if ($db->connect_error) {
         echo "could not connect: " . $db->connect_error;
