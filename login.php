@@ -68,8 +68,9 @@ if (isset($_POST['username'], $_POST['password'])) {
                 echo '<h3 id="wrong">Either wrong password or username</h3>';
 				//IF the password and username is right
 				
-            } else { 
-				echo("<a href ='./login/favourites.php?userID=$userID'> skb</a>");?>
+            } else { ?>
+				<script>//window.location ="login/favourites.php";</script> 
+				<?php echo("<a href ='./login/favourites.php?userID=$userID'> skb</a>");?>
 					<?php
 				//header("location:login/favourites.php?userID=2");				
 				exit();	
