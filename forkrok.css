@@ -94,7 +94,6 @@ h2 i {
 	color: #FDCD01;
 }
 
-
 @media (min-width: 928px) {
 	h1 {
 		font-size: 30pt;
@@ -104,8 +103,7 @@ h2 i {
 	}
 	h2 {
 		font-size: 30pt;
-		margin: 0px 0px 30px 0px
-		
+		margin: 0px 0px 30px 0px	
 	}
 	h3 {
 		font-size: 25pt;
@@ -554,12 +552,80 @@ form label {
 		}
 	}
 
+
+/* ------- BARS ------ */
+
+#listBar {
+		bottom: 50px;
+		font-family: 'lato';
+		width: 100%;
+		padding: 0;
+		text-align: center;
+		overflow: hidden;
+		list-style-type: none;
+		left: 0px;
+	}
+	.pic {
+		float: left;
+		max-width: 50%;
+		padding: 6px;
+		box-sizing: border-box;
+		margin-bottom: 15px;
+		min-height: 147px;
+		overflow: hidden;
+	}
+	.pic img {
+		max-width: 100%;
+	}
+	.header {
+		color: white;
+		z-index: 9999;
+		font-size: 15pt;
+		margin: 0;
+		margin-top: -75px;
+	}
+	#listBar {
+		max-width: 400px;
+		margin: 0 auto;
+		text-align: center;
+	}
+	#listBar li p {
+		text-align: left;
+	}	
+	
+	@media (min-width: 375px){
+		.header {
+			margin-top: -90px;
+		}
+	}
+	@media (min-width: 768px){
+		#listBar {
+			max-width: 600px;
+		}
+		.pic {
+			max-width: 33%;
+		}
+	}
+	@media (min-width: 928px){
+		.content {
+			margin-left: 400px;
+			padding-left: 0;
+		}
+		#listBar {
+			padding-left: 0;
+		}
+	}
+	@media (min-width: 1200px){
+		.content {
+			margin-left: 500px;
+		}
+	}
+
 /* ------- SIDEBAR ------- */
 
 #login {
 	color: #ddd !important; 
 }
-
 #login:hover {
 	color: #efc100;
 }
@@ -589,7 +655,6 @@ form label {
 	height: 60px;
 	
 }
-
 #nav-icon3 span{	
 	display: block;
 	position: absolute;
@@ -611,58 +676,47 @@ form label {
 #nav-icon3 span:nth-child(1) {
 	top: 1px;
 }
-
 #nav-icon3 span:nth-child(2),#nav-icon3 span:nth-child(3) {
 	top: 12px;
 }
-
 #nav-icon3 span:nth-child(4) {
 	top: 24px;
 }
-
 #nav-icon3.open span:nth-child(1) {
 	top: 18px;
 	width: 0%;
 	left: 50%;
 }
-
 #nav-icon3.open span:nth-child(2) {
 	-webkit-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
 	-o-transform: rotate(45deg);
 	transform: rotate(45deg);
 }
-
 #nav-icon3.open span:nth-child(3) {
 	-webkit-transform: rotate(-45deg);
 	-moz-transform: rotate(-45deg);
 	-o-transform: rotate(-45deg);
 	transform: rotate(-45deg);
 }
-
 #nav-icon3.open span:nth-child(4) {
 	top: 18px;
 	width: 0%;
 	left: 50%;
 }	
-
 #forkrok {
 	padding-top: 22px;
 }
-
 i {
 	padding-right: 20px;
 }
-
 header {
 	width: 100%;
 	z-index: 9999;
 	position: fixed;
 	left: 0;
 }
-
 .imgCont {
-	width: 100%;
 	text-align: center;
 	overflow: hidden;
 	width: 150px;
@@ -689,7 +743,6 @@ header {
 	box-sizing: border-box;
 	padding-top: 30px; 	
 }
-
 .ulli ul li:first-child {
 	margin-top: 32px;
 }
@@ -705,7 +758,6 @@ header {
 .ulli li a:hover {
 	color: #efc100;
 }
-
 #first {
 	padding-top: 50px; 
 }
@@ -715,12 +767,10 @@ header {
 	
 
 @media (min-width: 928px) { /* desktop*/
-
 	.imgCont {
 		padding-top: 40px;
 		width: 150px;
 	}
-
 	#nav-icon3 {
 		display: none;
 	}
@@ -772,7 +822,6 @@ header {
 	i {
 		padding-right: 9px;
 	}
-
 	header {
 		max-width: 320px;
 		z-index: 9999;
@@ -785,14 +834,12 @@ header {
 		float: left; 
 		padding: 1%;
 	}
-
 	header img {
 		display: block;
 	}
 }
 
 @media (min-width: 768px) and (max-width: 927px) { /* ipad */
-
 	.imgCont {
 		width: 100%;
 		width: 170px;
@@ -814,13 +861,11 @@ header {
 		font-weight: 700;
 		font-size: 20px;
 	}
-
 	#nav-icon3{
 		position: absolute;
 		right: 30px;
 		top: 40px;
 	}
-
 	#nav-icon3 span{	
 		display: block;
 		position: absolute;
@@ -831,11 +876,9 @@ header {
 	#nav-icon3 span:nth-child(1) {
 		top: 1px;
 	}
-
 	#nav-icon3 span:nth-child(2),#nav-icon3 span:nth-child(3) {
 		top: 15px;
 	}
-
 	#nav-icon3 span:nth-child(4) {
 		top: 30px;
 	}

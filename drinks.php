@@ -24,19 +24,22 @@
 
 				
 			<?php
+				//declare variables with an empty strings, to later push the users search-values into the string
 				$searchdrink = "";
 				$searchingredients = "";
-			
+				
+				//connect with the database with servername, username, password, and database
 				@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
 
+				//if the submit button is pushed, and the form is active and not empty...
 				if (isset($_POST) && !empty($_POST)) {
-				
-					#with statement under we're making it SQL Injection-proof
-					//makes it to a string, fjonks won't work
+					
 					$searchdrink = trim($_POST['searchdrink']);
 					$searchingredients = trim ($_POST['searchingredients']);
 					
+					//with statement under we're making it SQL Injection-proof
 					$searchdrink = mysqli_real_escape_string($db, $searchdrink);
+					//can't put code into field, "" won't work
 					$searchdrink = htmlentities($searchdrink);
 
 					$searchingredients = mysqli_real_escape_string($db, $searchingredients);

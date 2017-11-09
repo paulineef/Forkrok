@@ -1,8 +1,10 @@
-<?php include ("sidebar.php") ?><body class="logBox">
-<div class="content">
-<div class="placement">
+<?php include ("sidebar.php") ?>
+<body class="logBox">
+	<div class="content">
+		<div class="placement">
 		<h2>Add new user<i class="fa fa-plus" aria-hidden="true"></i></h2>
 	</div>
+	
 	<?php
 //PUT THIS HEADER ON TOP OF EACH UNIQUE PAGE
 session_start();
@@ -12,6 +14,9 @@ if (!isset($_SESSION['username'])) {
 ?>
 
 <?php
+@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
+
+
 if (isset($_POST['newUsername'])) {
     // This is the postback so add the book to the database
     # Get data from form
@@ -25,14 +30,14 @@ if (isset($_POST['newUsername'])) {
         echo("<br><a id='hej' href=newUser.php>Go back</a>");
 		exit();
     }
-
+	 
     $newUsername = addslashes($newUsername);
     /*$newPassword = addslashes ($newPassword);*/
 	//make sha1
 	$newPassword = addslashes(sha1($newPassword));
 	$copyPassword = addslashes(sha1($copyPassword));
     # Open the database using the "forkrok" account
-@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
+
 
     if ($db->connect_error) {
         echo "could not connect: " . $db->connect_error;
@@ -54,6 +59,7 @@ if (isset($_POST['newUsername'])) {
 		echo "Password doesn't match";
 	}
 }
+
 
 ?>
 <form action="" method="POST">

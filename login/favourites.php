@@ -2,7 +2,6 @@
 <head>
 	<title>Förkrök - Favourites</title>
 </head>
-<body>
 <?php 
 		$userID = trim($_GET["userID"]);
 	
@@ -32,5 +31,4 @@
 ?>
 </div>
 
-</body>
 <?php include ("../footer.php")?>

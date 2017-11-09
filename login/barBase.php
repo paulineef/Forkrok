@@ -26,7 +26,7 @@
 		</div>
 		<h2 class="place"> <?php echo $header ?></h2>
 		<div class="map">
-			<iframe frameborder="0" style="border:0" src=" <?php echo $maps ?>" allowfullscreen></iframe>
+			<iframe id="mapFrame" frameborder="0" style="border:0" src=" <?php echo $maps ?>" allowfullscreen></iframe>
 		</div>
 		<p>
 			<?php echo $description ?><br><br>
@@ -52,7 +52,7 @@
 		margin: 0;
 		margin-top: -75px;
 	}
-	iframe {
+	#mapFrame {
 		width: 100%;
 		min-height: 180px;
 		margin: 0 auto;
@@ -89,7 +89,6 @@
 		width: 100%;
 		background: white;
 		width: 1px;
-
 	}
 	.back a {
 		color: black;
@@ -108,16 +107,7 @@
 	.social .fa {
 		color: black !important;
 	}
-	.content {
-		position: relative;
-	}
-	.content {
-		float:left; 
-		margin-right: 100px;
-		width: 100%;
-		box-sizing: border-box;
-		margin: 0 auto;
-	}
+
 	.colour {
 		background: rgba(0,0,0, 0.5);
 		width: 100%;
