@@ -2,9 +2,8 @@
 	<link rel="stylesheet" type="text/css" href="forkrok.css">
 	<script src="https://use.fontawesome.com/6f2a9fca0c.js"></script>
 </head>
-	<?php include ("sidebar.php") ?>
-	
-	<?php 
+	<?php include ("sidebar.php"); 
+
 		$barID = trim($_GET["barID"]);
 	
 		@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
@@ -25,7 +24,7 @@
 		</div>
 		<h2 class="place"> <?php echo $header ?></h2>
 		<div class="map">
-			<iframe frameborder="0" style="border:0" src=" <?php echo $maps ?>" allowfullscreen></iframe>
+			<iframe id="mapFrame" frameborder="0" style="border:0" src=" <?php echo $maps ?>" allowfullscreen></iframe>
 		</div>
 		<p>
 			<?php echo $description ?><br><br>
@@ -37,10 +36,6 @@
 	</div>
 	<?php include ("footer.php") ?>
 <style type="text/css">	
-	.b {
-		display: inline;
-		float: right;
-	}
 	.place {
 		display: inline;
 	}
@@ -51,7 +46,7 @@
 		margin: 0;
 		margin-top: -75px;
 	}
-	iframe {
+	#mapFrame {
 		width: 100%;
 		min-height: 180px;
 		margin: 0 auto;
@@ -88,7 +83,6 @@
 		width: 100%;
 		background: white;
 		width: 1px;
-
 	}
 	.back a {
 		color: black;
@@ -106,24 +100,6 @@
 	}
 	.social .fa {
 		color: black !important;
-	}
-	.content {
-		position: relative;
-	}
-	.content {
-		float:left; 
-		margin-right: 100px;
-		width: 100%;
-		box-sizing: border-box;
-		margin: 0 auto;
-	}
-	.colour {
-		background: rgba(0,0,0, 0.5);
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		top: 0px;
-		margin: 0px;
 	}
 	#listBar {
 		max-width: 400px;
@@ -143,16 +119,12 @@
 			padding-left: 150px;
 			padding-top: 100px;
 		}
-		iframe {
+		#mapFrame {
 			min-height: 250px;
 			padding-bottom: 32px;
 		}
 	}
 	@media (min-width: 928px){
-		.content {
-			margin-left: 400px;
-			padding-left: 0;
-		}
 		#listBar {
 			padding-left: 0;
 		}
@@ -161,9 +133,5 @@
 			padding-left: 50px;
 		}
 	}
-	@media (min-width: 1200px){
-		.content {
-			margin-left: 500px;
-		}
-	}
+}
 </style>
