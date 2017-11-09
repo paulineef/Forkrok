@@ -30,18 +30,7 @@ if (isset($_POST['newUsername'])) {
         echo("<br><a id='hej' href=newUser.php>Go back</a>");
 		exit();
     }
-
-    //Check users
-	$get_users = mysql_query("SELECT users.username FROM users");
-	$get_rows = mysql_affected_rows($db);
-
-	if($get_rows >=1){
-		echo("<h1>The username is already taken</h1>");
-		echo("<br><a id='hej' href=newUser.php>Go back</a>");
-		exit();
-	}
 	 
-
     $newUsername = addslashes($newUsername);
     /*$newPassword = addslashes ($newPassword);*/
 	//make sha1
