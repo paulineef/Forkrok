@@ -24,7 +24,6 @@ if (isset($_POST['newUsername'])) {
     $newPassword = trim($_POST['newPassword']);
 	$copyPassword = trim($_POST['copyPassword']);
 
-
 	//IF there's an empty field
     if (!$newUsername || !$newPassword) {
         echo("<h3>You must specify both username and password</h3>");
@@ -33,21 +32,15 @@ if (isset($_POST['newUsername'])) {
     }
 
     //Check users
-	if(isset($newUsername)){
 	$get_users = mysql_query("SELECT users.username FROM users");
-
 	$get_rows = mysql_affected_rows($db);
 
 	if($get_rows >=1){
-	echo "<h1>user exists</h1>";
-	die();
+		echo("<h1>The username is already taken</h1>");
+		echo("<br><a id='hej' href=newUser.php>Go back</a>");
+		exit();
 	}
-
-	else{
-	echo "user do not exists";
-	}
-
-}
+	 
 
     $newUsername = addslashes($newUsername);
     /*$newPassword = addslashes ($newPassword);*/
@@ -77,6 +70,7 @@ if (isset($_POST['newUsername'])) {
 		echo "Password doesn't match";
 	}
 }
+
 
 ?>
 <form action="" method="POST">
