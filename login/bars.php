@@ -41,6 +41,7 @@
 	//as long as there as bars in database, echo out the header and picture in as list
 	//send the current barID to the URL
     while ($stmt->fetch()) {
+		//include the curren barID and userID in the url
 		echo "<a href='barBase.php?barID=$barID&userID=$userID'<li class='pic'><img src=\"../img/" .
 		$picture . "\"> <h3 class='header'> $header </h3></li></a>";
     }
