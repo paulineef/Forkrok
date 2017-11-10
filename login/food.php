@@ -74,7 +74,7 @@
 			while ($stmt->fetch()) {
 				echo "<tr>";
 				//echo out the values within header and term in a list
-				echo " <td class='listStyle'><a href='foodBase.php?foodID=$foodID'> $header</a></td> <td class='category'> $term </td>";
+				echo " <td class='listStyle'><a href='foodBase.php?foodID=$foodID&userID=$userID'> $header</a></td> <td class='category'> $term </td>";
 				echo "</tr>";
 			}
 		?>
