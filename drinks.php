@@ -34,28 +34,30 @@
 				//if the submit button is pushed, and the form is active and not empty...
 				if (isset($_POST) && !empty($_POST)) {
 					
+					//trim will erase whitespace in the searchfield, put the users search-values into the variable
 					$searchdrink = trim($_POST['searchdrink']);
 					$searchingredients = trim ($_POST['searchingredients']);
 					
-					//with statement under we're making it SQL Injection-proof
+					//makes the fields SQL Injection-proof, or '1=1
 					$searchdrink = mysqli_real_escape_string($db, $searchdrink);
-					//can't put code into field, "" won't work
+					//htmlentities, won't accept html-code into field
 					$searchdrink = htmlentities($searchdrink);
 
 					$searchingredients = mysqli_real_escape_string($db, $searchingredients);
 					$searchingredients = htmlentities($searchingredients);
 
+					//adds slashes before charaters that need to be escaped in the fields like '', "", \
 					$searchdrink = addslashes ($searchdrink);
 					$searchingredients = addslashes($searchingredients);
-					
 				}
 
-		        
+		        //get tabels and columns from database, and join the onces that are supposed to be connected to eachother
 				$query = "SELECT drinks.drinkID, drinks.name, ingredients.ingredientID, ingredients.term, drinks.picture FROM drinks
 				JOIN drinks_ingredients ON drinks.drinkID = drinks_ingredients.drinkID 
 				JOIN ingredients ON ingredients.ingredientID = drinks_ingredients.ingredientID";
 
-			
+				//if the field searchdrink is active and the field searchingredients is empty, echo out the search-value
+				//group by, so we only echo out one drink id and not the amount of drink id connected to each ingredients
 				if ($searchdrink && !$searchingredients) {
 					$query = $query . " where name like '%" . $searchdrink . "%' GROUP BY drinks.name";
 				}
@@ -73,19 +75,20 @@
 			<!-- Gallery -->
 			<div id="gallerycontent">
 				<?php 
-			
-			
-					# Here's the query using bound result parameters
-		    		// echo "we are now using bound result parameters <br/>";
+					//acess the database and prepare for the query to be used in the stmt-variable 
 		    		$stmt = $db->prepare($query);
-		    		//takes the result of the search and create variables from it
+		    		//takes the result from the query and put in the variables below
 		    		$stmt->bind_result($drinkID, $name, $ingredientID, $term, $picture);
+		    		//execute the function in the stmt
 		    		$stmt->execute();
 		    	?>
 
 		    	<?php
+		    		//create a list in html-form
 		    		echo '<ul id="listDrink">';
+		    		// While fetching results from a prepared statement into the bound variables
 		    		while ($stmt->fetch()) {
+		    		//echo out the drinks matching the searchresult and display it in an image rather than in text. Using list elements and href to make it able to click through and get more information. The images are connected in the database by the name getting from a folder. Name is displayed when hovering. 
 					echo "<li id='listimage'><a href='drinkBase.php?drinkID=$drinkID'><img class='specificimage' src=\"uploadedfiles/" . $picture . "\"> <h3 id='namestyle'>" . $name . "</h3> </a></li>";
 				}
 					echo "</ul>";
@@ -96,4 +99,5 @@
 	</div>
 </body>
 
+<!-- include footer to make sure it looks the same on all pages and no need to change in every single document if we need to redo something  -->
 <?php include ("footer.php") ?>
