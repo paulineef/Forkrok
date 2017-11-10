@@ -5,7 +5,7 @@
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 </head>
-<body>
+
 <?php include ("sidebar.php") ?>
 
 <div class="content">
@@ -15,27 +15,27 @@
 		<h2>Bars &amp; Clubs<i class="fa fa-beer" aria-hidden="true"></i></h2>
 </div>
 	<?php 
-	# Open the database
-@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
+	// Open the database
+	@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
 
 
 
 	//IF the database can't connect
-if ($db->connect_error) {
-    echo "could not connect: " . $db->connect_error;
-    printf("<br><a href=index.php>Return to home page </a>");
-    exit();
-}
+	if ($db->connect_error) {
+		echo "could not connect: " . $db->connect_error;
+		//get the option to return to home page
+		printf("<br><a href=index.php>Return to home page </a>");
+		exit();
+	}
 	$query = "SELECT barID, header, picture FROM bars";
 	
     //using the query to bind the result to parameters
     $stmt = $db->prepare($query);
 	
-	//takes the result of the search and create variables from it
+	//takes the result of the search and put it into variables
     $stmt->bind_result($barID, $header, $picture);
     $stmt->execute();
-?>
-   <?php
+
 	//make a list out of the objects in the database
     echo '<ul id="listBar">';
 	//as long as there are objects, echo out the header and picture of them
