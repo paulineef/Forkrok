@@ -421,7 +421,6 @@ form label {
 	overflow: hidden;
 	max-width: 100%;
 	padding: 0px;
-
 }
 
 #gallerycontent {
@@ -429,25 +428,20 @@ form label {
 	width: 100%;
 }
 
-
 @media(min-width: 928px) {
-
 	.searchFieldDrink {
 		width: 48%;
 	}
-
 	#gallerycontent {
 	   /* column-count: 3;
 	    column-gap: 0;
 	    line-height: 0;*/
 	}
-
 	h3 {
-		font-family: lato, sans-serif;
+		font-family: 'lato', sans-serif;
 		font-size: 15pt;
 		font-weight: 300;
 	}
-
 	.submit {
 		display: inline-block;
 	}
@@ -458,7 +452,6 @@ form label {
 }
 
 @media (min-width: 768px) and (max-width: 927px){
-
 	.searchFieldDrink {
 		width: 48%;
 	}
@@ -466,7 +459,6 @@ form label {
 	#right {
 		float: right; 
 	}
-
 }
 
 	/* --- DRINK BASE --- */
@@ -522,8 +514,7 @@ form label {
 		font-size: 12pt; 
 	}
 
-	@media (min-width: 768px) and (max-width: 927px) {
-
+@media (min-width: 768px) and (max-width: 927px) {
 		.drink td {
 			max-width: 400px; 
 		}
@@ -531,11 +522,9 @@ form label {
 		.t-left img {
 			width: 100%;
 		}
-
 	}
 
-
-	@media (min-width: 928px){
+@media (min-width: 928px){
 		.drink h5 {
 			font-size: 14pt; 
 		}

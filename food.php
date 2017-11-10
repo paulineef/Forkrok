@@ -11,7 +11,7 @@
 
 		<h2>Food<i class="fa fa-trophy" aria-hidden="true"></i></h2>
 
-		<?php echo("<form action='food.php?userID=$userID'' method='POST'>") ?>
+		<?php echo("<form action='food.php' method='POST'>") ?>
 			<div class="searchCat">
 				Category :
 				<select name="searchcategory" class="dropDown">
