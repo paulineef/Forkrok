@@ -13,14 +13,14 @@
 		</div>
 		<!-- POST = the information taken from the form will not be displayed in the URL -->
 		<form background="#dd00dd" method="POST" action="favourites.php">
-           <tr>
-           <td><input type="text" placeholder="Username" name="username"></td>
-            <td><input type="password" placeholder="Password" name="password"></td>
-           
-            <input id="submit" type="submit" value="Login">
+            <tr>
+				<td><input type="text" placeholder="Username" name="username"></td>
+				<td><input type="password" placeholder="Password" name="password"></td>
+
+				<input id="submit" type="submit" value="Login">
             </tr>
             <!-- Move to the page newUser.php when clicking on the link-->
-             <a id="new" href="newUser.php">Create new user</a>
+        	<a id="new" href="newUser.php">Create new user</a>
         </form>
 <?php 
 	//open the database with the server = localhost, username and password = user and name =forkrok and put it into a variable 'db'

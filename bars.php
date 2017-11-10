@@ -2,16 +2,15 @@
 	<title>Förkrök - Bars &amp; Clubs</title>
 	<link rel="stylesheet" type="text/css" href="forkrok.css">
 </head>
-
-<?php //iclude sidebar
-include ("sidebar.php") ?>
-
+<?php 
+	//include sidebar
+	include ("sidebar.php") 
+?>
 <div class="content">
 	<div class="placement">
 		<h2>Bars &amp; Clubs<i class="fa fa-beer" aria-hidden="true"></i></h2>
-</div>
-	
-	<?php 
+	</div>
+<?php 
 	// Open the database with the login we chose
 	@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
 
@@ -22,13 +21,14 @@ include ("sidebar.php") ?>
 		printf("<br><a href=index.php>Return to home page </a>");
 		exit();
 	}
+	
 	$query = "SELECT barID, header, picture FROM bars";
 	
     //using the query to bind the result to parameters
     $stmt = $db->prepare($query);
-	
 	//takes the result of the search and put it into variables
     $stmt->bind_result($barID, $header, $picture);
+	//execute the FUNCTION within stmt
     $stmt->execute();
 
 	//make a list out of the objects in the database
@@ -40,8 +40,7 @@ include ("sidebar.php") ?>
 		$picture . "\"> <h3 class='header'> $header </h3></li></a>";
     }
 	echo "</ul>";
-
-	?>
+?>
 </div>
 
 <?php include ("footer.php") ?>
