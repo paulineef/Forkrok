@@ -507,6 +507,10 @@ form label {
 		font-size: 12pt; 
 	}
 
+	#favvis, #ejfavvis {
+		float: right;
+	}
+
 @media (min-width: 768px) and (max-width: 927px) {
 		.info {
 			float: left; 
