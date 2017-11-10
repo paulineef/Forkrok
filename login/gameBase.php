@@ -70,7 +70,4 @@
 			</table>
 		</div>
 	</div>
-	<style type="text/css">
-
-	</style>
 <?php include('../footer.php');?>
