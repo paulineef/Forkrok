@@ -1,11 +1,10 @@
-<?php include ("sidebar.php") ?>
-<head>
+<?php include ("sidebar.php") ?><head>
 	<link rel="stylesheet" type="text/css" href="forkrok.css">
 	<script src="https://use.fontawesome.com/6f2a9fca0c.js"></script>
 </head>
 	<?php 
 		//get the value foodID from the URL, trim it = reduce shit and put it into a new variable
-		$foodID = trim($_GET["foodID"]);
+		$foodID = $_GET["foodID"];
 		//connect to the database with the server = localhost, username = user, password = user and database name = forkork and put it into a variable 'db'
 		@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
 
@@ -24,7 +23,8 @@
 		while ($stmt->fetch()) {
 	 	}
 	?> 
-	<div id="indexBongo">
+	
+<div id="indexBongo">
 		<div id="back">
 			<a href="food.php"><i class="fa fa-times" aria-hidden="true"></i></a>
 		</div>

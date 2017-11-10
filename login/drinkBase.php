@@ -37,19 +37,23 @@
 	<div class="content">		
 		<div class="placement">	
 			<div id="back">
-		<?php if($drinkID2 == $drinkID){
-					echo("<a href=removeFav.php?drinkID=$drinkID&userID=$userID><i id='favvis' class='fa fa-star' aria-hidden='true'></i></a>");
-				} else {
-					echo("<a href=addFav.php?drinkID=$drinkID&userID=$userID><i id='ejfavvis' class='fa fa-star-o' aria-hidden='true'></i></a>");
-				}
-		?>		
+		
 			
-			<?php echo("<a href=drinks.php?userID=$userID><i class='fa fa-times' aria-hidden='true'></i></a>")?></div>
+			<?php echo("<a href=drinks.php?userID=$userID><i class='fa fa-times' aria-hidden='true'></i></a>")?>
+				
+			</div>
 			<table class="drink">		
 				<thead>
 				<tr colspan="2">
 					<th>
-				<?php echo "<h2> $name </h2>";?>
+				<?php echo "<h2> $name";
+					
+					if($drinkID2 == $drinkID){
+					echo("<a href=removeFav.php?drinkID=$drinkID&userID=$userID><i id='favvis' class='fa fa-star' aria-hidden='true'></i></a></h2>");
+				} else {
+					echo("<a href=addFav.php?drinkID=$drinkID&userID=$userID><i id='ejfavvis' class='fa fa-star-o' aria-hidden='true'></i></a></h2>");
+				}
+				?>		
  					</th>
 				<tr/>
 				</thead>
