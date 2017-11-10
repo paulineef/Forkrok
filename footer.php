@@ -3,7 +3,7 @@
 		<p>Copyright © 2017 KRÖK CO.
 		</p>
 	</footer>
-
+</body>
 <style type="text/css">
 
 footer p {
