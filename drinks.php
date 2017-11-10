@@ -1,4 +1,4 @@
-<!-- includes the sidemenue and its functions -->
+<!-- includes the sidemenu and its functions -->
 <?php include ("sidebar.php") ?>
 
 <head>

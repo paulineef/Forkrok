@@ -3,8 +3,7 @@
 	<title>Förkrök</title>
 </head>
 <?php 
-	$gameID = trim($_GET["gameID"]);
-	
+
 	@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
 	
 	$query = "SELECT games.gameID, games.name, gameCat.categoryID, gameCat.term, games.need, games.instructions, games.picture FROM games 
