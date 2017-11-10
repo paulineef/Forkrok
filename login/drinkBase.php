@@ -47,10 +47,7 @@
 			<?php echo("<a href=drinks.php?userID=$userID><i class='fa fa-times' aria-hidden='true'></i></a>")?>
 				
 			</div>
-			<table class="drink">		
-				<thead>
-				<tr colspan="2">
-					<th>
+			<div class="drink">		
 				<?php echo "<h2> $name";
 					
 					if($drinkID2 == $drinkID){
@@ -59,13 +56,8 @@
 					echo("<a href=addFav.php?drinkID=$drinkID&userID=$userID><i id='ejfavvis' class='fa fa-star-o' aria-hidden='true'></i></a></h2>");
 				}
 				?>		
- 					</th>
-				<tr/>
-				</thead>
-				<tbody>
-				<tr>
 					<!--<a href='favourites.php'<i class="fa fa-star-o" aria-hidden="true"></i>-->
-					<td id="tdparent">
+					<div class="info">
 						<h5>Ingredients</h5>
 						<ul>
 						<?php foreach($ingredients as $var) { //same as [i];
@@ -74,22 +66,12 @@
 						?>
 						</ul>
 						<?php echo "<p> $description </p>";?>
-					</td>
-					<td class="t-left">
+					</div>
+					<div class="image">
 						<?php echo "<img src=\"../uploadedfiles/" . $picture . "\">"; ?>
-					</td>
-				</tr>
-			</tbody>
-			</table>
+					</div>
+			</div>
 		</div>
 	</div>
-
-<style type="text/css">
-
-	#favvis, #ejfavvis {
-		float: right;
-	}
-
-</style>
 
 <?php include ('../footer.php')  ?>
