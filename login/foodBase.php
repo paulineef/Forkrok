@@ -35,9 +35,6 @@
 		<div class="map">
 			<iframe frameborder="0" style="border:0" src=" <?php echo $maps ?>" allowfullscreen></iframe>
 		</div>
-		<p>
-			<?php echo $term ?><br><br>
-		</p>
 		<div class="social">
 			<a href="https://www.facebook.com/<?php echo $facebook?>" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
 		</div>

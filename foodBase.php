@@ -33,10 +33,6 @@
 			<!-- echo out the google maps API -->
 			<iframe frameborder="0" style="border:0" src=" <?php echo $maps ?>" allowfullscreen></iframe>
 		</div>
-		<p>
-			<!-- echo out the term, the foodcategory -->
-			<?php echo $term ?><br><br>
-		</p>
 		<div class="social">
 			<!-- echo out the facebook link into an icon -->
 			<a href="https://www.facebook.com/<?php echo $facebook?>" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
