@@ -1,44 +1,50 @@
+<?php include ("sidebar.php") ?>
 <head>
 	<link rel="stylesheet" type="text/css" href="forkrok.css">
 	<script src="https://use.fontawesome.com/6f2a9fca0c.js"></script>
 </head>
-	<?php include ("sidebar.php") ?>
 	<?php 
+		//get the value foodID from the URL, trim it = reduce shit and put it into a new variable
 		$foodID = trim($_GET["foodID"]);
-	
+		//connect to the database with the server = localhost, username = user, password = user and database name = forkork and put it into a variable 'db'
 		@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
-	
+
+		//SELECT foodID, header from food AND categoryID, term from foocCat AND maps, facebook from food
+		//JOIN foodcat with food in the columns categoryID WHERE the foodID is the name as 'foodID' = the value from the URL
 		$query = "SELECT food.foodID, food.header, foodCat.categoryID, foodCat.term, food.maps, food.facebook FROM food 
 		JOIN foodCat ON food.categoryID = foodCat.categoryID WHERE food.foodID = $foodID";
-
+		
+		//connect to database and prepare the query to be used in the variable stmt
 		$stmt = $db->prepare($query);
-		//takes the result of the search and create variables from it
+		//put the result from the query into these variables below
 		$stmt->bind_result($foodID, $header, $categoryID, $term, $maps, $facebook);
+		//execute the FUNCTION inside stmt
 		$stmt->execute();
-
+		//loop through the statement and collect the values within it. 
 		while ($stmt->fetch()) {
-	 }
-
+	 	}
 	?> 
 	<div id="indexBongo">
 		<div id="back">
 			<a href="food.php"><i class="fa fa-times" aria-hidden="true"></i></a>
 		</div>
+		<!-- echo out the header -->
 		<h2 class="place"> <?php echo $header ?></h2>
 		<div class="map">
+			<!-- echo out the google maps API -->
 			<iframe frameborder="0" style="border:0" src=" <?php echo $maps ?>" allowfullscreen></iframe>
 		</div>
 		<p>
+			<!-- echo out the term, the foodcategory -->
 			<?php echo $term ?><br><br>
 		</p>
 		<div class="social">
+			<!-- echo out the facebook link into an icon -->
 			<a href="https://www.facebook.com/<?php echo $facebook?>" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
 		</div>
 		
 	</div>
-	<?php include ("footer.php") ?>
-
-
+<?php include ("footer.php") ?>
 <style type="text/css">	
 	.b {
 		display: inline;

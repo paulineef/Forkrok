@@ -7,21 +7,25 @@
 	$userID = trim($_GET["userID"]);
 ?>
 	<?php 
+		//get the value foodID from the URL, trim it = reduce shit and put it into a new variable
 		$foodID = trim($_GET["foodID"]);
-	
+		//connect to the database with the server = localhost, username = user, password = user and database name = forkork and put it into a variable 'db'
 		@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
-	
+
+		//SELECT foodID, header from food AND categoryID, term from foocCat AND maps, facebook from food
+		//JOIN foodcat with food in the columns categoryID WHERE the foodID is the name as 'foodID' = the value from the URL
 		$query = "SELECT food.foodID, food.header, foodCat.categoryID, foodCat.term, food.maps, food.facebook FROM food 
 		JOIN foodCat ON food.categoryID = foodCat.categoryID WHERE food.foodID = $foodID";
-
+		
+		//connect to database and prepare the query to be used in the variable stmt
 		$stmt = $db->prepare($query);
-		//takes the result of the search and create variables from it
+		//put the result from the query into these variables below
 		$stmt->bind_result($foodID, $header, $categoryID, $term, $maps, $facebook);
+		//execute the FUNCTION inside stmt
 		$stmt->execute();
-
+		//loop through the statement and collect the values within it. 
 		while ($stmt->fetch()) {
-	 }
-
+	 	}
 	?> 
 	<div id="indexBongo">
 		<div id="back">
