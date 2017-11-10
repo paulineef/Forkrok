@@ -21,7 +21,9 @@
 			});
 		</script>
 	</head>
-	<?php $userID = $_GET["userID"]; ?>
+	<?php $userID = $_GET["userID"];
+	
+	?>
 	<header>
 		<!--navigation menu-->
 		<div id="nav-icon3">
@@ -37,7 +39,9 @@
 			</div>
 				<!-- echo out the a link that navigates to the different pages together with the userID in the URL -->
 				<li id="first">
-					<?php echo("<a href=games.php?userID=$userID><i class='fa fa-trophy' aria-hidden='true'></i>Games</a>")?>
+					<?php echo("<a href=games.php?userID=$userID&
+					
+					><i class='fa fa-trophy' aria-hidden='true'></i>Games</a>")?>
 				</li>
 				
 				<li>

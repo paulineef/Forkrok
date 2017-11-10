@@ -28,9 +28,18 @@
 		//IF there's an empty field
 	    if (!$newUsername || !$newPassword || !$copyPassword) {
 	        echo("<h3>Please fill out all fields.</h3>");
-	        echo("<br><a id='hej' href=newUser.php>Go back</a>");
-			exit();
+	        echo("<br><a id='hej' href=newUser.php>Go back</a><br>");
+			$_COOKIE['newUsername'] = $newUsername;
 	    }
+		
+		if (!isset($_COOKIE['newUsername'])) {
+			
+			$userCookie = setcookie('newUsername', $_POST['newUsername']); 
+			
+		} else {
+			$_COOKIE['newUsername'] = $newUsername;
+			$userCookie = $_COOKIE['newUsername'];
+		}
 		//add slashes before characters to aviod hacking  
 	    $newUsername = addslashes($newUsername);
 	    //add slashes before characters to aviod hacking and hash the password so it cannot be displayed in the database
@@ -51,7 +60,7 @@
 	    	if ($newUsername == $username ) {
 				//echo out that the name is already taken and provide a go back link
 				echo "<h3>Username is alredy taken.</h3>";
-				echo("<br><a id='hej' href=newUser.php>Go back</a>");	
+				echo("<br><a id='hej' href=newUser.php>Go back</a>");
 				exit(); 
 		   	}
 	 	}
@@ -65,11 +74,13 @@
 			$stmt->execute();
 			printf("<br><h3>User added!</h3>");
 			printf("<br><a href=favourites.php>Click to login</a>");
+			$_COOKIE['newUsername'] = $newUsername;
 			exit();
 			
 		//IF passwords doesn't match
 		} else {
-			echo "Password doesn't match";
+			echo ("<p>Password doesn't match</p>");
+			$_COOKIE['newUsername'] = $newUsername;
 		}
 	}
 ?>
@@ -78,7 +89,21 @@
 	    <table id="newTable" bgcolor="#fd896d" cellpadding="6">
 	        <tbody id="tbody">
 	            <tr>
-	                <td><INPUT type="text" placeholder="Username" name="newUsername"></td>
+	                <td><INPUT type="text" placeholder="Username" value="<?php if(isset($_COOKIE['newUsername'])){
+						echo($_COOKIE['newUsername']);
+						}else {
+							
+}
+						?>"
+							   
+							   name="newUsername">
+						<?php
+							//if(isset($_COOKIE['newUsername'])){
+								//'newUsername';
+							//} else 'Username'
+						?>
+						
+						</td>
 	            </tr>
 	            <tr>
 	                <td><INPUT type="password" placeholder="Password" name="newPassword"></td>
