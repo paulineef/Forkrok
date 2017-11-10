@@ -1,12 +1,13 @@
+<!-- includes the sidemenue and its functions -->
 <?php include ("sidebar.php");
-$userID = trim($_GET["userID"]);
+	//declare userId being the same as the userId pushed in the url
+	$userID = trim($_GET["userID"]);
 ?>
 
 <head>
 	<title>Förkrök - Drinks</title>
 	<link rel="stylesheet" type="text/css" href="../forkrok.css">
 </head>
-<body>
 
 <div class="content">
 	<div class="placement">
@@ -85,7 +86,5 @@ $userID = trim($_GET["userID"]);
 
 </div>	
 </div>
-
-</body>
 
 <?php include ("../footer.php") ?>
