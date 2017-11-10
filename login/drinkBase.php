@@ -1,8 +1,10 @@
+<!-- includes the sidemenue and its functions -->
 <?php include ('sidebar.php') ?>
+
 <?php 
 	//GET userID and drinkID from url and put them into varables
-	$drinkID = trim($_GET["drinkID"]);
-	$userID = trim($_GET["userID"]);
+	$drinkID = $_GET["drinkID"];
+	$userID = $_GET["userID"];
 
 	@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
 
