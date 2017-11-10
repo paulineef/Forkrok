@@ -32,8 +32,8 @@
 		</div>
 		<ul id="header" class="ulli">
 			<div class="imgCont">
-				<a href="index.php"><img id="logoSide" src="../img/logo_icon.svg"/><a/>
-				<a href="index.php"><img id="forkrok" src="../img/logo.svg"/><a/>
+				<?php echo("<a href='index.php?userID=$userID'><img id='logoSide' src='../img/logo_icon.svg'/><a/>") ?>
+				<?php echo ("<a href='index.php?userID=$userID'><img id='forkrok' src='../img/logo.svg'/><a/>") ?>
 			</div>
 				<!-- echo out the a link that navigates to the different pages together with the userID in the URL -->
 				<li id="first">
