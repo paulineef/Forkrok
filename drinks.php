@@ -11,6 +11,7 @@
 
 	<!-- contains the headline and search form -->
 	<div class="placement">
+		<!--class="fa fa-glass" aria-hidden="true" is to display the icon -->		
 		<h2>Drinks<i class="fa fa-glass" aria-hidden="true"></i></h2>
 
 		<!-- Searchfield, POST, mainly we don't want user to change the search in the url -->
