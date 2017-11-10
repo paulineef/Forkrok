@@ -2,14 +2,14 @@
 <?php include ("sidebar.php");
 	//declare userId being the same as the userId pushed in the url
 	$userID = $_GET["userID"];
-?>
-
-<head>
+?><head>
 	<title>Förkrök - Drinks</title>
 	<link rel="stylesheet" type="text/css" href="../forkrok.css">
 </head>
 
 <!-- contains the whole site with content -->
+
+
 <div class="content">
 
 	<!-- contains the headline and search form -->
@@ -18,7 +18,7 @@
 		<h2>Drinks<i class="fa fa-glass" aria-hidden="true"></i></h2>
 
 		<!-- Searchfield, POST, mainly we don't want user to change the search in the url -->
-		<form action ='drinks.php?userID=$userID' method="POST" id="drinksearch">
+		<?php echo("<form action ='drinks.php?userID=$userID' method='POST' id='drinksearch'>") ?>
 			<input type="text" name="searchdrink" placeholder="Search by drink" class="searchFieldDrink">
 			<input type="text" name="searchingredients" placeholder="or by ingredients" class="searchFieldDrink" id="right">
 			<input type="submit" value="Submit" class="submit" id="drinks">
