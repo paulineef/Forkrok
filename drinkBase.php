@@ -42,19 +42,11 @@
 			<!-- div around back arrow with icon -->
 			<a href="drinks.php"><i class="fa fa-times" aria-hidden="true"></i></a></div>
 			
-				<table class="drink">		
-					<thead>
-					<tr colspan="2">
-					<th>
+				<div class="drink">	
 				<!-- display the drinkname from the database -->
 				<?php echo "<h2> $name </h2>";?>
- 					</th>
-				<tr/>
-				</thead>
-				<tbody>
-				<tr>
 					<!--<a href='drinkBase.php?userID=$userID'<i class="fa fa-star-o" aria-hidden="true"></i>-->
-					<td id="tdparent">
+					<div class="info">
 						<h5>Ingredients</h5>
 						<ul>
 
@@ -65,13 +57,12 @@
 						?>
 						</ul>
 						<?php echo "<p> $description </p>";?>
-					</td>
-					<td class="t-left">
+					</div>
+					<div class="image">
 						<?php echo "<img src=\"uploadedfiles/" . $picture . "\">"; ?>
-					</td>
-				</tr>
-			</tbody>
-			</table>
+					</div>
+		
+			</div>
 		</div>
 	</div>
 
