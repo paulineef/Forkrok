@@ -8,47 +8,7 @@
 	cursor: default;
 }
 
-#listimage{
-	display:inline-block;
-	position: relative;
-	width: 32%;
-	text-align: center;
-}
 
-#namestyle {
-	visibility: hidden;
-	top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-	width:100%;
-	color: #000;
-	position: absolute;
-	margin: auto auto;
-	font-weight: 500;
-	text-transform: uppercase;
-}
-#listimage:hover #namestyle{
-	visibility: visible;
-	display: block;
-}
-#listimage:hover #specificimage{
-	opacity: 0.5;
-}
-#namestyle:hover #specificimage {
-	opacity: 0.5;
-}
-
-.specificimage {
-	display:inline-block;
-	width:100%;
-	float: left;
-	padding: 2px;
-	/*box-sizing: border-box;*/
-}
-
-.specificimage:hover {
-	opacity: 0.5;
-}
 
 h1,h2,h3,h4,h5,h6 {
 	font-family: lato, sans-serif; 
@@ -429,6 +389,44 @@ form label {
 	width: 100%;
 }
 
+#listimage{
+	display:inline-block;
+	position: relative;
+	width: 32%;
+	text-align: center;
+}
+
+#namestyle {
+	visibility: hidden;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	width:100%;
+	color: #000;
+	position: absolute;
+	margin: auto auto;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+#listimage:hover #namestyle{
+	visibility: visible;
+	display: block;
+}
+#listimage:hover #specificimage{
+	opacity: 0.5;
+}
+
+.specificimage {
+	display:inline-block;
+	width:100%;
+	float: left;
+	padding: 2px;
+}
+
+.specificimage:hover {
+	opacity: 0.5;
+}
+
 @media(min-width: 928px) {
 	.searchFieldDrink {
 		width: 48%;
@@ -468,43 +466,33 @@ form label {
 		width: 100%;
 	}
 
-	#drink{
-		max-width: 120px;
-		margin-right: 30px; 
-	}
-
-	.drink table {
+	.drink  {
+		overflow: auto; 
 		width: 100%; 
 		border-collapse: collapse;
 		padding: 0;
 		margin: 0;
 	}
 
-	.drink t-body {
-		width: 100%;
+	.image {
+		max-width: 300px; 
 	}
 
-	.drink th {
-		text-align: left; 
+	.image img {
+		max-width: 100%; 
 	}
 
-	.drink td {
-		vertical-align: top; 
-		max-width: 100px; 
-	}
-
-	.t-left {
-		padding-left: 30px; 
-	}
-
-	.t-left img {
-		width: 150%; 
-	}
-
-	.drink td h5 {
+	.info h5 {
 		margin: 0;
 		font-size: 15pt; 
 		color: #FDCD01;
+	}
+
+	.info {
+		margin-right: 30px;
+		min-width: 100px; 
+		max-width: 250px; 
+		margin-bottom: 30px; 
 	}
 
 	.drink ul {
@@ -520,38 +508,35 @@ form label {
 	}
 
 @media (min-width: 768px) and (max-width: 927px) {
-		.drink td {
-			max-width: 400px; 
+		.info {
+			float: left; 
 		}
 
-		.t-left img {
-			width: 100%;
+		.image {
+			overflow: hidden; 
+			
 		}
 
 		table {
 			width: 100%;
 		}
+
 	}
 
 @media (min-width: 928px){
-		.drink h5 {
-			font-size: 14pt; 
-		}
-		.drink ul li {
-			font-size: 10pt; 
+		.info {
+			float: left; 
 		}
 
-		#drink {
-			max-width: 100px; 
-		}
-
-		.t-left img {
-			width: 300%;
+		.image {
+			overflow: hidden;
+			  
 		}
 
 		table {
 			width: 100%;
 		}
+
 	}
 
 
