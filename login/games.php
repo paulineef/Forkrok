@@ -2,10 +2,10 @@
 	include ("sidebar.php");
 	//Gets the ID for variable
 	$userID = ($_GET["userID"]); 
-?>
-<head>
+?><head>
 	<title>Förkrök - Games</title>
 </head>
+
 <div class="content">
 	<div class="placement">
 
@@ -92,7 +92,7 @@
    			//fetches the prepared content and adds it to the varibles in a loop so it displays all of the rows in the table. 
 			while ($stmt->fetch()) {
 				echo "<tr>";
-				echo " <td class='listStyle'><a href='gameBase.php?gameID=$gameID'> $name</a></td> <td class='category'> $term </td>";
+				echo " <td class='listStyle'><a href='gameBase.php?gameID=$gameID&userID=$userID'> $name</a></td> <td class='category'> $term </td>";
 				echo "</tr>";
 			}
 		?>
