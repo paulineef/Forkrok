@@ -31,7 +31,7 @@
 	}
 ?>
 <!-- contains the whole site with content -->
-<div class="content">
+<div class="content" id="contentEXTRA">
 
 	<!-- contains the headline and search form -->		
 	<div class="placement">	
@@ -65,11 +65,5 @@
 			</div>
 		</div>
 	</div>
-
-<style type="text/css">
-
-
-
-</style>
 
 <?php include ('footer.php')  ?>

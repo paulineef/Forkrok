@@ -39,7 +39,7 @@
 	while($stmt->fetch()) {}
 ?>
 
-	<div class="content">		
+	<div class="content" id="contentEXTRA">		
 		<div class="placement">	
 			<div id="back">
 		

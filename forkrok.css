@@ -228,8 +228,7 @@ label {
 	.content {
 		float: left;
 		margin: 0px 0px 0px 450px;
-		max-width: 600px; 
-		min-width: 600px; 
+		width: 600px; 
 	}
 
 	.searchCat {
@@ -462,6 +461,10 @@ form label {
 
 	/* --- DRINK BASE --- */
 
+	#contentEXTRA {
+		width: 650px; 
+	}
+
 	table {
 		width: 100%;
 	}
@@ -505,10 +508,6 @@ form label {
 		font-family: 'lato', sans-serif; 
 		font-weight: 400;
 		font-size: 12pt; 
-	}
-
-	#favvis, #ejfavvis {
-		float: right;
 	}
 
 @media (min-width: 768px) and (max-width: 927px) {
