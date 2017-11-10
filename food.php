@@ -7,13 +7,8 @@
 	<div class="placement">
 	
 		<h2>Food<i class="fa fa-trophy" aria-hidden="true"></i></h2>
-<<<<<<< HEAD
 <!-- We use POST as a method to aviod the user to be able to change the action in the URL -->
 		<form action="food.php" method="POST">
-=======
-
-		<?php echo("<form action='food.php' method='POST'>") ?>
->>>>>>> 85461854b7a034ae79c2ab34114eb9438a53d405
 			<div class="searchCat">
 				Category :
 				<select name="searchcategory" class="dropDown">
@@ -40,8 +35,10 @@
 				//FUNCTION = connect to the database via the variable and access the value in the variable 'searchcategory'
 				//put the value filled in the form field into variables
 				$searchcategory = mysqli_real_escape_string($db, $searchcategory);
+				
 				//make it impossible to write html in the form field
 				$searchcategory = htmlentities($searchcategory);
+				
 				//add slashes before characters to aviod hacking 
 				$searchcategory = addslashes ($searchcategory);
 			}
