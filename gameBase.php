@@ -23,7 +23,6 @@
 	while ($stmt->fetch()) {
 	}
 ?> 
-<body>
 	<div class="content">
 		<div class="placement">
 			<div id="back">
@@ -67,8 +66,4 @@
 			</table>
 		</div>
 	</div>
-	<style type="text/css">
-
-	</style>
-</body>
 <?php include('footer.php');?>
