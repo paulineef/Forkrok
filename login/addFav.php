@@ -13,7 +13,7 @@ $userID = trim($_GET["userID"]);
 <div class="content" id="add">
 <?php    // Prepare an insert statement and execute it
     $stmt = $db->prepare("INSERT INTO favourites(drinkID, userID) VALUES ($drinkID, $userID)");
-    $stmt->bind_param('ss', $drinkID, $userID);
+    //$stmt->bind_param('ss', $drinkID, $userID);
     $stmt->execute();
     printf("<br><h3 id='added'>Drink Added!</h3>");
 	

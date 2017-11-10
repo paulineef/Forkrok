@@ -2,7 +2,10 @@
 	<link rel="stylesheet" type="text/css" href="../forkrok.css">
 	<script src="https://use.fontawesome.com/6f2a9fca0c.js"></script>
 </head>
-	<?php include ("sidebar.php") ?>
+<?php 
+	include ("sidebar.php"); 
+	$userID = trim($_GET["userID"]);
+?>
 	<?php 
 		$foodID = trim($_GET["foodID"]);
 	
