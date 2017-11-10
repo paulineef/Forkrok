@@ -13,7 +13,8 @@
 	<div class="placement">
 
 		<h2>Food<i class="fa fa-trophy" aria-hidden="true"></i></h2>
-
+<!-- Echo out the form tag to be able to send the userID value through the URL -->
+<!-- We use POST as a method to aviod the user to be able to change the action in the URL -->
 		<?php echo("<form action='food.php?userID=$userID' method='POST'>") ?>
 			<div class="searchCat">
 				Category :

@@ -1,18 +1,10 @@
 <?php
 	//start SESSION
 	session_start();
-	//IF there's a session already active on the site
-
-
-/* HÄR VAR DET FEL*/
-
-
+	//IF there's a session called username already active on the site, echo out a link to home page. The user does not need to log in.
 	if (isset($_SESSION['username'])) {
-		//header("location:login/index.php");?>
-	<script>
-		window.location ="login/index.php";
-	</script>
-	<?php }
+		echo("<a href='login/favourites.php'> Click here to see your favourites </a>");
+	 }
 ?>
 <div class="logBox">
 	<div class="content">
@@ -31,7 +23,7 @@
              <a id="new" href="newUser.php">Create new user</a>
         </form>
 <?php 
-	//open the database with the location = localhost, username and password = user and name =forkrok and put it into a variable
+	//open the database with the server = localhost, username and password = user and name =forkrok and put it into a variable 'db'
 	@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
 
 	//IF the database can't connect
@@ -58,7 +50,7 @@
 		//SELECT ALL from users where the username and password is what was typed in form field, inside of the variables
 		$query = ("SELECT * FROM users WHERE username = '{$uname}' "."AND password = '{$upass}'");
 		
-		//connect to database and prepare for it to be used in the variable stmt
+		//connect to database and prepare the query to be used in the variable stmt
 		$stmt = $db->prepare($query);
 		//execute the FUNCTION inside stmt
 		$stmt->execute();
