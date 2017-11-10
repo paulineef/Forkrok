@@ -1,7 +1,7 @@
 <?php
+	//destroy the session
     session_start();
     session_destroy();
-   // header("location:../favourites.php"); ?>
-	<script>window.location ="../favourites.php";</script> 
-<?php
+	//return to favourites outside the login folder
+    header("location:../favourites.php"); 
 ?>
