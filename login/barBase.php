@@ -5,20 +5,23 @@
 </head>
 	<?php include ("sidebar.php");
 	
-		//GET the barID and userID from the url
-		$barID = trim($_GET["barID"]);
-		$userID = trim($_GET["userID"]);
+		//GET the barID and userID from the URL
+		$barID = $_GET["barID"];
+		$userID = $_GET["userID"];
 	
 		//connect to the database
 		@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
 	
+		//SELECT only where barID is the same as 'barID' = the value in the URL
 		$query = "SELECT barID, header, description, facebook, maps FROM bars WHERE barID = $barID";
 
 		$stmt = $db->prepare($query);
 		//takes the result of the search and create variables from it
 		$stmt->bind_result($barID, $header, $description, $facebook, $maps);
+		//execute the FUNCTION within stmt
 		$stmt->execute();
 
+		//loop through the statement and collect the values within it. 
 		while ($stmt->fetch()) {
 		}
 	?> 

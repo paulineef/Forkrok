@@ -4,7 +4,7 @@
 </head>
 <?php 
 	include ("sidebar.php"); 
-	$userID = trim($_GET["userID"]);
+	$userID = $_GET["userID"];
 ?>
 	<?php 
 		//get the value foodID from the URL, trim it = reduce shit and put it into a new variable

@@ -1,7 +1,7 @@
 <?php 
 	include ("sidebar.php"); 
 	//get the value userID from the URL, trim it = reduce shit and put it into a new variable
-	$userID = trim($_GET["userID"]);
+	$userID = $_GET["userID"];
 ?><head>
 	<title>Förkrök - Food</title>
 	<link rel="stylesheet" type="text/css" href="../forkrok.css">

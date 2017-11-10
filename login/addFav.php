@@ -1,8 +1,9 @@
 <?php 
 include('sidebar.php');
 //GET the drinkID and userID from the URL
-$drinkID = trim($_GET["drinkID"]);
-$userID = trim($_GET["userID"]);
+$drinkID = $_GET["drinkID"];
+$userID = $_GET["userID"];
+
 // Open the database
 @ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
 
@@ -14,7 +15,8 @@ $userID = trim($_GET["userID"]);
         exit();
     } ?>
 <div class="content" id="add">
-<?php    // Prepare an insert statement with the current drinkID and userID and execute it
+<?php    
+	// Prepare an insert statement with the current drinkID and userID and execute it
     $stmt = $db->prepare("INSERT INTO favourites(drinkID, userID) VALUES ($drinkID, $userID)");
     //$stmt->bind_param('ss', $drinkID, $userID);
     $stmt->execute();

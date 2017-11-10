@@ -4,9 +4,8 @@
 	<script src="https://use.fontawesome.com/6f2a9fca0c.js"></script>
 </head>
 	<?php include ("sidebar.php"); 
-
 		//GET the barID from the url
-		$barID = trim($_GET["barID"]);
+		$barID = $_GET["barID"];
 	
 		//open the database
 		@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
@@ -16,8 +15,10 @@
 		$stmt = $db->prepare($query);
 		//takes the result of the search and create variables from it
 		$stmt->bind_result($barID, $header, $description, $facebook, $maps);
+		//execute the FUNCTION within stmt
 		$stmt->execute();
-
+		
+		//loop through the statement and collect the values within it. 
 		while ($stmt->fetch()) {
 		}
 	?> 
@@ -36,6 +37,5 @@
 		<div class="social">
 			<a href="https://www.facebook.com/<?php echo $facebook?>" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
 		</div>
-		
 	</div>
-	<?php include ("footer.php") ?>
+<?php include ("footer.php") ?>

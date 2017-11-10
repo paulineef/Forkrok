@@ -9,7 +9,7 @@
 <?php include ("sidebar.php");
 	
 	//GET userID from the URL and put it into a variable
-	$userID = trim($_GET["userID"]); ?>
+	$userID = $_GET["userID"]; ?>
 
 	<div class="content" id="barCont">
 		<div class="placement">
@@ -34,6 +34,7 @@
     $stmt = $db->prepare($query);
 	//takes the result of the search and create variables from it
     $stmt->bind_result($barID, $header, $picture);
+	//execute the FUNCTION within stmt
     $stmt->execute();
 	
     echo '<ul id="listBar">';
