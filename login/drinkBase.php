@@ -2,25 +2,32 @@
 <?php include ('sidebar.php') ?>
 
 <?php 
-	//GET userID and drinkID from url and put them into varables
+	//clarify drinkID will have the same value as the pushed drinkID in the url, from database
+	//clarify userID will have the same value as the pushed userID in the url, from database
 	$drinkID = $_GET["drinkID"];
 	$userID = $_GET["userID"];
 
+	//connect with the database with servername, username, password, and database
 	@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
 
+	//get tabels and columns from database, and join the onces that are supposed to be connected to eachother
 	$query = "SELECT drinks.drinkID, drinks.name, ingredients.ingredientID, ingredients.term, drinks.picture, drinks.description FROM drinks
 	JOIN drinks_ingredients ON drinks.drinkID = drinks_ingredients.drinkID 
 	JOIN ingredients ON ingredients.ingredientID = drinks_ingredients.ingredientID
-	WHERE drinks.drinkID = $drinkID
-	
-	";
+	WHERE drinks.drinkID = $drinkID";
 
+	//acess the database and prepare for the query to be used in the stmt-variable 
  	$stmt = $db->prepare($query);
+ 	//takes the result from the query and put in the variables below
     $stmt->bind_result($drinkID, $name, $ingredientID, $term, $picture, $description);
+    //execute the function in the stmt
     $stmt->execute();
+    //an empty array to have somewhere to push the information into from the database
 	$ingredients = array();
 
+	// While fetching results from a prepared statement into the bound variables
 	while($stmt->fetch()) {
+		//push the ingredients of a specific drink from the database(term) into the ingredients array
 		array_push($ingredients, $term);
 	}
 
@@ -29,11 +36,9 @@
     $stmt->bind_result($drinkID2, $userID2);
     $stmt->execute();
 
-	while($stmt->fetch()) {
-		
-	}
+	while($stmt->fetch()) {}
 ?>
-<body>
+
 	<div class="content">		
 		<div class="placement">	
 			<div id="back">
@@ -87,5 +92,4 @@
 
 </style>
 
-</body>
 <?php include ('../footer.php')  ?>
