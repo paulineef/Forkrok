@@ -6,7 +6,6 @@
 <head>
 	<title>Förkrök - Games</title>
 </head>
-<body>
 <div class="content">
 	<div class="placement">
 
@@ -101,5 +100,4 @@
 </div>
 	
 </div>
-</body>
 <?php include ("../footer.php") ?>

@@ -23,7 +23,6 @@
 		while ($stmt->fetch()) {
 	 	}
 	?> 
-	
 <div id="indexBongo">
 		<div id="back">
 			<a href="food.php"><i class="fa fa-times" aria-hidden="true"></i></a>

@@ -7,20 +7,22 @@
 		<script src="https://use.fontawesome.com/6f2a9fca0c.js"></script>
 		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 		<script type="text/javascript" charset="utf-8">
-			
+			//run the function when the document object model has been loaded, when the page load is finished
 			$(document).ready(function() {
-					
-			$("#nav-icon3").click(function(e){
-				e.preventDefault();	
-				$("#header").toggleClass('open');
-				$("#nav-icon3").toggleClass('open');
+				//when clicking on the nav-icon = the hamburger menu, start the function 
+				$("#nav-icon3").click(function(e){
+					//prevent default values and functions to appear
+					e.preventDefault();
+					//give the header ul the class open during the function
+					$("#header").toggleClass('open');
+					//give the hamburgermenu the class open during the function
+					$("#nav-icon3").toggleClass('open');
 				});
 			});
 		</script>
 	</head>
-	<?php $userID = trim($_GET["userID"]); ?>
+	<?php $userID = $_GET["userID"]; ?>
 	<header>
-		
 		<!--navigation menu-->
 		<div id="nav-icon3">
 	  		<span></span>
@@ -28,14 +30,12 @@
 	  		<span></span>
 	  		<span></span>
 		</div>
-		
 		<ul id="header" class="ulli">
-
 			<div class="imgCont">
 				<a href="index.php"><img id="logoSide" src="../img/logo_icon.svg"/><a/>
 				<a href="index.php"><img id="forkrok" src="../img/logo.svg"/><a/>
 			</div>
-
+				<!-- echo out the a link that navigates to the different pages together with the userID in the URL -->
 				<li id="first">
 					<?php echo("<a href=games.php?userID=$userID><i class='fa fa-trophy' aria-hidden='true'></i>Games</a>")?>
 				</li>
@@ -58,7 +58,7 @@
 					<li>
 					<?php echo("<a href=logout.php><i class='fa fa-lock' aria-hidden='true'></i>Log out</a>")?>
 				</li>
-
 		</ul>
 			
 	</header>
+	<body>

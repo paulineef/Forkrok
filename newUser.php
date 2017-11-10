@@ -1,30 +1,26 @@
 <?php include ("sidebar.php") ?>
-<body class="logBox">
 	<div class="content">
 		<div class="placement">
 		<h2>Add new user<i class="fa fa-plus" aria-hidden="true"></i></h2>
 	</div>
-	
 <?php
-	//PUT THIS HEADER ON TOP OF EACH UNIQUE PAGE
+	//start session
 	session_start();
+	//if session is not set, move back to sidebar.php
 	if (!isset($_SESSION['username'])) {
 	    header("sidebar.php");
 	}
-?>
-
-<?php
+	//connect to the database with the server = localhost, username = user, password = user and database name = forkork and put it into a variable 'db'
 	@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
-
+	//IF the database could not connect, print out a link to move back to home page
 	if ($db->connect_error) {
 	        echo "could not connect: " . $db->connect_error;
 	        printf("<br><a href=index.php>Return to home page </a>");
 	        exit();
 	    }
-
+	//IF the form field with the name newUsername is filled and not empty
 	if (isset($_POST['newUsername'])) {
-	    // This is the postback so add the book to the database
-	    # Get data from form
+		//get and trim, reduce shit, from the value filled in the field with the names below, e.g. newUsername and put into a new variable
 	    $newUsername = trim($_POST['newUsername']);
 	    $newPassword = trim($_POST['newPassword']);
 		$copyPassword = trim($_POST['copyPassword']);
@@ -35,46 +31,49 @@
 	        echo("<br><a id='hej' href=newUser.php>Go back</a>");
 			exit();
 	    }
-		 
+		//add slashes before characters to aviod hacking  
 	    $newUsername = addslashes($newUsername);
-	    /*$newPassword = addslashes ($newPassword);*/
-		//make sha1
+	    //add slashes before characters to aviod hacking and hash the password so it cannot be displayed in the database
 		$newPassword = addslashes(sha1($newPassword));
 		$copyPassword = addslashes(sha1($copyPassword));
-	    # Open the database using the "forkrok" account
 
+		
 	   	$query = "SELECT users.username FROM users";
+		//connect to database and prepare the query to be used in the variable stmt
 	   	$stmt = $db->prepare($query);
-	    		//takes the result of the search and create variables from it
-	    		$stmt->bind_result($username);
-	    		$stmt->execute();
-	    		while($stmt->fetch()){
-	    			if ($newUsername == $username ) {
-			    	echo "<h3>Username is alredy taken.</h3>";
-			    	echo("<br><a id='hej' href=newUser.php>Go back</a>");
-			    	exit(); 
-			    	}
-	    		}
-
-	    
-
+	    //put the result from the query into the variable below
+	    $stmt->bind_result($username);
+		//execute the FUNCTION inside stmt
+	    $stmt->execute();
+		//loop through the statement and collect the values within it
+	    while($stmt->fetch()){
+			//IF the new username added is the same as another username in the database
+	    	if ($newUsername == $username ) {
+				//echo out that the name is already taken and provide a go back link
+				echo "<h3>Username is alredy taken.</h3>";
+				echo("<br><a id='hej' href=newUser.php>Go back</a>");	
+				exit(); 
+		   	}
+	 	}
 		//make sure the password fields are matching, if NOT, do not add user
 		if($newPassword == $copyPassword && $newPassword != "" ){
-			// Prepare an insert statement and execute it
-	    $stmt = $db->prepare("insert into users(userID, username, password) values ('', ?, ?)");
-	    $stmt->bind_param('ss', $newUsername, $newPassword);
-	    $stmt->execute();
-	    printf("<br><h3>User added!</h3>");
-	    printf("<br><a href=favourites.php>Click to login</a>");
-	    exit();
+			//Prepare an insert statement into users at the columns userID, username and password with the values provided from the form field 
+			$stmt = $db->prepare("INSERT INTO users(userID, username, password) VALUES ('', ?, ?)");
+			//put the result from the query into these variables below
+			$stmt->bind_param('ss', $newUsername, $newPassword);
+			//execute the FUNCTION inside stmt
+			$stmt->execute();
+			printf("<br><h3>User added!</h3>");
+			printf("<br><a href=favourites.php>Click to login</a>");
+			exit();
 			
-			//IF passwords doesn't match
-		}else {
+		//IF passwords doesn't match
+		} else {
 			echo "Password doesn't match";
 		}
 	}
-
 ?>
+<!-- We use POST as a method to aviod the user to be able to change the action in the URL -->
 	<form action="" method="POST">
 	    <table id="newTable" bgcolor="#fd896d" cellpadding="6">
 	        <tbody id="tbody">
@@ -94,9 +93,7 @@
 	    </table>
 	</form>
 	</div>
-</body>
 <?php include("footer.php"); ?>
-
 <style>
 	#newTable {
 		padding: 30px 12px 30px 12px;

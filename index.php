@@ -1,9 +1,5 @@
 <?php include ("sidebar.php") ?>
-
-<body>
-
 <div class="content">
-
 	<div class="placement">
 			<h1>Get the party started!</h1>
 		<div>
@@ -18,13 +14,9 @@
 				<br/><br/>
 			</p>
 		</div>
-
 		<div class="pingpong">
 			<img src="img/pongblue.svg"/>
 		</div>
-	
 	</div>
 </div>
-
-</body>
 <?php include ("footer.php") ?>

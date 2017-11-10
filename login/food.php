@@ -70,7 +70,7 @@
 			//echo out a table with the headlines restaurant and category
 			echo '<table id="gameTable">';
    			echo '<tr><b><td class="headList">Restaurant</td> <td class="headList" id="cat">Category</td> </b> </tr>';
-			//loop through the statement and collect the values within it. 
+			//loop through the statement and collect the values within it
 			while ($stmt->fetch()) {
 				echo "<tr>";
 				//echo out the values within header and term in a list
