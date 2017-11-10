@@ -67,7 +67,7 @@
 		//put the gotten result into an associative array 
 		$user = $result->fetch_assoc();
 
-		//here we create a new variable 'totalcount' just to check if there's at least one user with the right combination. We make the values from the result counted as rows with one each for every user
+		//here we create a new variable 'to talcount' just to check if there's at least one user with the right combination. We make the values from the result counted as rows with one each for every user
 		$totalcount = $result->num_rows;
 		//access the userID value from the selected result from the databse and put it into a new variable --> in order to pass the uderID value between the different pages
 		$userID = $user['userID'];
@@ -84,6 +84,7 @@
 				
 		//ELSE the totalcount will have values which means that the username and password was correct
         } else {
+			
 			//echo out a link that navigates us to the favourites page together with the userID value in the URL
 			echo("<div id='formLink' style='background-color: #fff; width: 100%; height: 100vh; z-index: 100; position: absolute; top:0;'><a href ='./login/favourites.php?userID=$userID' style='text-decoration: none; color: black; font-family: lato; margin: 50px; margin-top: 200px; position: absolute; right: 30%;'> Click here to see your favourites </a></div>");
 			//stop the WHAT???

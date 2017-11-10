@@ -1,17 +1,17 @@
-<?php include ("sidebar.php");
-$userID = trim($_GET["userID"]); ?>
+<?php 
+	include ("sidebar.php");
+	$userID = trim($_GET["userID"]); 
+?>
 <head>
 	<title>Förkrök - Games</title>
 </head>
-
 <body>
-
 <div class="content">
 	<div class="placement">
 
 		<h2>Games<i class="fa fa-trophy" aria-hidden="true"></i></h2>
 	</div>	
-		<form action="games.php" method="POST">
+		<?php echo("<form action='games.php?userID=$userID'' method='POST'>") ?>
 			<input class="searchField" type="text" name="searchgame" placeholder="ex. Kings Cup"/>
 			<div class="searchCat">
 			Category :
