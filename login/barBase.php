@@ -3,12 +3,13 @@
 	<link rel="stylesheet" type="text/css" href="../barBase.css">
 	<script src="https://use.fontawesome.com/6f2a9fca0c.js"></script>
 </head>
-	<?php include ("sidebar.php") ?>
+	<?php include ("sidebar.php");
 	
-	<?php 
+		//GET the barID and userID from the url
 		$barID = trim($_GET["barID"]);
 		$userID = trim($_GET["userID"]);
 	
+		//connect to the database
 		@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
 	
 		$query = "SELECT barID, header, description, facebook, maps FROM bars WHERE barID = $barID";
@@ -23,6 +24,7 @@
 	?> 
 	<div id="indexBongo">
 		<div id="back">
+			<!-- go back link, still with the userID in the url -->
 			<?php echo("<a href=bars.php?userID=$userID><i class='fa fa-times' aria-hidden='true'></i></a>") ?>
 		</div>
 		<h2 class="place"> <?php echo $header ?></h2>
@@ -34,7 +36,6 @@
 		</p>
 		<div class="social">
 			<a href="https://www.facebook.com/<?php echo $facebook?>" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-		</div>
-		
+		</div>	
 	</div>
 	<?php include ("../footer.php") ?>
