@@ -14,7 +14,7 @@
 ?>
 <div class="content">
 	<?php
-		//print out 'drink removed' and get the option to return to drink page, still with the ID's in the url
+		//print out 'drink removed' and get the option to return to favourite page, still with the ID's in the url
         printf("<br><p>Drink removed</p>");
         printf("<br><a href=favourites.php?userID=$userID>Return to favourites</a>");?>	
 </div>

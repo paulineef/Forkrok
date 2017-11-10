@@ -21,7 +21,7 @@ $userID = $_GET["userID"];
     //$stmt->bind_param('ss', $drinkID, $userID);
     $stmt->execute();
     printf("<br><h3 id='added'>Drink Added!</h3>");
-	//get a link back to the previous page with the drinkID and userID still in the URL
+	//get a link back to the drink page with the drinkID and userID still in the URL
     printf("<br><a href=drinks.php?userID=$userID>Return to drinks</a>");
 ?>
 </div>
