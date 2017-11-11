@@ -14,7 +14,7 @@
 		<!-- POST = the information taken from the form will not be displayed in the URL -->
 		<form background="#dd00dd" method="POST" action="favourites.php">
             <tr>
-				<td><input type="text" placeholder="Username" name="username"></td>
+				<td><input type="text" placeholder="Username" value="" name="username"></td>
 				<td><input type="password" placeholder="Password" name="password"></td>
 
 				<input id="submit" type="submit" value="Login">
@@ -33,6 +33,11 @@
 		printf("<br><a href=index.php>Return to home page </a>");
 		exit();
 	}
+		//if(isset($_COOKIE['newUsername'])){
+		//$use = $_COOKIE['newUsername'];
+	//}else {
+			//setcookie()
+		//}
 
 	//IF the form field username and password is filled
 	if (isset($_POST['username'], $_POST['password'])) {
@@ -63,6 +68,8 @@
 		$totalcount = $result->num_rows;
 		//access the userID value from the selected result from the databse and put it into a new variable --> in order to pass the uderID value between the different pages
 		$userID = $user['userID'];
+		
+		$_COOKIE['newUsername'] = $newUsername;
 	}
 ?>
 	</div>
