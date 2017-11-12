@@ -164,9 +164,18 @@
 			padding-left: 50px;
 		}
 	}
+	@media (min-width: 1023px){
+		#indexBongo {
+			position: absolute;
+			left: 400px;
+		}
+	}
 	@media (min-width: 1200px){
 		.content {
 			margin-left: 500px;
+		}
+		#indexBongo {
+			left: 450px;
 		}
 	}
 </style>
