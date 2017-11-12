@@ -32,10 +32,15 @@
 			$_COOKIE['newUsername'] = $newUsername;
 	    }
 		
+		//set time for cookie, in seconds
+		//timer is on one day
+		$cookieTimer = time()+86400;
+		//IF cookie is not set, set it to what's written in newUsername
 		if (!isset($_COOKIE['newUsername'])) {
 			
-			$userCookie = setcookie('newUsername', $_POST['newUsername']); 
+			$userCookie = setcookie('newUsername', $_POST['newUsername'], $cookieTimer); 
 			
+		//IF cookis IS SET, use the previous 'value'
 		} else {
 			$_COOKIE['newUsername'] = $newUsername;
 			$userCookie = $_COOKIE['newUsername'];
@@ -89,19 +94,13 @@
 	    <table id="newTable" bgcolor="#fd896d" cellpadding="6">
 	        <tbody id="tbody">
 	            <tr>
+					<!-- IF there is a set cookie, print it in the newUsername field, if not, only print placeholder text -->
 	                <td><INPUT type="text" placeholder="Username" value="<?php if(isset($_COOKIE['newUsername'])){
 						echo($_COOKIE['newUsername']);
 						}else {
 							
 }
-						?>"
-							   
-							   name="newUsername">
-						<?php
-							//if(isset($_COOKIE['newUsername'])){
-								//'newUsername';
-							//} else 'Username'
-						?>
+						?>" name="newUsername">
 						
 						</td>
 	            </tr>
