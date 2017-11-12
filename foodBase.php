@@ -61,7 +61,6 @@
 		margin: 0 auto;
 	}
 	#indexBongo {
-		position: absolute;
 		margin: 0 auto;
 		width: 100%;
 		z-index: 999;
