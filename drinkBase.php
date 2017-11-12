@@ -31,7 +31,7 @@
 	}
 ?>
 <!-- contains the whole site with content -->
-<div class="content" id="contentEXTRA">
+<div class="content">
 
 	<!-- contains the headline and search form -->		
 	<div class="placement">	

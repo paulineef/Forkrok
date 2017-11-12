@@ -8,7 +8,29 @@
 	cursor: default;
 }
 
+footer {
+	position:fixed;
+	right:0px;
+	bottom:0px;
+	width:100%;
+	z-index: 10000;
+	background: #fd896d;
+	margin: 0px;
+	padding: 5px;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	color: #fff;
+	text-align: right;	
+	font-size: 10pt; 
+}
 
+/* Media */
+@media (min-width: 928px){
+	footer {
+		font-size: 10px;
+		padding: 4px; 
+	}
+}
 
 h1,h2,h3,h4,h5,h6 {
 	font-family: lato, sans-serif; 
@@ -461,10 +483,6 @@ form label {
 }
 
 	/* --- DRINK BASE --- */
-
-	#contentEXTRA {
-		width: 650px; 
-	}
 
 	table {
 		width: 100%;
