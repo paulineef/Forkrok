@@ -1,7 +1,5 @@
 <!-- includes the sidemenu and its functions -->
-<?php include ("sidebar.php") ?>
-
-<head>
+<?php include ("sidebar.php") ?><head>
 	<title>Förkrök - Drinks</title>
 	<link rel="stylesheet" type="text/css" href="forkrok.css">
 </head>

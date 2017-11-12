@@ -11,7 +11,7 @@
 		<div class="placement">
 			<h2>Login<i class="fa fa-lock" aria-hidden="true"></i></h2>
 		</div>
-		<!-- POST = the information taken from the form will not be displayed in the URL -->
+<!-- We use POST as a method to aviod the user to be able to change the action in the URL -->
 		<form background="#dd00dd" method="POST" action="favourites.php">
             <tr>
 				<td><input type="text" placeholder="Username" value="" name="username"></td>

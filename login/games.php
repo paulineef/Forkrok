@@ -67,7 +67,6 @@
 			JOIN gameCat ON games.categoryID = gameCat.categoryID";
 
 			//if the field searchgame is active and the field searchcategory is empty, echo out the search-value
-			//group by, so we only echo out one game id and not the amount of game id connected to each category
 			if ($searchgame && !$searchcategory) {
 				$query = $query . " where name like '%" . $searchgame . "%'";
 			}
@@ -84,7 +83,6 @@
 			$stmt->bind_result($gameID, $name, $catID, $term);
 			//execute the function in the stmt
 			$stmt->execute();
-			
 
 			//echos out the information so it can be accessed
 			echo '<table id="gameTable">';

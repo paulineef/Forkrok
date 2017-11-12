@@ -10,7 +10,7 @@
 	//connect with the database with servername, username, password, and database
 	@ $db = new mysqli('localhost', 'user', 'user', 'forkrok');
 
-	//get tabels and columns from database, and join the onces that are supposed to be connected to eachother
+	//get tabels and columns from database, and join the onces that are supposed to be connected to each other
 	$query = "SELECT drinks.drinkID, drinks.name, ingredients.ingredientID, ingredients.term, drinks.picture, drinks.description FROM drinks
 	JOIN drinks_ingredients ON drinks.drinkID = drinks_ingredients.drinkID 
 	JOIN ingredients ON ingredients.ingredientID = drinks_ingredients.ingredientID
@@ -31,11 +31,18 @@
 		array_push($ingredients, $term);
 	}
 
-	$query = ("SELECT * FROM favourites WHERE drinkID = '{$drinkID}' "."AND userID = '{$userID}'");
-	$stmt = $db->prepare($query);
-    $stmt->bind_result($drinkID2, $userID2);
-    $stmt->execute();
+	/*-- In order to only be able to favourite mark the same drink one time--*/
 
+	//SELECT all from favourites WHERE the drinkID and the userID is the same as the one from the URL
+	$query = ("SELECT * FROM favourites WHERE drinkID = '{$drinkID}' "."AND userID = '{$userID}'");
+	
+	//connect to database and prepare the query to be used in the variable stmt
+	$stmt = $db->prepare($query);
+	//put the result from the query into these variables below, we want the drinkID already in favourites in antoher variable
+    $stmt->bind_result($drinkID2, $userID2);
+	//execute the FUNCTION inside stmt
+    $stmt->execute();
+	//loop through the statement and collect the values within it. 
 	while($stmt->fetch()) {}
 ?>
 
@@ -44,31 +51,43 @@
 			<div id="back">
 		
 			
-			<?php echo("<a href=drinks.php?userID=$userID><i class='fa fa-times' aria-hidden='true'></i></a>")?>
+			<?php 
+				//the go back link
+				echo("<a href=drinks.php?userID=$userID><i class='fa fa-times' aria-hidden='true'></i></a>")
+			?>
 				
 			</div>
 			<div class="drink">		
 				<?php echo "<h2> $name";
-					
+					//IF the selected drinkID already exist in favourites, echo out a filled star
 					if($drinkID2 == $drinkID){
-					echo("<a href=removeFav.php?drinkID=$drinkID&userID=$userID><i id='favvis' class='fa fa-star' aria-hidden='true'></i></a></h2>");
-				} else {
-					echo("<a href=addFav.php?drinkID=$drinkID&userID=$userID><i id='ejfavvis' class='fa fa-star-o' aria-hidden='true'></i></a></h2>");
-				}
+						echo("<a href=removeFav.php?drinkID=$drinkID&userID=$userID><i id='favvis' class='fa fa-star' aria-hidden='true'></i></a></h2>");
+					} else {
+						//ELSE echo out an unfilled star
+						echo("<a href=addFav.php?drinkID=$drinkID&userID=$userID><i id='ejfavvis' class='fa fa-star-o' aria-hidden='true'></i></a></h2>");
+					}
 				?>		
-					<!--<a href='favourites.php'<i class="fa fa-star-o" aria-hidden="true"></i>-->
 					<div class="info">
 						<h5>Ingredients</h5>
 						<ul>
-						<?php foreach($ingredients as $var) { //same as [i];
+						<?php 
+							//lop through the array with the variable 'var'
+							foreach($ingredients as $var) { //same as [i];
+								//echo out each ingredient found in the array
 								echo "<li>" . $var . "</li>";
 							}
 						?>
 						</ul>
-						<?php echo "<p> $description </p>";?>
+						<?php 
+							//echo out the desription of how to make the drink
+							echo "<p> $description </p>";
+						?>
 					</div>
 					<div class="image">
-						<?php echo "<img src=\"../uploadedfiles/" . $picture . "\">"; ?>
+						<?php 
+							//echo out the picture of the drink displayed
+							echo "<img src=\"../uploadedfiles/" . $picture . "\">"; 
+						?>
 					</div>
 			</div>
 		</div>
